@@ -47,7 +47,7 @@ nav {
       //styling navbar link items
       .navbar-link,
       a {
-        width: inherit !important;
+        width: inherit;
         justify-content: flex-start;
       }
     }
@@ -70,6 +70,30 @@ nav {
     a:first-child {
       width: 31.1rem;
       justify-content: flex-start;
+
+      //Menu icon in Navbar Item
+      svg {
+        display: none;
+        transition: all 0.25s ease-in-out;
+      }
+      @media only screen and (width < 1200px) {
+        width: inherit;
+        justify-content: space-between;
+        &:hover {
+          background: transparent;
+          color: vars.$grey;
+          cursor: default;
+        }
+
+        svg {
+          transform: scale(2.5);
+          display: block;
+          cursor: pointer;
+          &:hover {
+            color: white;
+          }
+        }
+      }
     }
   }
 }
