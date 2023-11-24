@@ -1,5 +1,7 @@
 /***********************************************Importing other stylesheets***********************************************/
 @use "layout";
+@use "utils/mixins" as utils;
+@use "utils/variables" as vars;
 
 //styling links
 a {
@@ -20,12 +22,19 @@ html {
   -webkit-scroll-behavior: smooth;
   scroll-behavior: smooth;
   background-color: white;
+  overflow: hidden;
+  height: 100vh;
+  width: 100vw;
 }
 
 body {
   font-size: 1.6em;
   min-width: 32rem;
   background-color: white;
+  margin: 3.9rem;
+  @include utils.size(calc(100vw - 7.8rem), calc(100vh - 7.8rem));
+  border-radius: 0.8rem;
+  border: 0.1rem solid vars.$lineColor;
 }
 
 main {

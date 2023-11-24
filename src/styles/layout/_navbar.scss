@@ -3,10 +3,18 @@
 
 nav {
   background-color: transparent;
-  @include utils.size(100vw, 5.6191rem);
+  @include utils.size(100%, 5.6191rem);
   @include utils.flex;
   justify-content: space-between;
   border-bottom: 1px solid vars.$lineColor;
+  z-index: 99999;
+  position: relative;
+  overflow: hidden;
+
+  @media only screen and (width < 1024px) {
+    @include utils.flex(column);
+    height: 100%;
+  }
 
   div {
     @include utils.flex;
@@ -16,8 +24,7 @@ nav {
     a {
       @include utils.formatText(450, 1.6rem);
       width: max-content;
-      padding-inline: 3.2rem;
-      padding-block: 1.7rem;
+      padding: 1.7rem 3.2rem;
       @include utils.flex;
       border-right: 1px solid vars.$lineColor;
       color: vars.$grey;
@@ -30,19 +37,32 @@ nav {
         background-color: vars.$blueHover;
         color: white;
       }
-     }
+    }
+
+    @media only screen and (width < 1024px) {
+      @include utils.flex(column);
+      // background-color: green;
+      width: 100%;
+
+      //styling navbar link items
+      .navbar-link,
+      a {
+        width: inherit;
+      }
+    }
   }
 
   .underline {
     position: absolute;
     left: 0;
     right: 0;
-    // top: 80%;
     display: block;
     height: 0.3rem;
-    // width: 100%;
     background: vars.$orange;
     bottom: -0.3rem;
+    @media only screen and (width < 1024px) {
+      display: none;
+    }
   }
 
   .links-group {
