@@ -2,6 +2,7 @@
 
 import { ComponentProps } from "react";
 
+import { motion } from "framer-motion";
 import { useSelectedLayoutSegment } from "next/navigation";
 
 import { Link } from "./LanguageSwitcher";

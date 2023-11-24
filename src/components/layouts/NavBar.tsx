@@ -7,7 +7,7 @@ import { usePathname } from "next/navigation";
 import NavigationLink from "@/app/[locale]/NavigationLink";
 
 interface INavBar {
-  children?: string[];
+  // children?: string[];
 }
 
 const NavBar: React.FC<INavBar> = ({ children = [] }) => {
@@ -20,37 +20,34 @@ const NavBar: React.FC<INavBar> = ({ children = [] }) => {
   return (
     <motion.nav>
       <div className="links-group">
-        {/* <NavigationLink href="/about1" className="">
+        <NavigationLink href="/about1" className="">
           <motion.span layoutId="underline" />
           frank jordan zone
         </NavigationLink>
         <NavigationLink href="/about2">
           <motion.span layoutId="underline" />
           _hello
-        </NavigationLink> */}
-        <NavigationLink href="/about">
-          {path === "/about" && (
-            <motion.span
-              transition={{ ease: "easeInOut", duration: 0.35 }}
-              layoutId="underline"
-              className="underline"
-            />
-          )}
-          _about-me
         </NavigationLink>
-        <NavigationLink href="/about1" className="">
-          frank jordan zone
-        </NavigationLink>
-
         <NavigationLink href="/">
           {path === "/" && (
             <motion.span
-              transition={{ ease: "easeInOut", duration: 0.35 }}
+              transition={{ ease: "easeInOut", duration: 0.5 }}
               layoutId="underline"
               className="underline"
             />
           )}
           _projects
+        </NavigationLink>
+
+        <NavigationLink href="/about">
+          {path === "/about" && (
+            <motion.span
+              transition={{ ease: "easeInOut", duration: 0.5 }}
+              layoutId="underline"
+              className="underline"
+            />
+          )}
+          _about-me
         </NavigationLink>
       </div>
       <div className="">

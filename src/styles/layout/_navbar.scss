@@ -32,6 +32,7 @@ nav {
       }
       &--active {
         cursor: pointer;
+        // border-bottom: 0.3rem solid vars.$orange;
       }
     }
   }
@@ -42,10 +43,10 @@ nav {
     right: 0;
     // top: 80%;
     display: block;
-    height: 1px;
+    height: 0.3rem;
     // width: 100%;
-    background: #000;
-    bottom: -1px;
+    background: vars.$orange;
+    bottom: -0.3rem;
   }
 
   .links-group {
