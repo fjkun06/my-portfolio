@@ -1,6 +1,6 @@
 import type { Preview } from "@storybook/react";
 import { MINIMAL_VIEWPORTS } from "@storybook/addon-viewport";
-import "../src/styles/main.scss";
+import "@/src/styles/main.scss";
 
 const customViewports = {
   kindleFire2: {

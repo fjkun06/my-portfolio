@@ -1,6 +1,11 @@
 import Image from "next/image";
+import { useTranslations } from "next-intl";
+
+import { Link } from "./LanguageSwitcher";
+import SwitchLanguage from "./SwitchLanguage";
 
 export default function Home() {
+  const t = useTranslations("index");
   return (
     <main className="flex min-h-screen flex-col items-center justify-between p-24">
       <div
@@ -14,9 +19,13 @@ export default function Home() {
            lg:w-auto  lg:rounded-xl lg:border 
            lg:bg-gray-200 lg:p-4 lg:dark:bg-zinc-800/30"
         >
-          Get started by qqqqqqqediting&nbsp;
+          Get started by qqqqqqqediting&nbsp; {t("title")}
           <code className="font-mono font-bold">src/app/page.tsx</code>
         </p>
+        <Link href="/" locale="de">
+          Switch to German
+        </Link>
+        <SwitchLanguage />
       </div>
 
       <div
