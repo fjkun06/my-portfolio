@@ -4,6 +4,7 @@ import { notFound } from "next/navigation";
 
 import "./globals.css";
 import "@/styles/main.scss";
+import "@/utils/fonts";
 
 export const metadata: Metadata = {
   title: "Frank Jordan Portfolio",
