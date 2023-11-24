@@ -1,5 +1,5 @@
 /***********************************************Importing other stylesheets***********************************************/
-// @use "pages";
+@use "layout";
 
 
 //styling links
@@ -25,4 +25,5 @@ html {
 body {
   font-size: 1.6em;
   min-width: 32rem;
+  background-color: white;
 }

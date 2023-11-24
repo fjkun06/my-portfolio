@@ -15,8 +15,7 @@ export default function NavigationLink({ href, ...rest }: ComponentProps<typeof 
     <Link
       aria-current={isActive ? "page" : undefined}
       href={href}
-      style={{ fontWeight: isActive ? "bold" : "normal" }}
-      className=""
+      className={isActive ? "navbar-link navbar-link--active " : "navbar-link"}
       {...rest}
     />
   );

@@ -5,6 +5,7 @@ import { notFound } from "next/navigation";
 import "./globals.css";
 import "@/styles/main.scss";
 import "@/utils/fonts";
+import { NavBar } from "@/components";
 
 export const metadata: Metadata = {
   title: "Frank Jordan Portfolio",
@@ -26,7 +27,10 @@ export default function LocaleLayout({ children, params: { locale } }: ILocaleLa
 
   return (
     <html lang={locale}>
-      <body>{children}</body>
+      <body>
+        <NavBar />
+        {children}
+      </body>
     </html>
   );
 }
