@@ -1,7 +1,6 @@
 /***********************************************Importing other stylesheets***********************************************/
 @use "layout";
 
-
 //styling links
 a {
   text-decoration: none;
@@ -20,10 +19,15 @@ html {
   overflow-x: hidden;
   -webkit-scroll-behavior: smooth;
   scroll-behavior: smooth;
+  background-color: white;
 }
 
 body {
   font-size: 1.6em;
   min-width: 32rem;
   background-color: white;
+}
+
+main {
+  background: transparent;
 }

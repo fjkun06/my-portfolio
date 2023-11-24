@@ -1,5 +1,7 @@
-/* eslint-disable max-len */
 import type { Metadata } from "next";
+
+import { PageWrapper } from "@/components";
+/* eslint-disable max-len */
 
 export const metadata: Metadata = {
   title: "Frank Jordan Portfolio",
@@ -14,5 +16,5 @@ interface ILocaleLayout {
 export default function LocaleLayout({ children }: ILocaleLayout) {
   // Validate that the incoming `locale` parameter is valid
 
-  return <main>{children}</main>;
+  return <PageWrapper>{children}</PageWrapper>;
 }
