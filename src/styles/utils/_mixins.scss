@@ -14,19 +14,22 @@
   text-overflow: ellipsis;
 }
 
+@mixin justifyAlignSame($jc:center,$ai:$jc){
+ justify-content: $jc;
+  align-items: $ai;
+}
+
 //sets display to grid
 @mixin grid {
   display: grid;
-  justify-content: center;
-  align-items: center;
+  @include justifyAlignSame;
   @content;
 }
 
 @mixin flex($direction: row) {
   display: flex;
   flex-direction: $direction;
-  justify-content: center;
-  align-items: center;
+  @include justifyAlignSame;
   @content;
 }
 

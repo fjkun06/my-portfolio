@@ -9,11 +9,11 @@ nav {
   border-bottom: 1px solid vars.$lineColor;
   z-index: 99999;
   position: relative;
-  overflow: hidden;
 
-  @media only screen and (width < 1024px) {
+  @media only screen and (width < 1200px) {
     @include utils.flex(column);
     height: 100%;
+    @include utils.justifyAlignSame(flex-start);
   }
 
   div {
@@ -39,7 +39,7 @@ nav {
       }
     }
 
-    @media only screen and (width < 1024px) {
+    @media only screen and (width < 1200px) {
       @include utils.flex(column);
       // background-color: green;
       width: 100%;
@@ -47,7 +47,8 @@ nav {
       //styling navbar link items
       .navbar-link,
       a {
-        width: inherit;
+        width: inherit !important;
+        justify-content: flex-start;
       }
     }
   }
@@ -60,7 +61,7 @@ nav {
     height: 0.3rem;
     background: vars.$orange;
     bottom: -0.3rem;
-    @media only screen and (width < 1024px) {
+    @media only screen and (width < 1200px) {
       display: none;
     }
   }
