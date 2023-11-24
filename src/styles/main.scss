@@ -25,12 +25,18 @@ html {
   overflow: hidden;
   height: 100vh;
   width: 100vw;
+  background: vars.$blueDarkest;
 }
 
 body {
   font-size: 1.6em;
   min-width: 32rem;
   background-color: white;
+  background:
+    url("/background-blurs.svg") no-repeat,
+    vars.$blueDark;
+  background-position: 100% 0;
+  background-size: contain;
   margin: 3.9rem;
   @include utils.size(calc(100vw - 7.8rem), calc(100vh - 7.8rem));
   border-radius: 0.8rem;
