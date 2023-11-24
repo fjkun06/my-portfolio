@@ -41,6 +41,11 @@ body {
   @include utils.size(calc(100vw - 7.8rem), calc(100vh - 7.8rem));
   border-radius: 0.8rem;
   border: 0.1rem solid vars.$lineColor;
+  overflow: hidden;
+  @media only screen and (width < 768px) {
+    margin: 1.9rem;
+    @include utils.size(calc(100vw - 3.8rem), calc(100vh - 3.8rem));
+  }
 }
 
 main {

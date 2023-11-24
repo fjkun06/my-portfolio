@@ -7,11 +7,16 @@ import { useSelectedLayoutSegment } from "next/navigation";
 
 import { Link } from "./LanguageSwitcher";
 
+interface INavigationLink extends ComponentProps<typeof Link> {
+  callback: () => void;
+}
+
 export default function NavigationLink({
   href,
   children,
+  callback,
   ...rest
-}: ComponentProps<typeof Link>) {
+}: INavigationLink) {
   const selectedLayoutSegment = useSelectedLayoutSegment();
   const pathname = selectedLayoutSegment ? `/${selectedLayoutSegment}` : "/";
   const isActive = pathname === href;
@@ -22,6 +27,7 @@ export default function NavigationLink({
       href={href}
       className={isActive ? "navbar-link navbar-link--active " : "navbar-link"}
       {...rest}
+      onClick={callback}
     >
       {isActive && (
         <motion.span
