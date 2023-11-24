@@ -8,7 +8,7 @@
     "start": "next start",
     "lint-fix": "eslint  --fix --ext .js,.jsx,.ts,.tsx .",
     "prepare": "husky install",
-    "storybook": "storybook dev -p 6006",
+    "storybook": "storybook dev -p 6006  -s ./public",
     "build-storybook": "storybook build"
   },
   "dependencies": {
@@ -17,11 +17,13 @@
     "react-dom": "^18"
   },
   "devDependencies": {
+    "@storybook/addon-a11y": "^7.5.3",
     "@storybook/addon-essentials": "^7.5.3",
     "@storybook/addon-interactions": "^7.5.3",
     "@storybook/addon-links": "^7.5.3",
     "@storybook/addon-onboarding": "^1.0.8",
     "@storybook/addon-styling-webpack": "^0.0.5",
+    "@storybook/addon-viewport": "^7.5.3",
     "@storybook/blocks": "^7.5.3",
     "@storybook/nextjs": "^7.5.3",
     "@storybook/react": "^7.5.3",
