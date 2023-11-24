@@ -14,7 +14,7 @@ export default function Home() {
            lg:w-auto  lg:rounded-xl lg:border 
            lg:bg-gray-200 lg:p-4 lg:dark:bg-zinc-800/30"
         >
-          Get started by editing&nbsp;
+          Get started by qqqqqqqediting&nbsp;
           <code className="font-mono font-bold">src/app/page.tsx</code>
         </p>
       </div>

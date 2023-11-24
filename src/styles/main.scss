@@ -1,0 +1,28 @@
+/***********************************************Importing other stylesheets***********************************************/
+// @use "pages";
+
+
+//styling links
+a {
+  text-decoration: none;
+}
+
+//all components
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+//Configuring html
+html {
+  font-size: 62.5%;
+  overflow-x: hidden;
+  -webkit-scroll-behavior: smooth;
+  scroll-behavior: smooth;
+}
+
+body {
+  font-size: 1.6em;
+  min-width: 32rem;
+}
