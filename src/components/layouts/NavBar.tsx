@@ -1,8 +1,7 @@
 "use client";
-import React, { useMemo } from "react";
+import React, { memo } from "react";
 
 import { motion } from "framer-motion";
-import { usePathname } from "next/navigation";
 
 import NavigationLink from "@/app/[locale]/NavigationLink";
 
@@ -11,51 +10,20 @@ interface INavBar {
 }
 
 const NavBar: React.FC<INavBar> = ({ children = [] }) => {
-  const pathname = usePathname();
-
-  const path = useMemo(
-    () => (pathname.slice(3).length ? pathname.slice(3) : "/"),
-    [pathname]
-  );
   return (
     <motion.nav>
       <div className="links-group">
-        <NavigationLink href="/about1" className="">
-          <motion.span layoutId="underline" />
-          frank jordan zone
-        </NavigationLink>
-        <NavigationLink href="/about2">
-          <motion.span layoutId="underline" />
-          _hello
-        </NavigationLink>
-        <NavigationLink href="/">
-          {path === "/" && (
-            <motion.span
-              transition={{ ease: "easeInOut", duration: 0.5 }}
-              layoutId="underline"
-              className="underline"
-            />
-          )}
-          _projects
-        </NavigationLink>
-
-        <NavigationLink href="/about">
-          {path === "/about" && (
-            <motion.span
-              transition={{ ease: "easeInOut", duration: 0.5 }}
-              layoutId="underline"
-              className="underline"
-            />
-          )}
-          _about-me
-        </NavigationLink>
+        <NavigationLink href="/about2"> frank jordan zone </NavigationLink>
+        <NavigationLink href="/about2">_hello</NavigationLink>
+        <NavigationLink href="/">_projects</NavigationLink>
+        <NavigationLink href="/about">_about</NavigationLink>
       </div>
       <div className="">
-        <NavigationLink href="/about">_language</NavigationLink>
-        <NavigationLink href="/">_projects</NavigationLink>
+        <NavigationLink href="/aboutt">_language</NavigationLink>
+        <NavigationLink href="/e">_projects</NavigationLink>
       </div>
     </motion.nav>
   );
 };
 
-export default NavBar;
+export default memo(NavBar);
