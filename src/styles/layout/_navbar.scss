@@ -5,22 +5,20 @@ nav {
   background-color: transparent;
   width: 100%;
   @include utils.flex;
-  justify-content: space-between;
   justify-content: flex-start;
   border-bottom: 1px solid vars.$lineColor;
   position: relative;
   background: vars.$blueDark;
-  overflow: hidden;
 
   @media only screen and (width > 1200px) {
     height: 5.6191rem !important;
   }
   @media only screen and (width < 1200px) {
     @include utils.flex(column);
-    // height: 100%;
     @include utils.justifyAlignSame(flex-start);
   }
 
+  //Navbar items containers
   div {
     @include utils.flex;
 
@@ -40,19 +38,13 @@ nav {
 
       &:hover {
         background-color: vars.$blueHover;
-        color: white;
+        color: vars.$white;
       }
     }
 
-    @media only screen and (width > 1200px) {
-      // height: 5.6191rem !important;
-    }
     @media only screen and (width < 1200px) {
       @include utils.flex(column);
-      // background-color: green;
       width: 100%;
-
-      //styling navbar link items
       .navbar-link,
       a {
         width: inherit;
@@ -61,6 +53,7 @@ nav {
     }
   }
 
+  //Line under active route
   .underline {
     position: absolute;
     left: 0;
@@ -74,6 +67,7 @@ nav {
     }
   }
 
+  //second div container of navbar items (right most items)
   .links-group {
     justify-content: flex-end;
     width: 100%;
@@ -84,6 +78,8 @@ nav {
     div:first-child {
       width: 31.1rem;
       justify-content: flex-start;
+      -webkit-user-select: none;
+      user-select: none;
 
       //Menu icon in Navbar Item
       svg {
@@ -104,7 +100,7 @@ nav {
           display: block;
           cursor: pointer;
           &:hover {
-            color: white;
+            color: vars.$white;
           }
         }
       }

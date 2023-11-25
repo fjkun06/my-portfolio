@@ -6,13 +6,13 @@ interface IMenuIcon extends React.HTMLAttributes<HTMLSpanElement> {
   isOpen: boolean;
   callback: () => void;
 }
-const MenuIcon: React.FC<IMenuIcon> = ({ isOpen, callback }) => {
+const MenuIcon: React.FC<IMenuIcon> = ({ isOpen = false, callback }) => {
   return (
     <motion.span className="" onClick={callback}>
       <motion.svg
         stroke="currentColor"
         fill="none"
-        stroke-width="0"
+        strokeWidth="0"
         viewBox="0 0 24 24"
         height="1em"
         width="1em"

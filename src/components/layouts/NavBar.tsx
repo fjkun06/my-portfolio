@@ -5,6 +5,7 @@ import { AnimatePresence, motion } from "framer-motion";
 
 import NavigationLink from "@/app/[locale]/NavigationLink";
 import { MenuIcon } from "@/components/icons";
+import useMediaQuery from "@/utils/useMediaQuery";
 
 interface INavBar {
   children?: string[];
@@ -13,7 +14,21 @@ interface INavBar {
 const NavBar: React.FC<INavBar> = ({ children = [] }) => {
   const [isOpen, setIsOpen] = React.useState(false);
   const toggleOpen = () => setIsOpen(!isOpen);
-  const closeMenu = () => setIsOpen(false);
+  const closeMenu = () => !max1200 && setIsOpen(false);
+
+  const max1200 = useMediaQuery("(width > 1200px)");
+  // console.log(max1200);
+
+  //useEffect to reset navbar in large screens
+  React.useEffect(() => {
+    const resetNavbar = () => {
+      if (max1200) setIsOpen(true);
+      if (max1200) console.log("I am open");
+    };
+
+    resetNavbar();
+  }, [max1200]);
+
   return (
     <motion.nav
       animate={{ height: isOpen ? "100%" : "7%" }}
