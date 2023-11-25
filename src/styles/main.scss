@@ -21,17 +21,16 @@ html {
   overflow-x: hidden;
   -webkit-scroll-behavior: smooth;
   scroll-behavior: smooth;
-  background-color: white;
+  background-color: vars.$white;
   overflow: hidden;
-  height: 100vh;
-  width: 100vw;
+  @include utils.size(100vw,100vh);
   background: vars.$blueDarkest;
 }
 
 body {
   font-size: 1.6em;
   min-width: 32rem;
-  background-color: white;
+  background-color: vars.$blueDark;
   background:
     url("/background-blurs.svg") no-repeat,
     vars.$blueDark;
@@ -41,7 +40,7 @@ body {
   @include utils.size(calc(100vw - 7.8rem), calc(100vh - 7.8rem));
   border-radius: 0.8rem;
   border: 0.1rem solid vars.$lineColor;
-  overflow: hidden;
+  overflow: inherit;
   @media only screen and (width < 768px) {
     margin: 1.9rem;
     @include utils.size(calc(100vw - 3.8rem), calc(100vh - 3.8rem));
