@@ -26,9 +26,9 @@ nav {
     .navbar-link,
     a {
       @include utils.formatText(450, 1.6rem);
+      @include utils.flex;
       width: max-content;
       padding: 1.7rem 3.2rem;
-      @include utils.flex;
       border-right: 1px solid vars.$lineColor;
       color: vars.$grey;
       transition: all 0.25s ease-in-out;
@@ -84,6 +84,7 @@ nav {
       //Menu icon in Navbar Item
       svg {
         display: none;
+        cursor: pointer;
         transition: all 0.25s ease-in-out;
       }
       @media only screen and (width < 1200px) {
@@ -98,7 +99,6 @@ nav {
         svg {
           transform: scale(2.5) translateY(0.15rem);
           display: block;
-          cursor: pointer;
           &:hover {
             color: vars.$white;
           }
