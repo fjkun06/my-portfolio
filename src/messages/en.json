@@ -1,5 +1,23 @@
 {
   "index": {
     "title":"Hello World"
+  },
+    "routes":{
+    "home": {
+      "text": "_hello",
+      "href":"/"
+    },
+    "about": {
+      "text": "_about-me",
+      "href":"/about"
+    },
+    "projects": {
+      "text": "_projects",
+      "href":"/projects"
+    },
+    "contact": {
+      "text": "_contact-me",
+      "href":"/contact"
+    }
   }
 }
