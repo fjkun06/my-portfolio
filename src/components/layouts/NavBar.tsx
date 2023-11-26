@@ -15,7 +15,7 @@ interface INavBar {
 }
 
 const NavBar: React.FC<INavBar> = ({ items = [[]] }) => {
-  //Navbar context to toggle content when active
+  //Navbar context to toggle content in main element when active
   const { isNavbarOpen, setState } = useContext(NavbarContext);
 
   const [isOpen, setIsOpen] = React.useState(false);

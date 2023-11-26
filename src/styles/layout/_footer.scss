@@ -9,11 +9,10 @@ footer {
   border-top: 1px solid vars.$lineColor;
   background: transparent;
   background: vars.$blueDark;
-
   padding-inline: 2.2rem;
 
   @media only screen and (width < 401px) {
-    justify-content: space-evenly;
+    justify-content: center;
   }
   //
   .footer {
@@ -87,6 +86,7 @@ footer {
             border-left: 1px solid vars.$lineColor;
             padding-left: 2.3rem;
             @media only screen and (width < 501px) {
+              padding-left: 2.3rem;
               display: none;
             }
           }
