@@ -1,6 +1,11 @@
 //loading mixins and variable
 @use "../utils/mixins" as utils;
 @use "../utils/variables" as vars;
+$colors:
+  1 vars.$indigo,
+  2 vars.$lightGreen,
+  3 vars.$white,
+  4 vars.$lightBrown;
 .portfolio-home {
   @include utils.size(100%);
   @include utils.flex;
@@ -10,16 +15,57 @@
   &--right {
     @include utils.size(inherit);
     @include utils.size(100%);
-    @include utils.flex;
-    justify-content: center;
-    h1{
+    @include utils.flex(column);
+    max-width: 50%;
+    h1 {
       text-align: center;
     }
   }
 
   //left section
   &--left {
-    background: red;
+    // background: red;
+    row-gap: 8.1rem;
+    div,
+    pre {
+      @include utils.size(100%, 50%);
+      @include utils.flex(column);
+      align-items: flex-start;
+    }
+
+    div {
+      justify-content: flex-end;
+      span,
+      h3 {
+        @include utils.formatText(450, 1.8rem);
+        color: vars.$milkyWhite;
+        &:is(.title) {
+          font-size: 6.2rem;
+      transform: translateX(-0.75rem);
+        }
+      }
+      h3 {
+        font-size: 3.2rem;
+        color: vars.$indigo;
+      }
+    }
+    pre {
+      // background: #000;
+      justify-content: flex-start;
+      gap: 0.5;
+      code {
+        &:not(:last-of-type) {
+          color: vars.$grey;
+        }
+        &:last-of-type {
+          @each $i, $color in $colors {
+            & span:nth-child(#{$i}) {
+              color: $color;
+            }
+          }
+        }
+      }
+    }
   }
   //right section
   &--right {
