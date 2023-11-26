@@ -39,6 +39,8 @@ nav {
         background-color: vars.$blueHover;
         color: vars.$white;
       }
+
+      //navbar language items
     }
 
     //Giving active route text a white color
@@ -75,6 +77,10 @@ nav {
     justify-content: flex-end;
     width: 100%;
 
+    .nav-flag{
+      width: 3rem;
+      margin-right: 0.5rem;
+    }
     @media only screen and (width < 1200px) {
       flex-direction: column-reverse;
 

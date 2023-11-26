@@ -9,5 +9,25 @@ footer {
   border-top: 1px solid vars.$lineColor;
   background: transparent;
   padding-inline: 2.2rem;
-  background: green;
+  // background: green;
+
+  //
+  .footer {
+    &-media,
+    &-github {
+      display: flex;
+      color: vars.$grey;
+
+      svg {
+        @include utils.size(100%, 5rem);
+        cursor: pointer;
+        transition: all 0.25s ease-in-out;
+        color: darken(vars.$grey, 15%);
+
+        &:hover {
+          color: vars.$grey;
+        }
+      }
+    }
+  }
 }
