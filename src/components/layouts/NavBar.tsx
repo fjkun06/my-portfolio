@@ -8,26 +8,26 @@ import { MenuIcon } from "@/components/icons";
 import useMediaQuery from "@/utils/useMediaQuery";
 
 interface INavBar {
-  children?: string[];
+  items?: string[][];
 }
 
-const NavBar: React.FC<INavBar> = ({ children = [] }) => {
+const NavBar: React.FC<INavBar> = ({ items = [[]] }) => {
   const [isOpen, setIsOpen] = React.useState(false);
   const toggleOpen = () => setIsOpen(!isOpen);
   const closeMenu = () => !max1200 && setIsOpen(false);
-
   const max1200 = useMediaQuery("(width > 1200px)");
-  // console.log(max1200);
 
   //useEffect to reset navbar in large screens
   React.useEffect(() => {
     const resetNavbar = () => {
       if (max1200) setIsOpen(true);
-      if (max1200) console.log("I am open");
     };
 
     resetNavbar();
   }, [max1200]);
+
+  //contact item holder
+  const contact = items.slice(-1)[0];
 
   return (
     <motion.nav
@@ -43,35 +43,22 @@ const NavBar: React.FC<INavBar> = ({ children = [] }) => {
       <AnimatePresence>
         {isOpen && (
           <>
-            <motion.div
-              className=""
-              initial={{ x: -20, opacity: 0 }}
-              animate={{ x: 0, opacity: 1 }}
-              exit={{ x: -20, opacity: 0 }}
-            >
-              <NavigationLink callback={closeMenu} href="/about2">
-                _hello
-              </NavigationLink>
-              <NavigationLink callback={closeMenu} href="/">
-                _projects
-              </NavigationLink>
-              <NavigationLink callback={closeMenu} href="/about">
-                _about
-              </NavigationLink>
-            </motion.div>
-            <motion.div
-              className="links-group"
-              initial={{ x: -20, opacity: 0 }}
-              animate={{ x: 0, opacity: 1 }}
-              exit={{ x: -20, opacity: 0 }}
-            >
+            <NavBarGroup>
+              {items.length &&
+                items.slice(0, 3).map(([text, href], index) => (
+                  <NavigationLink key={index} callback={closeMenu} href={href}>
+                    {text}
+                  </NavigationLink>
+                ))}
+            </NavBarGroup>
+            <NavBarGroup className="links-group">
               <NavigationLink callback={closeMenu} href="/aboutt">
                 _language
               </NavigationLink>
-              <NavigationLink callback={closeMenu} href="/e">
-                _projects
+              <NavigationLink callback={closeMenu} href={contact[1]}>
+                {contact[0]}
               </NavigationLink>
-            </motion.div>
+            </NavBarGroup>
           </>
         )}
       </AnimatePresence>
@@ -80,3 +67,22 @@ const NavBar: React.FC<INavBar> = ({ children = [] }) => {
 };
 
 export default memo(NavBar);
+
+const NavBarGroup = ({
+  children,
+  className
+}: {
+  children: React.ReactNode;
+  className?: string;
+}) => {
+  return (
+    <motion.div
+      className={className}
+      initial={{ x: -20, opacity: 0 }}
+      animate={{ x: 0, opacity: 1 }}
+      exit={{ x: -20, opacity: 0 }}
+    >
+      {children}
+    </motion.div>
+  );
+};
