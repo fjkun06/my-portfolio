@@ -8,13 +8,13 @@ interface IPageWrapper {
 }
 const PageWrapper: React.FC<IPageWrapper> = ({ children }) => {
   return (
-    <motion.div
+    <motion.main
       initial={{ y: 20, opacity: 0 }}
       animate={{ opacity: 1, y: 0 }}
       exit={{ y: 20, opacity: 0 }}
     >
       {children}
-    </motion.div>
+    </motion.main>
   );
 };
 

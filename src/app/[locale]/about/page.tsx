@@ -5,7 +5,7 @@ import { useTranslations } from "next-intl";
 const About = () => {
   const t = useTranslations("index");
 
-  return <div>About Page {t("title")}#</div>;
+  return <>About Page {t("title")}#</>;
 };
 
 export default About;

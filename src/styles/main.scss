@@ -23,7 +23,7 @@ html {
   scroll-behavior: smooth;
   background-color: vars.$white;
   overflow: hidden;
-  @include utils.size(100vw,100vh);
+  @include utils.size(100vw, 100vh);
   background: vars.$blueDarkest;
 }
 
@@ -44,6 +44,12 @@ body {
   @media only screen and (width < 768px) {
     margin: 1.9rem;
     @include utils.size(calc(100vw - 3.8rem), calc(100vh - 3.8rem));
+  }
+
+  //setting height(total availabel height - height of footer + height of navbar)
+  //for all pages in Pagewrapper
+  main {
+    @include utils.size(calc(100vw - 7.8rem), calc(100% - 10.5rem));
   }
 }
 

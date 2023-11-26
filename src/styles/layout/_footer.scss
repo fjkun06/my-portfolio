@@ -1,0 +1,13 @@
+//loading mixins and variable
+@use "../utils/mixins" as utils;
+@use "../utils/variables" as vars;
+footer {
+  background-color: transparent;
+  @include utils.size(100%, 5rem);
+  @include utils.flex;
+  justify-content: space-between;
+  border-top: 1px solid vars.$lineColor;
+  background: transparent;
+  padding-inline: 2.2rem;
+  background: green;
+}
