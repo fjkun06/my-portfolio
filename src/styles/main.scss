@@ -27,7 +27,7 @@ html {
   @include utils.size(100vw, 100%);
   background: vars.$blueDarkest;
   @include utils.flex;
-  padding: 3.9rem;
+  padding: 3rem;
   @media only screen and (width < 1300px) {
     padding: 1.5rem;
   }
