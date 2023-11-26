@@ -17,6 +17,7 @@ footer {
     &-github {
       display: flex;
       color: vars.$grey;
+      @include utils.formatText(450, 1.6rem);
 
       svg {
         @include utils.size(100%, 5rem);
