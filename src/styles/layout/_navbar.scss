@@ -40,6 +40,11 @@ nav {
         background-color: vars.$blueHover;
         color: vars.$white;
       }
+
+      //Giving active route text a white color
+      &--active{
+        color: vars.$white;
+      } 
     }
 
     @media only screen and (width < 1200px) {
