@@ -9,6 +9,9 @@ nav {
   border-bottom: 1px solid vars.$lineColor;
   position: relative;
   background: vars.$blueDark;
+  height: 6.125rem;
+  // height: 6.625rem;
+  transition: all 0.5s ease-in-out;
 
   @media only screen and (width > 1300px) {
     height: 5.6191rem !important;
@@ -16,6 +19,7 @@ nav {
   @media only screen and (width < 1300px) {
     @include utils.flex(column);
     @include utils.justifyAlignSame(flex-start);
+    height: 7.125rem;
   }
 
   //Navbar items containers
@@ -40,7 +44,12 @@ nav {
         color: vars.$white;
       }
 
-      //navbar language items
+      @media only screen and (width < 1300px) {
+        @include utils.formatText(450, 2.5rem);
+      }
+      @media only screen and (width < 480px) {
+        @include utils.formatText(450, 2rem);
+      }
     }
 
     //Giving active route text a white color
@@ -77,8 +86,9 @@ nav {
     justify-content: flex-end;
     width: 100%;
 
-    .nav-flag{
+    .nav-flag {
       width: 3rem;
+      // height: 3rem;
       margin-right: 0.5rem;
     }
     @media only screen and (width < 1300px) {
@@ -103,6 +113,7 @@ nav {
       justify-content: flex-start;
       -webkit-user-select: none;
       user-select: none;
+        border-bottom: 1px solid transparent;
 
       //Menu icon in Navbar Item
       svg {
@@ -120,7 +131,7 @@ nav {
         }
 
         svg {
-          transform: scale(2.5) translateY(0.15rem);
+          transform: scale(1.5) translateY(0.15rem);
           display: block;
           &:hover {
             color: vars.$white;
@@ -129,4 +140,14 @@ nav {
       }
     }
   }
+}
+
+.navbar--open {
+  height: calc(100% - 5rem);
+  @media only screen and (width < 768px) {
+    height: calc(100% - 5rem);
+  }
+}
+.underlined {
+  border-bottom: 1px solid vars.$lineColor !important;
 }
