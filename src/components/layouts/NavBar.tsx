@@ -1,23 +1,32 @@
 "use client";
-import React, { memo } from "react";
+import React, { memo, useContext } from "react";
 
 import { AnimatePresence, motion } from "framer-motion";
 
 import { NavigationLink, SwitchLanguage } from "@/components";
-import { MenuIcon } from "@/components/icons";
+import { FrankJordanIcon, MenuIcon } from "@/components/icons";
 import { locales } from "@/utils/data";
 import useMediaQuery from "@/utils/useMediaQuery";
+
+import { NavbarContext } from "./BodyWrapper";
 
 interface INavBar {
   items: string[][];
 }
 
 const NavBar: React.FC<INavBar> = ({ items = [[]] }) => {
+  //Navbar context to toggle content in main element when active
+  const { isNavbarOpen, setState } = useContext(NavbarContext);
+
   const [isOpen, setIsOpen] = React.useState(false);
-  const toggleOpen = () => setIsOpen(!isOpen);
+  const toggleOpen = () => {
+    setIsOpen(!isOpen);
+    //disable body of page to display mobile navbar
+    setState(!isNavbarOpen);
+  };
   //verifies if the screen width is more than 1200px and toggles the navbar height
   const closeMenu = () => !max1200 && setIsOpen(false);
-  const max1200 = useMediaQuery("(width > 1200px)");
+  const max1200 = useMediaQuery("(width > 1300px)");
 
   //useEffect to reset navbar in large screens
   React.useEffect(() => {
@@ -32,13 +41,13 @@ const NavBar: React.FC<INavBar> = ({ items = [[]] }) => {
   const contact = items.slice(-1)[0];
 
   return (
-    <motion.nav
-      animate={{ height: isOpen ? "100%" : "7%" }}
-      transition={{ duration: 0.5, ease: "easeInOut" }}
-    >
+    <nav className={`navbar--${isOpen ? "open" : "closed"}`}>
       <div className="nav-toggle">
-        <div className="nav-toggle--link">
-          <span className="">frank jordan zoné</span>
+        <div className={`nav-toggle--link ${isOpen ? "underlined" : ""}`}>
+          <span className="">
+            <FrankJordanIcon />
+            <span className=""> frank jordan zoné</span>
+          </span>
           <MenuIcon isOpen={isOpen} callback={toggleOpen} />
         </div>
       </div>
@@ -71,7 +80,7 @@ const NavBar: React.FC<INavBar> = ({ items = [[]] }) => {
           </>
         )}
       </AnimatePresence>
-    </motion.nav>
+    </nav>
   );
 };
 
@@ -88,8 +97,8 @@ const NavBarGroup = ({
     <motion.div
       className={className}
       initial={{ x: -20, opacity: 0 }}
-      animate={{ x: 0, opacity: 1 }}
-      exit={{ x: -20, opacity: 0 }}
+      animate={{ x: 0, opacity: 1, transition: { duration: 0.7, ease: "easeInOut" } }}
+      exit={{ x: -20, opacity: 0, transition: { duration: 0.4, ease: "easeInOut" } }}
     >
       {children}
     </motion.div>

@@ -4,6 +4,7 @@ import React, { useMemo } from "react";
 import { usePathname } from "next/navigation";
 
 import { NavigationLink } from "@/components";
+import { AmericaIcon, GermanyIcon } from "@/components/icons";
 
 interface ISwitchLanguage {
   language: "en" | "de";
@@ -32,6 +33,7 @@ const SwitchLanguage: React.FC<ISwitchLanguage> = ({ language, text }) => {
       href={path}
       locale={language}
     >
+      {language === "en" ? <AmericaIcon /> : <GermanyIcon />}
       {text}
     </NavigationLink>
   );

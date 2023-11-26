@@ -9,13 +9,64 @@ nav {
   border-bottom: 1px solid vars.$lineColor;
   position: relative;
   background: vars.$blueDark;
+  height: 6.125rem;
+  // height: 6.625rem;
+  transition: all 0.5s ease-in-out;
 
-  @media only screen and (width > 1200px) {
+  @media only screen and (width > 1300px) {
     height: 5.6191rem !important;
   }
-  @media only screen and (width < 1200px) {
+  @media only screen and (width < 1300px) {
     @include utils.flex(column);
     @include utils.justifyAlignSame(flex-start);
+    height: 7.125rem;
+  }
+
+  //Mobile Menu Bar
+  .nav-toggle {
+    div:first-child {
+      user-select: none;
+      width: 31.1rem;
+      justify-content: flex-start;
+      -webkit-user-select: none;
+      user-select: none;
+      border-bottom: 1px solid transparent;
+
+      //span containing logo
+      span {
+        @include utils.flex;
+        gap: 2rem;
+        svg:is(.icon) {
+          //selects an svg with classname .icon
+          @include utils.size(2.5rem);
+          padding-left: 0.5rem;
+          display: block;
+        }
+      }
+      //Menu icon in Navbar Item
+      svg {
+        display: none;
+        cursor: pointer;
+        transition: all 0.25s ease-in-out;
+      }
+      @media only screen and (width < 1300px) {
+        width: inherit;
+        justify-content: space-between;
+        &:hover {
+          background: transparent;
+          color: vars.$grey;
+          cursor: default;
+        }
+
+        svg {
+          transform: scale(1.5) translateY(0.15rem);
+          display: block;
+          &:hover {
+            color: vars.$white;
+          }
+        }
+      }
+    }
   }
 
   //Navbar items containers
@@ -39,13 +90,20 @@ nav {
         background-color: vars.$blueHover;
         color: vars.$white;
       }
+
+      @media only screen and (width < 1300px) {
+        @include utils.formatText(450, 2.5rem);
+      }
+      @media only screen and (width < 480px) {
+        @include utils.formatText(450, 2rem);
+      }
     }
 
     //Giving active route text a white color
     .navbar-link--active {
       color: vars.$white;
     }
-    @media only screen and (width < 1200px) {
+    @media only screen and (width < 1300px) {
       @include utils.flex(column);
       width: 100%;
       .navbar-link,
@@ -65,7 +123,7 @@ nav {
     height: 0.3rem;
     background: vars.$orange;
     bottom: -0.3rem;
-    @media only screen and (width < 1200px) {
+    @media only screen and (width < 1300px) {
       display: none;
     }
   }
@@ -75,7 +133,14 @@ nav {
     justify-content: flex-end;
     width: 100%;
 
-    @media only screen and (width < 1200px) {
+    a .nav-flag {
+      width: 3rem;
+      margin-right: 0.5rem;
+      @media only screen and (width < 1300px) {
+        @include utils.size(inherit);
+      }
+    }
+    @media only screen and (width < 1300px) {
       flex-direction: column-reverse;
 
       &--language {
@@ -84,43 +149,20 @@ nav {
         justify-content: flex-start;
         a {
           width: 5rem;
+          width: 15rem;
           border: none;
         }
       }
     }
   }
+}
 
-  //Mobile Menu Bar
-  .nav-toggle {
-    div:first-child {
-      width: 31.1rem;
-      justify-content: flex-start;
-      -webkit-user-select: none;
-      user-select: none;
-
-      //Menu icon in Navbar Item
-      svg {
-        display: none;
-        cursor: pointer;
-        transition: all 0.25s ease-in-out;
-      }
-      @media only screen and (width < 1200px) {
-        width: inherit;
-        justify-content: space-between;
-        &:hover {
-          background: transparent;
-          color: vars.$grey;
-          cursor: default;
-        }
-
-        svg {
-          transform: scale(2.5) translateY(0.15rem);
-          display: block;
-          &:hover {
-            color: vars.$white;
-          }
-        }
-      }
-    }
+.navbar--open {
+  height: calc(100% - 5rem);
+  @media only screen and (width < 768px) {
+    height: calc(100% - 5rem);
   }
+}
+.underlined {
+  border-bottom: 1px solid vars.$lineColor !important;
 }

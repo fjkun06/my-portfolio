@@ -6,7 +6,7 @@ import "@/styles/main.scss";
 import "@/utils/fonts";
 import { useTranslations } from "next-intl";
 
-import { NavBar } from "@/components";
+import { BodyWrapper } from "@/components";
 import { locales, routes } from "@/utils/data";
 
 export const metadata: Metadata = {
@@ -33,10 +33,7 @@ export default function LocaleLayout({ children, params: { locale } }: ILocaleLa
 
   return (
     <html lang={locale}>
-      <body>
-        <NavBar items={navbarRoutes} />
-        {children}
-      </body>
+      <BodyWrapper routes={navbarRoutes}>{children}</BodyWrapper>
     </html>
   );
 }
