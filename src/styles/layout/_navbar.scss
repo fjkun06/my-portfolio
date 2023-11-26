@@ -22,6 +22,53 @@ nav {
     height: 7.125rem;
   }
 
+  //Mobile Menu Bar
+  .nav-toggle {
+    div:first-child {
+      user-select: none;
+      width: 31.1rem;
+      justify-content: flex-start;
+      -webkit-user-select: none;
+      user-select: none;
+      border-bottom: 1px solid transparent;
+
+      //span containing logo
+      span {
+        @include utils.flex;
+        gap: 2rem;
+        svg:is(.icon) {
+          //selects an svg with classname .icon
+          @include utils.size(2.5rem);
+          padding-left: 0.5rem;
+          display: block;
+        }
+      }
+      //Menu icon in Navbar Item
+      svg {
+        display: none;
+        cursor: pointer;
+        transition: all 0.25s ease-in-out;
+      }
+      @media only screen and (width < 1300px) {
+        width: inherit;
+        justify-content: space-between;
+        &:hover {
+          background: transparent;
+          color: vars.$grey;
+          cursor: default;
+        }
+
+        svg {
+          transform: scale(1.5) translateY(0.15rem);
+          display: block;
+          &:hover {
+            color: vars.$white;
+          }
+        }
+      }
+    }
+  }
+
   //Navbar items containers
   div {
     @include utils.flex;
@@ -86,10 +133,12 @@ nav {
     justify-content: flex-end;
     width: 100%;
 
-    .nav-flag {
+    a .nav-flag {
       width: 3rem;
-      // height: 3rem;
       margin-right: 0.5rem;
+      @media only screen and (width < 1300px) {
+        @include utils.size(inherit);
+      }
     }
     @media only screen and (width < 1300px) {
       flex-direction: column-reverse;
@@ -100,42 +149,8 @@ nav {
         justify-content: flex-start;
         a {
           width: 5rem;
+          width: 15rem;
           border: none;
-        }
-      }
-    }
-  }
-
-  //Mobile Menu Bar
-  .nav-toggle {
-    div:first-child {
-      width: 31.1rem;
-      justify-content: flex-start;
-      -webkit-user-select: none;
-      user-select: none;
-        border-bottom: 1px solid transparent;
-
-      //Menu icon in Navbar Item
-      svg {
-        display: none;
-        cursor: pointer;
-        transition: all 0.25s ease-in-out;
-      }
-      @media only screen and (width < 1300px) {
-        width: inherit;
-        justify-content: space-between;
-        &:hover {
-          background: transparent;
-          color: vars.$grey;
-          cursor: default;
-        }
-
-        svg {
-          transform: scale(1.5) translateY(0.15rem);
-          display: block;
-          &:hover {
-            color: vars.$white;
-          }
         }
       }
     }

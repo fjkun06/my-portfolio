@@ -5,3 +5,4 @@ export { default as TwitterIcon } from "@/components/icons/TwitterIcon";
 export { default as GithubIcon } from "@/components/icons/GithubIcon";
 export { default as LinkedInIcon } from "@/components/icons/LinkedInIcon";
 export { default as XingIcon } from "@/components/icons/XingIcon";
+export { default as FrankJordanIcon } from "@/components/icons/FrankJordanIcon";

@@ -4,7 +4,7 @@ import React, { memo, useContext } from "react";
 import { AnimatePresence, motion } from "framer-motion";
 
 import { NavigationLink, SwitchLanguage } from "@/components";
-import { MenuIcon } from "@/components/icons";
+import { FrankJordanIcon, MenuIcon } from "@/components/icons";
 import { locales } from "@/utils/data";
 import useMediaQuery from "@/utils/useMediaQuery";
 
@@ -44,7 +44,10 @@ const NavBar: React.FC<INavBar> = ({ items = [[]] }) => {
     <nav className={`navbar--${isOpen ? "open" : "closed"}`}>
       <div className="nav-toggle">
         <div className={`nav-toggle--link ${isOpen ? "underlined" : ""}`}>
-          <span className="">frank jordan zoné</span>
+          <span className="">
+            <FrankJordanIcon />
+            <span className=""> frank jordan zoné</span>
+          </span>
           <MenuIcon isOpen={isOpen} callback={toggleOpen} />
         </div>
       </div>
