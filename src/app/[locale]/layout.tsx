@@ -7,6 +7,7 @@ import "@/utils/fonts";
 import { useTranslations } from "next-intl";
 
 import { NavBar } from "@/components";
+import { locales, routes } from "@/utils/data";
 
 export const metadata: Metadata = {
   title: "Frank Jordan Portfolio",
@@ -15,7 +16,6 @@ export const metadata: Metadata = {
 };
 
 // Can be imported from a shared config
-const locales = ["en", "de"];
 interface ILocaleLayout {
   params: {
     locale: string;
@@ -28,9 +28,8 @@ export default function LocaleLayout({ children, params: { locale } }: ILocaleLa
 
   //loading translation files
   const t = useTranslations("routes");
-  const routes = ["home", "about", "projects", "contact"];
+  //fetch text and href data from language files
   const navbarRoutes = routes.map((el) => [t(`${el}.text`), t(`${el}.href`)]);
-  console.log(navbarRoutes);
 
   return (
     <html lang={locale}>

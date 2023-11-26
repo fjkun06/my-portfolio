@@ -3,9 +3,12 @@ import React, { memo } from "react";
 
 import { AnimatePresence, motion } from "framer-motion";
 
-import NavigationLink from "@/app/[locale]/NavigationLink";
+import { NavigationLink } from "@/components";
 import { MenuIcon } from "@/components/icons";
+import { locales } from "@/utils/data";
 import useMediaQuery from "@/utils/useMediaQuery";
+
+import SwitchLanguage from "../SwitchLanguage";
 
 interface INavBar {
   items: string[][];
@@ -53,12 +56,13 @@ const NavBar: React.FC<INavBar> = ({ items = [[]] }) => {
                 ))}
             </NavBarGroup>
             <NavBarGroup className="links-group">
-              <NavigationLink callback={closeMenu} href="/aboutt">
-                _en
-              </NavigationLink>
-              <NavigationLink callback={closeMenu} href="/aboutt">
-                _de
-              </NavigationLink>
+              {locales.map((locale) => (
+                <SwitchLanguage
+                  key={locale}
+                  language={locale as any}
+                  text={`_${locale}`}
+                />
+              ))}
               <NavigationLink callback={closeMenu} href={contact[1]}>
                 {contact[0]}
               </NavigationLink>
