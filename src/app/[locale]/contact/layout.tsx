@@ -4,8 +4,8 @@ import { PageWrapper } from "@/components";
 /* eslint-disable max-len */
 
 export const metadata: Metadata = {
-  title: "Frank Jordan | About",
-  description: "Frank Jordan Zone's about page. It shows details about Frank Jordan"
+  title: "Frank Jordan | Contact",
+  description: "Frank Jordan Zone's contact page. It shows how to get to Frank Jordan"
 };
 
 interface ILocaleLayout {

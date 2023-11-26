@@ -1,6 +1,7 @@
 /***********************************************Importing other stylesheets***********************************************/
-// @use "pages";
-
+@use "layout";
+@use "utils/mixins" as utils;
+@use "utils/variables" as vars;
 
 //styling links
 a {
@@ -20,9 +21,32 @@ html {
   overflow-x: hidden;
   -webkit-scroll-behavior: smooth;
   scroll-behavior: smooth;
+  background-color: vars.$white;
+  overflow: hidden;
+  @include utils.size(100vw,100vh);
+  background: vars.$blueDarkest;
 }
 
 body {
   font-size: 1.6em;
   min-width: 32rem;
+  background-color: vars.$blueDark;
+  background:
+    url("/background-blurs.svg") no-repeat,
+    vars.$blueDark;
+  background-position: 100% 0;
+  background-size: contain;
+  margin: 3.9rem;
+  @include utils.size(calc(100vw - 7.8rem), calc(100vh - 7.8rem));
+  border-radius: 0.8rem;
+  border: 0.1rem solid vars.$lineColor;
+  overflow: inherit;
+  @media only screen and (width < 768px) {
+    margin: 1.9rem;
+    @include utils.size(calc(100vw - 3.8rem), calc(100vh - 3.8rem));
+  }
+}
+
+main {
+  background: transparent;
 }

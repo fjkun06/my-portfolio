@@ -1,0 +1,126 @@
+@use "../utils/mixins" as utils;
+@use "../utils/variables" as vars;
+
+nav {
+  background-color: transparent;
+  width: 100%;
+  @include utils.flex;
+  justify-content: flex-start;
+  border-bottom: 1px solid vars.$lineColor;
+  position: relative;
+  background: vars.$blueDark;
+
+  @media only screen and (width > 1200px) {
+    height: 5.6191rem !important;
+  }
+  @media only screen and (width < 1200px) {
+    @include utils.flex(column);
+    @include utils.justifyAlignSame(flex-start);
+  }
+
+  //Navbar items containers
+  div {
+    @include utils.flex;
+
+    //styling navbar link items
+    .nav-toggle--link,
+    a {
+      @include utils.formatText(450, 1.6rem);
+      @include utils.flex;
+      width: max-content;
+      padding: 1.7rem 3.2rem;
+      border-right: 1px solid vars.$lineColor;
+      color: vars.$grey;
+      transition: all 0.25s ease-in-out;
+      position: relative;
+      cursor: pointer;
+
+      &:hover {
+        background-color: vars.$blueHover;
+        color: vars.$white;
+      }
+    }
+
+    //Giving active route text a white color
+    .navbar-link--active {
+      color: vars.$white;
+    }
+    @media only screen and (width < 1200px) {
+      @include utils.flex(column);
+      width: 100%;
+      .navbar-link,
+      a {
+        width: inherit;
+        justify-content: flex-start;
+      }
+    }
+  }
+
+  //Line under active route
+  .underline {
+    position: absolute;
+    left: 0;
+    right: 0;
+    display: block;
+    height: 0.3rem;
+    background: vars.$orange;
+    bottom: -0.3rem;
+    @media only screen and (width < 1200px) {
+      display: none;
+    }
+  }
+
+  //second div container of navbar items (right most items)
+  .nav-links-group {
+    justify-content: flex-end;
+    width: 100%;
+
+    @media only screen and (width < 1200px) {
+      flex-direction: column-reverse;
+
+      &--language {
+        display: flex;
+        flex-direction: row;
+        justify-content: flex-start;
+        a {
+          width: 5rem;
+          border: none;
+        }
+      }
+    }
+  }
+
+  //Mobile Menu Bar
+  .nav-toggle {
+    div:first-child {
+      width: 31.1rem;
+      justify-content: flex-start;
+      -webkit-user-select: none;
+      user-select: none;
+
+      //Menu icon in Navbar Item
+      svg {
+        display: none;
+        cursor: pointer;
+        transition: all 0.25s ease-in-out;
+      }
+      @media only screen and (width < 1200px) {
+        width: inherit;
+        justify-content: space-between;
+        &:hover {
+          background: transparent;
+          color: vars.$grey;
+          cursor: default;
+        }
+
+        svg {
+          transform: scale(2.5) translateY(0.15rem);
+          display: block;
+          &:hover {
+            color: vars.$white;
+          }
+        }
+      }
+    }
+  }
+}

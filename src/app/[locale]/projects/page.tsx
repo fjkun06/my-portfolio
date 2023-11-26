@@ -2,10 +2,10 @@ import React from "react";
 
 import { useTranslations } from "next-intl";
 
-const About = () => {
+const Projects = () => {
   const t = useTranslations("index");
 
-  return <div>About Page {t("title")}#</div>;
+  return <div>Projects Page {t("title")}#</div>;
 };
 
-export default About;
+export default Projects;
