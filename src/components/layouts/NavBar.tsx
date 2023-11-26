@@ -8,12 +8,13 @@ import { MenuIcon } from "@/components/icons";
 import useMediaQuery from "@/utils/useMediaQuery";
 
 interface INavBar {
-  items?: string[][];
+  items: string[][];
 }
 
 const NavBar: React.FC<INavBar> = ({ items = [[]] }) => {
   const [isOpen, setIsOpen] = React.useState(false);
   const toggleOpen = () => setIsOpen(!isOpen);
+  //verifies if the screen width is more than 1200px and toggles the navbar height
   const closeMenu = () => !max1200 && setIsOpen(false);
   const max1200 = useMediaQuery("(width > 1200px)");
 
@@ -36,7 +37,7 @@ const NavBar: React.FC<INavBar> = ({ items = [[]] }) => {
     >
       <div className="nav-toggle">
         <div className="navbar-link">
-          <span className="">frank jordan zone</span>
+          <span className="">frank jordan zoné</span>
           <MenuIcon isOpen={isOpen} callback={toggleOpen} />
         </div>
       </div>
@@ -53,7 +54,10 @@ const NavBar: React.FC<INavBar> = ({ items = [[]] }) => {
             </NavBarGroup>
             <NavBarGroup className="links-group">
               <NavigationLink callback={closeMenu} href="/aboutt">
-                _language
+                _en
+              </NavigationLink>
+              <NavigationLink callback={closeMenu} href="/aboutt">
+                _de
               </NavigationLink>
               <NavigationLink callback={closeMenu} href={contact[1]}>
                 {contact[0]}

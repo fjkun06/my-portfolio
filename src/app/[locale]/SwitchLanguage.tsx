@@ -25,9 +25,13 @@ const SwitchLanguage = () => {
       <br />
       <Link href={path} locale="en">
         Switch to English
-      </Link>{" "}
+      </Link>
       <br />
       <NavigationLink href="/about">About</NavigationLink>
+      <br />
+      <NavigationLink href={path} locale="de">
+        Switch to de
+      </NavigationLink>
     </div>
   );
 };
