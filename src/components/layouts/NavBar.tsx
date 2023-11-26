@@ -15,13 +15,13 @@ interface INavBar {
 }
 
 const NavBar: React.FC<INavBar> = ({ items = [[]] }) => {
-  //testing purpose
+  //Navbar context to toggle content when active
   const { isNavbarOpen, setState } = useContext(NavbarContext);
-  console.log(isNavbarOpen);
 
   const [isOpen, setIsOpen] = React.useState(false);
   const toggleOpen = () => {
     setIsOpen(!isOpen);
+    //disable body of page to display mobile navbar
     setState(!isNavbarOpen);
   };
   //verifies if the screen width is more than 1200px and toggles the navbar height

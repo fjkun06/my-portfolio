@@ -6,7 +6,7 @@ import "@/styles/main.scss";
 import "@/utils/fonts";
 import { useTranslations } from "next-intl";
 
-import { BodyWrapper, Footer, NavBar } from "@/components";
+import { BodyWrapper } from "@/components";
 import { locales, routes } from "@/utils/data";
 
 export const metadata: Metadata = {
