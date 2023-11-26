@@ -1,0 +1,28 @@
+//loading mixins and variable
+@use "../utils/mixins" as utils;
+@use "../utils/variables" as vars;
+.portfolio-home {
+  @include utils.size(100%);
+  @include utils.flex;
+  padding: 12.6rem 31.1rem;
+
+  &--left,
+  &--right {
+    @include utils.size(inherit);
+    @include utils.size(100%);
+    @include utils.flex;
+    justify-content: center;
+    h1{
+      text-align: center;
+    }
+  }
+
+  //left section
+  &--left {
+    background: red;
+  }
+  //right section
+  &--right {
+    background: green;
+  }
+}

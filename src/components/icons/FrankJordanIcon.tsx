@@ -25,7 +25,7 @@ const FrankJordanIcon = () => {
         <text
           transform="translate(54.63 82.74) rotate(90)"
           fill="#071827"
-          font-family="OCRAExtended, 'OCR A Extended'"
+          fontFamily="OCRAExtended, 'OCR A Extended'"
           font-size="3"
         >
           <tspan x="0" y="0">

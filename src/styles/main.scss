@@ -1,5 +1,9 @@
 /***********************************************Importing other stylesheets***********************************************/
+
 @use "layout";
+@use "screens";
+
+//importing utilities
 @use "utils/mixins" as utils;
 @use "utils/variables" as vars;
 
@@ -50,7 +54,7 @@ body {
   border: 0.1rem solid vars.$lineColor;
   overflow: inherit;
   main {
-    @include utils.size(calc(100vw - 7.8rem), calc(100% - 10.5rem));
+    @include utils.size(100%, calc(100% - 10.5rem));
     background: transparent;
     @media only screen and (width < 1300px) {
       @include utils.size(100%, calc(100% - 7.125rem - 5rem));

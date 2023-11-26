@@ -1,15 +1,16 @@
-"use client";
-import { motion } from "framer-motion";
+import { PageWrapper } from "@/components";
+
 export default function Home() {
   return (
-    <motion.main
-      initial={{ y: 30, opacity: 0 }}
-      animate={{ opacity: 1, y: 0 }}
-      exit={{ y: 30, opacity: 0 }}
-    >
-      <div className="">
-        <h1 className="text-[50px]">Frank Jordan Zone&apos;s Portfolio</h1>
-      </div>
-    </motion.main>
+    <PageWrapper>
+      <main className="portfolio-home">
+        <div className="portfolio-home--left">
+          <h1 className="text-[50px]">Frank Jordan Zone&apos;s Portfolio Left</h1>
+        </div>
+        <div className="portfolio-home--right">
+          <h1 className="text-[50px]">Frank Jordan Zone&apos;s Portfolio right</h1>
+        </div>
+      </main>
+    </PageWrapper>
   );
 }

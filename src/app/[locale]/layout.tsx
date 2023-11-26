@@ -10,7 +10,7 @@ import { BodyWrapper } from "@/components";
 import { locales, routes } from "@/utils/data";
 
 export const metadata: Metadata = {
-  title: "Frank Jordan Portfolio",
+  title: "Frank Jordan | Front-end Developer",
   description:
     "Frank Jordan Zone's portfolio website for all his projects, details about his personal and educational background and how to contact him."
 };
