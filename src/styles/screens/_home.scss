@@ -9,7 +9,7 @@ $colors:
 .portfolio-home {
   @include utils.size(100%);
   @include utils.flex;
-  padding: 12.6rem 31.1rem;
+  padding-inline: 31.1rem;
 
   &--left,
   &--right {
