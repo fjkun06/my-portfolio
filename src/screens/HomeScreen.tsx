@@ -1,8 +1,45 @@
 "use client";
-import React from "react";
+import React, { useEffect, useState } from "react";
 
 import { motion } from "framer-motion";
 const HomeScreen = () => {
+  // const increaseIndexCircularly = (arr: any) => {
+  //   let i = 0;
+  //   while (i < 15) {
+  //     arr = arr.map((element: any, index: any, array: any) => {
+  //       const newIndex = (index + 1) % array.length;
+  //       return array[newIndex];
+  //     });
+  //     console.log(arr);
+  //     i++;
+  //   }
+  // };
+
+  const [arr, setArr] = useState<number[]>([0, 1, 2, 3, 4]);
+  const delay = 3000; // 3 seconds
+  let lastTime = 0;
+
+  useEffect(() => {
+    const animate = (currentTime: number): void => {
+      if (currentTime - lastTime >= delay) {
+        setArr((prevArr) =>
+          prevArr.map((element, index, array) => {
+            const newIndex = (index + 1) % array.length;
+            return array[newIndex];
+          })
+        );
+
+        lastTime = currentTime;
+      }
+
+      requestAnimationFrame(animate);
+    };
+
+    // requestAnimationFrame(animate);
+  }, []);
+
+  console.log(arr);
+
   return (
     <motion.main className="portfolio-home">
       <div className="portfolio-home--left">
@@ -32,7 +69,12 @@ const HomeScreen = () => {
         </motion.pre>
       </div>
       <div className="portfolio-home--right">
-        <h1 className="text-[50px]">Frank Jordan Zone&apos;s Portfolio right</h1>
+        {/* <h1 className="text-[50px]">Frank Jordan Zone&apos;s Portfolio right</h1> */}
+        {arr.map((el) => (
+          <span key={el} className="">
+            {el}
+          </span>
+        ))}
       </div>
     </motion.main>
   );
