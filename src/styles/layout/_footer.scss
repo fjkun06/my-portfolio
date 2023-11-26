@@ -9,24 +9,84 @@ footer {
   border-top: 1px solid vars.$lineColor;
   background: transparent;
   padding-inline: 2.2rem;
-  // background: green;
 
+  @media only screen and (width < 401px) {
+    justify-content: space-evenly;
+  }
   //
   .footer {
     &-media,
     &-github {
-      display: flex;
+      @include utils.flex;
       color: vars.$grey;
       @include utils.formatText(450, 1.6rem);
+      height: 100%;
 
       svg {
-        @include utils.size(100%, 5rem);
+        @include utils.size(2.5rem);
         cursor: pointer;
         transition: all 0.25s ease-in-out;
         color: darken(vars.$grey, 15%);
+      }
+    }
 
-        &:hover {
-          color: vars.$grey;
+    &-media {
+      span {
+        border-right: 1px solid vars.$lineColor;
+        height: 100%;
+        @include utils.flex;
+
+        //all spans except the first should have this styling
+        &:not(:first-of-type) {
+          @include utils.size(5.2rem, 100%);
+          cursor: pointer;
+          transition: all 0.25s ease-in-out;
+
+          &:hover {
+            background-color: vars.$blueHover;
+            svg {
+              color: lighten(vars.$grey, 10%);
+            }
+          }
+        }
+
+        &:first-child {
+          padding-right: 1.4rem;
+          user-select: none;
+          @media only screen and (width < 501px) {
+          padding-right: 1.2rem;
+          }
+          @media only screen and (width < 401px) {
+            display: none;
+          }
+        }
+      }
+    }
+
+    &-github {
+      gap: 0.5rem;
+      cursor: pointer;
+      transition: all 0.25s ease-in-out;
+
+      &:hover {
+        background-color: vars.$blueHover;
+        svg {
+          color: lighten(vars.$grey, 10%);
+        }
+      }
+      span {
+        height: 100%;
+        @include utils.flex;
+        &:first-of-type {
+          border-left: 1px solid vars.$lineColor;
+          padding-left: 2.3rem;
+          @media only screen and (width < 501px) {
+            display: none;
+          }
+        }
+
+        &:not(:first-of-type) {
+          @include utils.size(5.2rem, 100%);
         }
       }
     }

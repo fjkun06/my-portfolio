@@ -33,7 +33,7 @@ const NavBar: React.FC<INavBar> = ({ items = [[]] }) => {
 
   return (
     <motion.nav
-      animate={{ height: isOpen ? "100%" : "6%" }}
+      animate={{ height: isOpen ? "90vh" : "6.125rem" }}
       transition={{ duration: 0.5, ease: "easeInOut" }}
     >
       <div className="nav-toggle">
