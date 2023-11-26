@@ -3,12 +3,10 @@ import React, { memo } from "react";
 
 import { AnimatePresence, motion } from "framer-motion";
 
-import { NavigationLink } from "@/components";
+import { NavigationLink, SwitchLanguage } from "@/components";
 import { MenuIcon } from "@/components/icons";
 import { locales } from "@/utils/data";
 import useMediaQuery from "@/utils/useMediaQuery";
-
-import SwitchLanguage from "../SwitchLanguage";
 
 interface INavBar {
   items: string[][];
@@ -39,7 +37,7 @@ const NavBar: React.FC<INavBar> = ({ items = [[]] }) => {
       transition={{ duration: 0.5, ease: "easeInOut" }}
     >
       <div className="nav-toggle">
-        <div className="navbar-link">
+        <div className="nav-toggle--link">
           <span className="">frank jordan zoné</span>
           <MenuIcon isOpen={isOpen} callback={toggleOpen} />
         </div>
@@ -55,14 +53,17 @@ const NavBar: React.FC<INavBar> = ({ items = [[]] }) => {
                   </NavigationLink>
                 ))}
             </NavBarGroup>
-            <NavBarGroup className="links-group">
-              {locales.map((locale) => (
-                <SwitchLanguage
-                  key={locale}
-                  language={locale as any}
-                  text={`_${locale}`}
-                />
-              ))}
+            <NavBarGroup className="nav-links-group">
+              <div className="nav-links-group--language">
+                {locales.map((locale) => (
+                  <SwitchLanguage
+                    key={locale}
+                    language={locale as any}
+                    text={`_${locale}`}
+                  />
+                ))}
+              </div>
+
               <NavigationLink callback={closeMenu} href={contact[1]}>
                 {contact[0]}
               </NavigationLink>
