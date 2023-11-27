@@ -16,15 +16,33 @@ const HomeScreen = () => {
   // };
 
   const [arr, setArr] = useState<number[]>([0, 1, 2, 3, 4]);
-  const delay = 3000; // 3 seconds
+  const delay = 7000; // 3 seconds
   let lastTime = 0;
 
+  // useEffect(() => {
+  //   const animate = (currentTime: number): void => {
+  //     if (currentTime - lastTime >= delay) {
+  //       setArr((prevArr) =>
+  //         prevArr.map((element, index, array) => {
+  //           const newIndex = (index + 1) % array.length;
+  //           return array[newIndex];
+  //         })
+  //       );
+
+  //       lastTime = currentTime;
+  //     }
+
+  //     requestAnimationFrame(animate);
+  //   };
+
+  //   requestAnimationFrame(animate);
+  // }, []);
   useEffect(() => {
     const animate = (currentTime: number): void => {
       if (currentTime - lastTime >= delay) {
         setArr((prevArr) =>
           prevArr.map((element, index, array) => {
-            const newIndex = (index + 1) % array.length;
+            const newIndex = (index - 1 + array.length) % array.length;
             return array[newIndex];
           })
         );
@@ -35,10 +53,8 @@ const HomeScreen = () => {
       requestAnimationFrame(animate);
     };
 
-    // requestAnimationFrame(animate);
+    requestAnimationFrame(animate);
   }, []);
-
-  console.log(arr);
 
   return (
     <motion.main className="portfolio-home">
@@ -70,11 +86,18 @@ const HomeScreen = () => {
       </div>
       <div className="portfolio-home--right">
         {/* <h1 className="text-[50px]">Frank Jordan Zone&apos;s Portfolio right</h1> */}
-        {arr.map((el) => (
-          <span key={el} className="">
-            {el}
-          </span>
-        ))}
+        {arr
+          // .filter((x) => x < 2)
+          .map((el, i) => (
+            <motion.span
+              key={el}
+              className=""
+              // animate={{ scale: i === 2 ? [1.25, 1, 1] : 1 }}
+              // transition={{ duration: 3, times: [0, 0.5, 1], type: "spring" }}
+            >
+              {el}
+            </motion.span>
+          ))}
       </div>
     </motion.main>
   );

@@ -6,6 +6,43 @@ $colors:
   2 vars.$lightGreen,
   3 vars.$white,
   4 vars.$lightBrown;
+
+@keyframes scale {
+  100% {
+    // transform:translateY(-10rem) scale(1.15);
+    transform: translateY(-10rem);
+  }
+}
+@keyframes animateLastChild {
+  50% {
+    opacity: 0;
+    transform: translateY(10vh);
+  }
+  60% {
+    opacity: 0;
+    transform: translateY(-105vh);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateY(-95vh);
+  }
+}
+@keyframes animateFourthChild {
+  15% {
+    // opacity: 0;
+    // transform: translateY(10vh);
+  }
+  85% {
+    // opacity: 0;
+    // transform: translateY(-105vh);
+  }
+  100% {
+    // opacity: 1;
+    // transform: translateY(-95vh);
+    transform: translateY(10rem);
+  }
+}
 .portfolio-home {
   @include utils.size(100%);
   @include utils.flex;
@@ -41,7 +78,7 @@ $colors:
         color: vars.$milkyWhite;
         &:is(.title) {
           font-size: 6.2rem;
-      transform: translateX(-0.75rem);
+          transform: translateX(-0.75rem);
         }
       }
       h3 {
@@ -69,6 +106,71 @@ $colors:
   }
   //right section
   &--right {
-    background: green;
+    // background: green;
+    height: 100%;
+    overflow: hidden;
+    display: block;
+    display: grid;
+    gap: 2rem;
+    span {
+      width: 100%;
+      width: 360px;
+      height: 18.2rem;
+      text-align: center;
+      @include utils.flex;
+      transform: translateY(-10rem);
+      cursor: pointer;
+      user-select: none;
+     
+      border-radius: 1rem;
+      transition: all 0.25s linear;
+      &:nth-child(3) {
+        background-color: black;
+        // animation: scale 1s ease-in-out 0s infinite forwards;
+      }
+      &:nth-child(2n) {
+        background-color: rgba(black, 0.75);
+      }
+      &:first-child,
+      &:last-child {
+        // background-color: rgba(red, 0.35);
+      }
+      &:first-child {
+        // transform: translateY(-70px);
+      }
+      //fourth child
+      &:nth-child(1) {
+        background-color: rgba(black, 0.5);
+        animation: animateFourthChild 3s ease-in-out 3s 1 forwards;
+        // transform: translateY(10rem);
+      }
+      //fourth child
+      &:nth-child(2) {
+        background-color: rgba(black, 0.5);
+        animation: animateFourthChild 3s ease-in-out 3s 1 forwards;
+        // transform: translateY(10rem);
+      }
+      //fourth child
+      &:nth-child(3) {
+        background-color: rgba(black, 3);
+        animation: animateFourthChild 3s ease-in-out 3s 1 forwards;
+        // transform: translateY(10rem);
+      }
+      //fourth child
+      &:nth-child(4) {
+        background-color: rgba(black, 0.25);
+        animation: animateFourthChild 3s ease-in-out 3s 1 forwards;
+        // transform: translateY(10rem);
+      }
+      &:last-child {
+        background-color: rgba(black, 0.25);
+
+        opacity: 0;
+        opacity: 1;
+        transform: translateY(-10rem);
+        animation: animateLastChild 3s ease-in-out 3s 1 forwards;
+        animation-fill-mode: forwards;
+      }
+    }
   }
 }
