@@ -5,14 +5,17 @@ import { vscDarkPlus } from "react-syntax-highlighter/dist/esm/styles/prism";
 interface ICodeSnippet {
   snippet: string;
   language?: string;
+  className?: string;
 }
-const CodeSnippet: React.FC<ICodeSnippet> = ({ snippet, language }) => {
+const CodeSnippet: React.FC<ICodeSnippet> = ({ snippet, language, className }) => {
   return (
-    <div>
-      <SyntaxHighlighter language={language ?? "javascript"} style={vscDarkPlus}>
-        {snippet}
-      </SyntaxHighlighter>
-    </div>
+    <SyntaxHighlighter
+      language={language ?? "javascript"}
+      style={vscDarkPlus}
+      className={className}
+    >
+      {snippet}
+    </SyntaxHighlighter>
   );
 };
 

@@ -57,3 +57,7 @@ export { default as CodeSnippet } from "@/components/CodeSnippet";`,
     language: "javascript"
   }
 ];
+
+export const sampleCode = `// complete the game to continue
+// you can also see it on my Github page
+const  githubLink  =  “https://github.com/example/url”`;

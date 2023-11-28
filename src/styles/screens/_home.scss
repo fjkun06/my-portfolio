@@ -1,11 +1,6 @@
 //loading mixins and variable
 @use "../utils/mixins" as utils;
 @use "../utils/variables" as vars;
-$colors:
-  1 vars.$indigo,
-  2 vars.$lightGreen,
-  3 vars.$white,
-  4 vars.$lightBrown;
 
 @keyframes animateLastChild {
   50% {
@@ -45,17 +40,16 @@ $colors:
 
   //name section of home page
   &--left {
-    // background: red;
-    row-gap: 8.1rem;
-    div,
-    pre {
+    row-gap: 7.1rem;
+    div {
       @include utils.size(100%, 50%);
       @include utils.flex(column);
       align-items: flex-start;
+      height: max-content;
     }
 
     //stzyling main text and name
-    div {
+    div:first-of-type {
       justify-content: flex-end;
       span,
       h3 {
@@ -73,26 +67,19 @@ $colors:
     }
 
     //styling lines of code
-    pre {
-      // background: #000;
-      justify-content: flex-start;
-      gap: 0.5;
-      code {
-        &:not(:last-of-type) {
-          color: vars.$grey;
-        }
-        &:last-of-type {
-          @each $i, $color in $colors {
-            & span:nth-child(#{$i}) {
-              color: $color;
-            }
-          }
+    div:last-of-type {
+      pre {
+        overflow: hidden !important;
+        background: transparent !important;
+        padding-left: 0 !important;
+        span {
+          @include utils.formatText(450, 1.6rem);
         }
       }
     }
   }
 
-  //right section
+  //right section : code reel
   &--right {
     height: 100%;
     overflow: hidden;
@@ -109,7 +96,7 @@ $colors:
       transition: all 0.25s linear;
       background-color: rgba(#011627, 0.5);
       overflow: hidden;
-      box-shadow: rgba(#1E2D3D, 0.25) 0px 8px 24px;
+      box-shadow: rgba(#1e2d3d, 0.25) 0px 8px 24px;
       &:hover {
         background-color: rgba(#011627, 1);
         transition: background-color 0.25s ease-in-out;
