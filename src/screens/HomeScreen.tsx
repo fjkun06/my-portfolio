@@ -2,6 +2,10 @@
 import React, { useEffect, useState } from "react";
 
 import { motion } from "framer-motion";
+
+import { CodeSnippet } from "@/components";
+
+import { codeSnippets, codeSnippets2 } from "./data";
 const HomeScreen = () => {
   // const increaseIndexCircularly = (arr: any) => {
   //   let i = 0;
@@ -86,13 +90,17 @@ const HomeScreen = () => {
       </div>
       <div className="portfolio-home--right">
         {/* <h1 className="text-[50px]">Frank Jordan Zone&apos;s Portfolio right</h1> */}
-        {arr
+        {codeSnippets2
+          // .filter((x) => x < 2)
+          .map((props) => (
+            <CodeSnippet key={props.language} {...props} />
+            // <CodeSnippet key={language} snippet={snippet} language={language} />
+          ))}
+        {/* {arr
           // .filter((x) => x < 2)
           .map((el) => (
-            <motion.span key={el} className="">
-              {el}
-            </motion.span>
-          ))}
+            <CodeSnippet key={el} snippet={codeSnippets[el]} />
+          ))} */}
       </div>
     </motion.main>
   );

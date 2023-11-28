@@ -43,7 +43,7 @@ $colors:
     }
   }
 
-  //left section
+  //name section of home page
   &--left {
     // background: red;
     row-gap: 8.1rem;
@@ -102,7 +102,7 @@ $colors:
     overflow: hidden;
     display: grid;
     gap: 2rem;
-    span {
+    div {
       width: 360px;
       height: 18.2rem;
       @include utils.size(56rem, 18.2rem);
@@ -113,7 +113,23 @@ $colors:
       user-select: none;
       border-radius: 1rem;
       transition: all 0.25s linear;
-      background-color: rgba(black, 0.25);
+      background-color: rgba(#011627, 0.5);
+      overflow: hidden;
+      box-shadow: rgba(149, 157, 165, 0.15) 0px 8px 24px;
+      box-shadow: rgba(#1E2D3D, 0.25) 0px 8px 24px;
+      &:hover {
+        background-color: rgba(#011627, 1);
+        transition: background-color 0.25s ease-in-out;
+      }
+      //editing code container
+      pre {
+        @include utils.size(100%);
+        // @include utils.blurbackdrop;
+        background: transparent !important;
+        // backdrop-filter: blur(10px);
+        border-radius: 1rem;
+        overflow: hidden !important;
+      }
       //fourth child
       &:not(:last-child) {
         animation: animateFourthChild 3s ease-in-out 3s 1 forwards;
