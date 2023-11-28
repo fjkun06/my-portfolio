@@ -88,13 +88,8 @@ const HomeScreen = () => {
         {/* <h1 className="text-[50px]">Frank Jordan Zone&apos;s Portfolio right</h1> */}
         {arr
           // .filter((x) => x < 2)
-          .map((el, i) => (
-            <motion.span
-              key={el}
-              className=""
-              // animate={{ scale: i === 2 ? [1.25, 1, 1] : 1 }}
-              // transition={{ duration: 3, times: [0, 0.5, 1], type: "spring" }}
-            >
+          .map((el) => (
+            <motion.span key={el} className="">
               {el}
             </motion.span>
           ))}
