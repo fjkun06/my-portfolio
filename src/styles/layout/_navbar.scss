@@ -42,6 +42,9 @@ nav {
           padding-left: 0.5rem;
           display: block;
         }
+        @media only screen and (width < 500px) {
+          font-size: 1.6rem;
+        }
       }
       //Menu icon in Navbar Item
       svg {
