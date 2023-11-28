@@ -94,17 +94,11 @@ $colors:
 
   //right section
   &--right {
-    // background: green;
-    // background: linear-gradient(to bottom, rgba(0, 0, 0, 0.25), transparent 60%);
-    // background: linear-gradient(to bottom, rgba(transparent, 0.45), transparent 50%),
-    //   linear-gradient(to top, rgba(transparent, 0.45), transparent 50%);
     height: 100%;
     overflow: hidden;
     display: grid;
     gap: 2rem;
     div {
-      width: 360px;
-      height: 18.2rem;
       @include utils.size(56rem, 18.2rem);
       @include utils.flex;
       text-align: center;
@@ -115,27 +109,24 @@ $colors:
       transition: all 0.25s linear;
       background-color: rgba(#011627, 0.5);
       overflow: hidden;
-      box-shadow: rgba(149, 157, 165, 0.15) 0px 8px 24px;
       box-shadow: rgba(#1E2D3D, 0.25) 0px 8px 24px;
       &:hover {
         background-color: rgba(#011627, 1);
         transition: background-color 0.25s ease-in-out;
       }
-      //editing code container
+      //editing code snippet container
       pre {
         @include utils.size(100%);
-        // @include utils.blurbackdrop;
         background: transparent !important;
-        // backdrop-filter: blur(10px);
         border-radius: 1rem;
         overflow: hidden !important;
       }
       //fourth child
       &:not(:last-child) {
-        animation: animateFourthChild 3s ease-in-out 3s 1 forwards;
+        animation: animateFourthChild 3s linear 3s 1 forwards;
       }
       &:last-child {
-        animation: animateLastChild 3s ease-in-out 3s 1 forwards;
+        animation: animateLastChild 3s linear 3s 1 forwards;
       }
     }
   }

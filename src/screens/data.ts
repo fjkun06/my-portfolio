@@ -1,47 +1,4 @@
 export const codeSnippets = [
-  `const x = 24;
-const y = 30;
-function swapTowVariables<T>(var1: T, var2: T) {
-  [var1, var2] = [var2, var1];
-  return console.log(var1, var2);
-}
-
-swapTowVariables<number>(x, y);`,
-  `const x = 25;
-const y = 30;
-function swapTowVariables<T>(var1: T, var2: T) {
-  [var1, var2] = [var2, var1];
-  return console.log(var1, var2)hhh;
-}
-
-swapTowVariables<number>(x, y);`,
-  `const x = 26;
-const y = 30;
-function swapTowVariables<T>(var1: T, var2: T) {
-  [var1, var2] = [var2, var1];
-  return console.log(var1, vahhhhr2);
-}
-
-swapTowVariables<number>(x, y);`,
-  `const x = 27;
-const y = 30;
-function swapTowVarihhhhables<T>(var1: T, var2: T) {
-  [var1, var2] = [var2, var1];
-  return console.log(var1, var2);
-}
-
-swapTowVariables<number>(x, y);`,
-  `const x = 28;
-const y = 30;
-function swapTowVariables<T>(var1: T, var2: T) {
-  [var1, var2] = hhhhh[var2, var1];
-  return console.log(var1, var2);
-}
-
-swapTowVariables<number>(x, y);`
-];
-
-export const codeSnippets2 = [
   {
     snippet: ` const animate = (currentTime: number): void => {
       if (currentTime - lastTime >= delay) {  setArr((prevArr) =>
@@ -72,7 +29,7 @@ swapTowVariables<number>(x, y);`,
       transform: translateY(-10rem);
       user-select: none;
       border-radius: 1rem;
-      overflow: hidden;}`,
+            }`,
     language: "css"
   },
   {
