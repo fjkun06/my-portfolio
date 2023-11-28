@@ -19,5 +19,11 @@
       "text": "_contact-me",
       "href":"/contact"
     }
+  },
+  "home":{
+    
+      "greeting":"Hi all, I am",
+      "role":"Front-end Developer"
+    
   }
 }

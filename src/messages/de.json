@@ -19,5 +19,11 @@
       "text": "_kontaktiere-mich",
       "href":"/contact"
     }
+  },
+    "home":{
+    
+      "greeting":"Hallo zusammen, ich bin",
+      "role":"Front-End-Entwickler"
+    
   }
 }

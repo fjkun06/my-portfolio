@@ -58,6 +58,6 @@ export { default as CodeSnippet } from "@/components/CodeSnippet";`,
   }
 ];
 
-export const sampleCode = `// complete the game to continue
+export const sampleCode = `// sample JavaScript comments
 // you can also see it on my Github page
 const  githubLink  =  “https://github.com/example/url”`;
