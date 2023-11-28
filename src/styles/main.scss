@@ -48,7 +48,7 @@ body {
     url("/background-blurs.svg") no-repeat,
     vars.$blueDark;
   background-position: 100% 0;
-  background-size: contain;
+  background-size: 60%;
   @include utils.size(100%);
   border-radius: 0.8rem;
   border: 0.1rem solid vars.$lineColor;

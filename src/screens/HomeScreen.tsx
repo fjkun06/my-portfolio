@@ -17,7 +17,7 @@ const HomeScreen = () => {
     const animate = (currentTime: number): void => {
       if (currentTime - lastTime >= delay) {
         setArr((prevArr) =>
-          prevArr.map((element, index, array) => {
+          prevArr.map((_, index, array) => {
             const newIndex = (index - 1 + array.length) % array.length;
             return array[newIndex];
           })
