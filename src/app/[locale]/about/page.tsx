@@ -1,11 +1,13 @@
 import React from "react";
 
-import { useTranslations } from "next-intl";
+// import { useTranslations } from "next-intl";
+
+import { AboutScreen } from "@/screens";
 
 const About = () => {
-  const t = useTranslations("index");
+  // const t = useTranslations("index");
 
-  return <>About Page {t("title")}#</>;
+  return <AboutScreen />;
 };
 
 export default About;

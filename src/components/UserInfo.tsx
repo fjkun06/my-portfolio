@@ -6,7 +6,7 @@ import { motion } from "framer-motion";
 
 import { CodeSnippet } from "@/components";
 
-import { sampleCode } from "./data";
+import { sampleCode } from "../screens/data";
 
 const UserInfo = ({ greeting, role }: { greeting: string; role: string }) => {
   return (

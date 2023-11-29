@@ -2,8 +2,7 @@ import React from "react";
 
 import { useTranslations } from "next-intl";
 
-import CodeReel from "./CodeReel";
-import UserInfo from "./UserInfo";
+import { CodeReel, UserInfo } from "@/components";
 
 const HomeScreen = () => {
   const t = useTranslations("home");

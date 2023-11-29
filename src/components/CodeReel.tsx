@@ -4,7 +4,7 @@ import React, { useEffect, useState } from "react";
 
 import { CodeSnippet } from "@/components";
 
-import { codeSnippets } from "./data";
+import { codeSnippets } from "../screens/data";
 
 const CodeReel = () => {
   const [arr, setArr] = useState<number[]>([0, 1, 2, 3, 4]);
