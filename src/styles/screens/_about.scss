@@ -12,16 +12,36 @@
     background-color: transparent;
     @include utils.size(31.1rem, 100%);
     @include utils.flex(column);
+    justify-content: flex-start;
     min-width: 31.1rem;
+    margin-top: 1rem;
+    border-right: 1px solid vars.$lineColor;
 
     span {
       @include utils.formatText(400, 1.6rem);
+      @include utils.flex;
+      justify-content: flex-start;
+      gap: 1rem;
+      padding: 1rem 2rem;
       color: vars.$grey;
       cursor: pointer;
       transition: color 0.25s ease-in-out;
       text-align: left;
-      &:hover {
+      width: 100%;
+
+      &:hover,
+      &:is(.active) {
         color: vars.$white;
+        svg {
+          color: lighten(vars.$grey, 10%);
+        }
+      }
+
+      //text icons
+      svg {
+        @include utils.size(2.4rem);
+        color: darken(vars.$grey, 15%);
+        transition: all 0.25s ease-in-out;
       }
     }
   }
