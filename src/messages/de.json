@@ -20,6 +20,12 @@
       "href":"/contact"
     }
   },
+    "about":{
+      "summary":"Zusammenfassung",
+      "education":"Bildung && Interessen",
+      "skills":"Weiche && harte Fähigkeiten",
+      "experience":"Berufserfahrung"
+  },
     "home":{
     
       "greeting":"Hallo zusammen, ich bin",

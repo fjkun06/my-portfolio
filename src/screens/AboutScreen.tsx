@@ -13,7 +13,7 @@ import "swiper/scss/pagination";
 import { SideNavigation } from "@/components";
 
 // import required modules
-const AboutScreen = () => {
+const AboutScreen = ({ routes }: { routes: string[] }) => {
   //sythax for calling using the Swiper instance in React TypScript
   const [swiper, setSwiper] = React.useState<Swiper>();
 
@@ -21,12 +21,15 @@ const AboutScreen = () => {
   const [activeIndex, setActiveIndex] = React.useState(0);
 
   //function to determine if the current slide is ctive
-  const isActive = (index: number) => activeIndex === index - 1;
 
   const arr = [0, 1, 2, 3];
   return (
     <main className="portfolio-about">
-      <SideNavigation currentIndex={activeIndex} swiperFunction={swiper} />
+      <SideNavigation
+        currentIndex={activeIndex}
+        swiperFunction={swiper}
+        routes={routes}
+      />
       <section>
         <Swiper
           direction={"vertical"}
