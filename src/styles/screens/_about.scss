@@ -9,10 +9,21 @@
 
   //navigation bar (aside)
   aside {
-    background-color: gold;
+    background-color: transparent;
     @include utils.size(31.1rem, 100%);
-    @include utils.flex;
+    @include utils.flex(column);
     min-width: 31.1rem;
+
+    span {
+      @include utils.formatText(400, 1.6rem);
+      color: vars.$grey;
+      cursor: pointer;
+      transition: color 0.25s ease-in-out;
+      text-align: left;
+      &:hover {
+        color: vars.$white;
+      }
+    }
   }
 
   //main content for swipers
@@ -48,7 +59,8 @@
     position: relative;
     flex-direction: column;
 
-    div,section {
+    div,
+    section {
       width: 100%;
       height: 100%;
       @include utils.flex(column);

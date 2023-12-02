@@ -26,11 +26,12 @@ const AboutScreen = () => {
   return (
     <main className="portfolio-about">
       <aside>
-        navigation <br />
-        <span onClick={() => swiper.slideTo(1, 1000)}>&nbsp; slide1 &nbsp;</span>
-        <span onClick={() => swiper.slideTo(2, 1000)}>&nbsp; slide2 &nbsp;</span>
-        <span onClick={() => swiper.slideTo(3, 1000)}>&nbsp; slide3 &nbsp;</span>
-        <span onClick={() => swiper.slideTo(4, 1000)}>&nbsp; slide4 &nbsp;</span>
+        <span onClick={() => swiper.slideTo(1, 1000)}>
+          Education &amp;&amp; Interests
+        </span>
+        <span onClick={() => swiper.slideTo(2, 1000)}>Soft &amp;&amp; Hard Skills</span>
+        <span onClick={() => swiper.slideTo(3, 1000)}>Professional Experience</span>
+        {/* <span onClick={() => swiper.slideTo(4, 1000)}> slide4 </span> */}
       </aside>
       <section>
         <Swiper
