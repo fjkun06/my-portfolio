@@ -21,7 +21,8 @@ const BodyWrapper: React.FC<IBodyWrapper> = ({ children, routes, footerText }) =
     <NavbarContext.Provider value={{ isNavbarOpen, setState }}>
       <body>
         <NavBar items={routes} />
-        {isNavbarOpen && children}
+        {children}
+        {/* {isNavbarOpen && children} */}
         <Footer findMe={footerText} />
       </body>
     </NavbarContext.Provider>

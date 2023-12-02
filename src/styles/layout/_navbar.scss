@@ -5,6 +5,36 @@ nav {
   background-color: transparent;
   width: 100%;
   @include utils.flex;
+  border-bottom: 1px solid vars.$lineColor;
+  background: vars.$blueDark;
+  height: 6.125rem;
+  transition: all 0.5s ease-in-out;
+  @media only screen and (width > 1300px) {
+    height: 5.6191rem !important;
+  }
+  @media only screen and (width < 1300px) {
+    height: 7.125rem;
+  }
+
+  .navbar {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 9999;
+    @include utils.flex;
+    justify-content: flex-start;
+    transition: all 0.5s ease-in-out;
+
+    @media only screen and (width < 1300px) {
+      @include utils.flex(column);
+      @include utils.justifyAlignSame(flex-start);
+    }
+  }
+}
+.navbar {
+  background-color: transparent;
+  width: 100%;
+  @include utils.flex;
   justify-content: flex-start;
   border-bottom: 1px solid vars.$lineColor;
   position: relative;

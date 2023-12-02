@@ -41,45 +41,47 @@ const NavBar: React.FC<INavBar> = ({ items = [[]] }) => {
   const contact = items.slice(-1)[0];
 
   return (
-    <nav className={`navbar--${isOpen ? "open" : "closed"}`}>
-      <div className="nav-toggle">
-        <div className={`nav-toggle--link ${isOpen ? "underlined" : ""}`}>
-          <span className="">
-            <FrankJordanIcon />
-            <span className=""> frank jordan zoné</span>
-          </span>
-          <MenuIcon isOpen={isOpen} callback={toggleOpen} />
+    <nav>
+      <div className={`navbar navbar--${isOpen ? "open" : "closed"}`}>
+        <div className="nav-toggle">
+          <div className={`nav-toggle--link ${isOpen ? "underlined" : ""}`}>
+            <span className="">
+              <FrankJordanIcon />
+              <span className=""> frank jordan zoné</span>
+            </span>
+            <MenuIcon isOpen={isOpen} callback={toggleOpen} />
+          </div>
         </div>
-      </div>
-      <AnimatePresence>
-        {isOpen && (
-          <>
-            <NavBarGroup>
-              {items.length &&
-                items.slice(0, 3).map(([text, href], index) => (
-                  <NavigationLink key={index} callback={closeMenu} href={href}>
-                    {text}
-                  </NavigationLink>
-                ))}
-            </NavBarGroup>
-            <NavBarGroup className="nav-links-group">
-              <div className="nav-links-group--language">
-                {locales.map((locale) => (
-                  <SwitchLanguage
-                    key={locale}
-                    language={locale as any}
-                    text={`_${locale}`}
-                  />
-                ))}
-              </div>
+        <AnimatePresence>
+          {isOpen && (
+            <>
+              <NavBarGroup>
+                {items.length &&
+                  items.slice(0, 3).map(([text, href], index) => (
+                    <NavigationLink key={index} callback={closeMenu} href={href}>
+                      {text}
+                    </NavigationLink>
+                  ))}
+              </NavBarGroup>
+              <NavBarGroup className="nav-links-group">
+                <div className="nav-links-group--language">
+                  {locales.map((locale) => (
+                    <SwitchLanguage
+                      key={locale}
+                      language={locale as any}
+                      text={`_${locale}`}
+                    />
+                  ))}
+                </div>
 
-              <NavigationLink callback={closeMenu} href={contact[1]}>
-                {contact[0]}
-              </NavigationLink>
-            </NavBarGroup>
-          </>
-        )}
-      </AnimatePresence>
+                <NavigationLink callback={closeMenu} href={contact[1]}>
+                  {contact[0]}
+                </NavigationLink>
+              </NavBarGroup>
+            </>
+          )}
+        </AnimatePresence>
+      </div>
     </nav>
   );
 };
