@@ -20,6 +20,12 @@
       "href":"/contact"
     }
   },
+  "about":{
+      "summary":"Summary",
+      "education":"Education && Interests",
+      "skills":" Soft && Hard Skills",
+      "experience":" Professional Experience"
+  },
   "home":{
     
       "greeting":"Hi all, I am",

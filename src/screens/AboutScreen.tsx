@@ -10,12 +10,7 @@ import { Swiper, SwiperSlide } from "swiper/react";
 // Import Swiper styles
 import "swiper/scss";
 import "swiper/scss/pagination";
-import {
-  EducationIcon,
-  ProfessionalIcon,
-  SkillsIcon,
-  SummaryIcon
-} from "@/components/icons";
+import { SideNavigation } from "@/components";
 
 // import required modules
 const AboutScreen = () => {
@@ -31,36 +26,7 @@ const AboutScreen = () => {
   const arr = [0, 1, 2, 3];
   return (
     <main className="portfolio-about">
-      <aside>
-        <span
-          className={isActive(1) ? "active" : ""}
-          onClick={() => swiper.slideTo(0, 1500)}
-        >
-          <SummaryIcon />
-          Summary
-        </span>
-        <span
-          className={isActive(2) ? "active" : ""}
-          onClick={() => swiper.slideTo(1, 1500)}
-        >
-          <EducationIcon />
-          Education &amp;&amp; Interests
-        </span>
-        <span
-          className={isActive(3) ? "active" : ""}
-          onClick={() => swiper.slideTo(2, 1500)}
-        >
-          <SkillsIcon />
-          Soft &amp;&amp; Hard Skills
-        </span>
-        <span
-          className={isActive(4) ? "active" : ""}
-          onClick={() => swiper.slideTo(3, 1500)}
-        >
-          <ProfessionalIcon />
-          Professional Experience
-        </span>
-      </aside>
+      <SideNavigation currentIndex={activeIndex} swiperFunction={swiper} />
       <section>
         <Swiper
           direction={"vertical"}

@@ -1,4 +1,12 @@
-import { LinkedInIcon, TwitterIcon, XingIcon } from "@/components/icons";
+import {
+  LinkedInIcon,
+  TwitterIcon,
+  XingIcon,
+  EducationIcon,
+  ProfessionalIcon,
+  SkillsIcon,
+  SummaryIcon
+} from "@/components/icons";
 
 export const footerItems = [
   {
@@ -12,5 +20,24 @@ export const footerItems = [
   {
     icon: <TwitterIcon />,
     href: "https://twitter.com/fjkun06"
+  }
+];
+
+export const sideNavigationDate = [
+  {
+    text: "summary",
+    icon: <SummaryIcon />
+  },
+  {
+    text: "education",
+    icon: <EducationIcon />
+  },
+  {
+    text: "skills",
+    icon: <SkillsIcon />
+  },
+  {
+    text: "experience",
+    icon: <ProfessionalIcon />
   }
 ];

@@ -31,12 +31,10 @@ export default function LocaleLayout({ children, params: { locale } }: ILocaleLa
   const tFooter = useTranslations("");
   //fetch text and href data from language files
   const navbarRoutes = routes.map((el) => [t(`${el}.text`), t(`${el}.href`)]);
-  const footerText = tFooter("find-me");
-  console.log(footerText);
 
   return (
     <html lang={locale}>
-      <BodyWrapper footerText={footerText} routes={navbarRoutes}>
+      <BodyWrapper footerText={tFooter("find-me")} routes={navbarRoutes}>
         {children}
       </BodyWrapper>
     </html>
