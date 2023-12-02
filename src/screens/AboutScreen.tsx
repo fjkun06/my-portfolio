@@ -3,8 +3,10 @@ import React from "react";
 
 import { motion } from "framer-motion";
 import { useInView } from "framer-motion";
+import { Swiper as SW } from "swiper";
 import { Parallax, Mousewheel, Pagination } from "swiper/modules";
 import { Swiper, SwiperSlide } from "swiper/react";
+import { SwiperOptions } from "swiper/types";
 
 // Import Swiper styles
 import "swiper/scss";
@@ -12,15 +14,24 @@ import "swiper/scss/pagination";
 
 // import required modules
 const AboutScreen = () => {
-  //testing when slide is in view
-  const ref = React.useRef(null);
-  const isInView = useInView(ref, { amount: "some" });
-  console.log(isInView);
+  // const swiperParams: SwiperOptions = {
+  //   speed: 400
+  // };
+
+  // const swiper = new SW(".swiper", swiperParams);
+
+  const [swiper, setSwiper] = React.useState<Swiper>();
 
   const arr = [0, 1, 2, 3, 4];
   return (
     <main className="portfolio-about">
-      <aside>navigation</aside>
+      <aside>
+        navigation <br />
+        <span onClick={() => swiper.slideTo(1, 1000)}>&nbsp; slide1 &nbsp;</span>
+        <span onClick={() => swiper.slideTo(2, 1000)}>&nbsp; slide2 &nbsp;</span>
+        <span onClick={() => swiper.slideTo(3, 1000)}>&nbsp; slide3 &nbsp;</span>
+        <span onClick={() => swiper.slideTo(4, 1000)}>&nbsp; slide4 &nbsp;</span>
+      </aside>
       <section>
         <Swiper
           direction={"vertical"}
@@ -34,8 +45,9 @@ const AboutScreen = () => {
           }}
           modules={[Parallax, Mousewheel, Pagination]}
           className="mySwiper"
+          onSwiper={(swiper) => setSwiper(swiper)}
         >
-          <SwiperSlide>
+          {/* <SwiperSlide>
             <Section>Animate</Section>
           </SwiperSlide>
           <SwiperSlide>
@@ -48,7 +60,7 @@ const AboutScreen = () => {
           </SwiperSlide>
           <SwiperSlide>
             <Section>view!</Section>
-          </SwiperSlide>
+          </SwiperSlide> */}
           {arr.map((el) => (
             <SwiperSlide key={el}>
               {({ isActive }) => <Section>{el}</Section>}
