@@ -1,0 +1,7 @@
+//loading mixins and variable
+@use "../utils/mixins" as utils;
+@use "../utils/variables" as vars;
+
+.about-summary {
+  background-color: black;
+}
