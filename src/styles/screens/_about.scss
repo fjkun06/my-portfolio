@@ -6,6 +6,12 @@
   @include utils.size(100%);
   @include utils.flex;
   overflow: hidden;
+  @media only screen and (width < 1024px) {
+    flex-direction: column;
+    overflow-y: scroll;
+    justify-content: flex-start;
+    gap: 0rem;
+  }
 
   //navigation bar (aside)
   aside {
@@ -16,6 +22,19 @@
     min-width: 31.1rem;
     margin-top: 1rem;
     border-right: 1px solid vars.$lineColor;
+
+    @media only screen and (width < 1024px) {
+      flex-direction: column;
+      flex-direction: row;
+      flex-wrap: wrap;
+      // gap: 1rem;
+      margin-top: 0;
+      align-items: flex-start;
+      justify-content: flex-start;
+      @include utils.size(100%, 31.1rem);
+      @include utils.size(100%, fit-content);
+      background-color: red;
+    }
 
     span {
       @include utils.formatText(400, 1.6rem);
@@ -28,6 +47,8 @@
       transition: color 0.25s ease-in-out;
       text-align: left;
       width: 100%;
+
+      height: max-content;
 
       &:hover,
       &:is(.active) {
@@ -55,14 +76,20 @@
   //swiper
   .swiper {
     @include utils.size(100%);
+    z-index: 0;
   }
   .swipper-wrapper {
     @include utils.flex;
+
+    overflow: hidden;
   }
 
   .swiper-slide {
     text-align: center;
-    padding-inline: 4rem;
+    padding-right: 4rem;
+    @media only screen and (width < 1024px) {
+      padding-inline: unset;
+    }
     @include utils.flex(column);
     position: relative;
 

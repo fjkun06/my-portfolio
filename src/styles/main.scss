@@ -53,6 +53,11 @@ body {
   border-radius: 0.8rem;
   border: 0.1rem solid vars.$lineColor;
   overflow: inherit;
+  @media only screen and (width < 1300px) {
+    background-size: cover;
+  background-position: center;
+
+  }
   main {
     @include utils.size(100%, calc(100% - 10.5rem));
     background: transparent;
