@@ -25,5 +25,6 @@
       "greeting":"Hi all, I am",
       "role":"Front-end Developer"
     
-  }
+  },
+  "find-me":"find me in:"
 }

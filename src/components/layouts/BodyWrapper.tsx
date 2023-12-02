@@ -6,9 +6,10 @@ import { Footer, NavBar } from "@/components";
 interface IBodyWrapper {
   children: React.ReactNode | React.ReactNode[];
   routes: string[][];
+  footerText: string;
 }
 export const NavbarContext = createContext<any>(null);
-const BodyWrapper: React.FC<IBodyWrapper> = ({ children, routes }) => {
+const BodyWrapper: React.FC<IBodyWrapper> = ({ children, routes, footerText }) => {
   const [isNavbarOpen, setState] = useState(true);
 
   //useEffect to reset content display
@@ -21,7 +22,7 @@ const BodyWrapper: React.FC<IBodyWrapper> = ({ children, routes }) => {
       <body>
         <NavBar items={routes} />
         {isNavbarOpen && children}
-        <Footer />
+        <Footer findMe={footerText} />
       </body>
     </NavbarContext.Provider>
   );

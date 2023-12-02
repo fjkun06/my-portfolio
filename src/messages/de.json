@@ -25,5 +25,7 @@
       "greeting":"Hallo zusammen, ich bin",
       "role":"Front-End-Entwickler"
     
-  }
+  },
+  "find-me":"profile:"
+
 }
