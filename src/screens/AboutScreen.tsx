@@ -2,14 +2,15 @@
 "use client";
 import React from "react";
 
+import { useMediaQuery } from "react-responsive";
 import { Parallax, Mousewheel, Pagination } from "swiper/modules";
 import { Swiper, SwiperSlide } from "swiper/react";
 
 // Import Swiper styles
 import "swiper/scss";
 import "swiper/scss/pagination";
-import { SideNavigation, Section } from "@/components";
-import useMediaQuery from "@/utils/useMediaQuery";
+import { SideNavigation } from "@/components";
+// import useMediaQuery from "@/utils/useMediaQuery";
 
 import SummaryScreen from "./SummaryScreen";
 
@@ -21,8 +22,19 @@ const AboutScreen = ({ routes }: { routes: string[] }) => {
   // state that has the current active index, which can be used to force re-rende other components
   const [activeIndex, setActiveIndex] = React.useState(0);
 
-  const max1024 = useMediaQuery("(width < 1024px)");
-  console.log(!max1024);
+  //enabling or disabling mouselwheel scrolling
+  const isDesktopOrLaptop = useMediaQuery(
+    {
+      minWidth: 1024
+    },
+    undefined,
+    handleMediaQueryChange
+  );
+  const [max1024, setAMouseWheel] = React.useState(isDesktopOrLaptop);
+  function handleMediaQueryChange(matches: boolean) {
+    setAMouseWheel(matches);
+    console.log(matches);
+  }
 
   const arr = [0, 1, 2, 3];
   return (
@@ -40,15 +52,11 @@ const AboutScreen = ({ routes }: { routes: string[] }) => {
           slidesPerView={1}
           spaceBetween={0}
           grabCursor
-          // simulateTouch={false}
-          // allowTouchMove={false}
-          mousewheel={false}
-          // mousewheel={true}
+          mousewheel={max1024}
           navigation={true}
           pagination={{
             clickable: true
           }}
-          // modules={[Parallax, Pagination]}
           modules={[Parallax, Mousewheel, Pagination]}
           className="mySwiper"
           onSwiper={(swiper) => setSwiper(swiper)}
