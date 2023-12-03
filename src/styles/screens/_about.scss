@@ -22,6 +22,7 @@
     min-width: 31.1rem;
     margin-top: 1rem;
     border-right: 1px solid vars.$lineColor;
+    background: red;
 
     @media only screen and (width < 1024px) {
       flex-direction: column;
@@ -33,7 +34,6 @@
       justify-content: flex-start;
       @include utils.size(100%, 31.1rem);
       @include utils.size(100%, fit-content);
-      background-color: red;
     }
 
     span {
@@ -69,7 +69,10 @@
 
   //main content for swipers
   section {
-    @include utils.size(100%);
+    @include utils.size(calc(100% - 31.1rem), 100%);
+    @media only screen and (width < 1024px) {
+      width: 100%;
+    }
     @include utils.flex;
   }
 

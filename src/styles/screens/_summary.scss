@@ -80,56 +80,51 @@
     }
   }
   .summary-carousel {
-    @include utils.size(100%, 40%);
     @include utils.size(100%, max-content);
-    background-color: rgb(26, 91, 26);
     background: transparent;
     overflow: hidden;
     padding-block: 6rem;
     white-space: nowrap;
     position: relative;
     display: block !important;
+    //pause carousel animation on hover
+    &:hover {
+      .logos-slide {
+        animation-play-state: paused;
+      }
+    }
+
+    //little portal on edges of carousel
+    &::before,
+    &::after {
+      position: absolute;
+      content: "";
+      top: 0;
+      height: 100%;
+      width: 5rem;
+      z-index: 2;
+    }
+    &::before {
+      left: 0;
+      background: linear-gradient(to left, rgba(255, 255, 255, 0), vars.$blueHover);
+    }
+    &::after {
+      right: 0;
+      background: red;
+      background: linear-gradient(to right, rgba(255, 255, 255, 0), vars.$blueHover);
+    }
+
+    .logos-slide {
+      display: inline-flex !important;
+      flex-direction: row !important;
+      width: max-content;
+      animation: 35s slide infinite linear;
+
+      img {
+        height: 10rem;
+        margin: 0 4rem;
+        cursor: pointer;
+      }
+    }
   }
-}
-
-.logos::before {
-  position: absolute;
-  content: "";
-  top: 0;
-  left: 0;
-  height: 100%;
-  width: 5rem;
-  background: linear-gradient(to left, rgba(255, 255, 255, 0), vars.$blueHover);
-  z-index: 2;
-}
-
-.logos::after {
-  position: absolute;
-  content: "";
-  top: 0;
-  right: 0;
-  height: 100%;
-  width: 15rem;
-  background: linear-gradient(to right, rgba(255, 255, 255, 0), vars.$blueHover);
-  z-index: 2;
-}
-
-.logos:hover .logos-slide {
-  animation-play-state: paused;
-}
-
-.logos-slide img {
-  height: 10rem;
-  margin: 0 4rem;
-  cursor: pointer;
-}
-
-.logos-slide {
-  display: inline-block;
-  display: inline-flex !important;
-  flex-direction: row !important;
-  width: max-content;
-  /* overflow: hidden; */
-  animation: 35s slide infinite linear;
-  // @include utils.blurbackdrop;
 }

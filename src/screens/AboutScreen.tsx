@@ -38,7 +38,7 @@ const AboutScreen = ({ routes }: { routes: string[] }) => {
 
   const arr = [0, 1, 2, 3];
   return (
-    <main className="portfolio-about">
+    <div className="portfolio-about">
       <SideNavigation
         currentIndex={activeIndex}
         swiperFunction={swiper}
@@ -66,7 +66,7 @@ const AboutScreen = ({ routes }: { routes: string[] }) => {
           ))}
         </Swiper>
       </section>
-    </main>
+    </div>
   );
 };
 
