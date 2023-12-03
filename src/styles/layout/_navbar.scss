@@ -17,9 +17,7 @@ nav {
   }
 
   .navbar {
-    position: absolute;
-    top: 0;
-    left: 0;
+    @include utils.positioning(0, 0);
     z-index: 9999;
     @include utils.flex;
     justify-content: flex-start;

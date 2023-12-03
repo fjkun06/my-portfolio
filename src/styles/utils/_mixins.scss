@@ -14,8 +14,8 @@
   text-overflow: ellipsis;
 }
 
-@mixin justifyAlignSame($jc:center,$ai:$jc){
- justify-content: $jc;
+@mixin justifyAlignSame($jc: center, $ai: $jc) {
+  justify-content: $jc;
   align-items: $ai;
 }
 
@@ -33,7 +33,7 @@
   @content;
 }
 
-@mixin formatText($fw, $fs, $lh:normal) {
+@mixin formatText($fw, $fs, $lh: normal) {
   font-weight: $fw;
   font-size: $fs;
   line-height: $lh;
@@ -69,6 +69,7 @@
 
 //positioning absolutely positioned elements
 @mixin positioning($dir_value, $top, $direction: left) {
+  position: absolute;
   top: $top;
   #{$direction}: $dir_value;
 }
