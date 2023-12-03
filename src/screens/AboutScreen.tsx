@@ -51,7 +51,6 @@ const AboutScreen = ({ routes }: { routes: string[] }) => {
           speed={1000}
           slidesPerView={1}
           spaceBetween={0}
-          grabCursor
           mousewheel={max1024}
           navigation={true}
           pagination={{

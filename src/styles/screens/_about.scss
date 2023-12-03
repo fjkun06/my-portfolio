@@ -95,9 +95,7 @@
 
     div,
     section {
-      @include utils.size(100%);
       @include utils.flex(column);
-      gap: 4rem;
     }
   }
 
