@@ -13,6 +13,9 @@
 .about-summary {
   @include utils.size(100%);
   justify-content: space-evenly !important;
+  @media only screen and (width < 1300px) {
+    height: calc(100% - 4.4rem);
+  }
   header {
     @include utils.size(100%, 60%);
     @include utils.flex;

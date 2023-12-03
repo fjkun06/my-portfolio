@@ -192,9 +192,6 @@ nav {
 
 .navbar--open {
   height: calc(100% - 5rem);
-  @media only screen and (width < 768px) {
-    height: calc(100% - 5rem);
-  }
 }
 .underlined {
   border-bottom: 1px solid vars.$lineColor !important;

@@ -30,7 +30,7 @@ const AboutScreen: React.FC<IAboutScreen> = ({ data: { routes, summary } }) => {
   //enabling or disabling mouselwheel scrolling
   const isDesktopOrLaptop = useMediaQuery(
     {
-      minWidth: 1024
+      minWidth: 1300
     },
     undefined,
     handleMediaQueryChange

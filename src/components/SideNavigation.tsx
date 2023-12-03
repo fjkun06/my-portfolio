@@ -11,9 +11,7 @@ interface ISideNavigation {
 const SideNavigation: React.FC<ISideNavigation> = ({ routes, ...props }) => {
   return (
     <aside>
-      {sideNavigationDate.map((data, i) => (
-        <SideNavigationItem {...props} {...data} text={routes[i]} index={i + 1} key={i} />
-      ))}
+      <div className="side-navigation">Hello</div>
     </aside>
   );
 };
