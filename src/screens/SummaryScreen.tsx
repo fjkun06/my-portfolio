@@ -33,6 +33,7 @@ const SummaryScreen = () => {
               love the logic and structure of coding and always thrive to write elegant
               and efficient code, irrespective of the programming language.
             </span>
+            <br />
             <span>
               From writing my first C code in 2018, to my latest Github commit the
               excitement of solving problems via programming just keeps growing

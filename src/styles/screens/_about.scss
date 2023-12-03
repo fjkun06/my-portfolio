@@ -22,7 +22,6 @@
     min-width: 31.1rem;
     margin-top: 1rem;
     border-right: 1px solid vars.$lineColor;
-    background: red;
 
     @media only screen and (width < 1024px) {
       flex-direction: column;
@@ -68,11 +67,13 @@
   }
 
   //main content for swipers
-  section {
+  section.slide-container {
     @include utils.size(calc(100% - 31.1rem), 100%);
     @media only screen and (width < 1024px) {
       width: 100%;
     }
+  }
+  section {
     @include utils.flex;
   }
 
@@ -89,7 +90,7 @@
 
   .swiper-slide {
     text-align: center;
-    padding-right: 4rem;
+    // padding-right: 4rem;
     @media only screen and (width < 1024px) {
       padding-inline: unset;
     }

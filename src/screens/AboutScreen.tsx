@@ -44,13 +44,14 @@ const AboutScreen = ({ routes }: { routes: string[] }) => {
         swiperFunction={swiper}
         routes={routes}
       />
-      <section>
+      <section className="slide-container">
         <Swiper
           direction={"vertical"}
           effect="pagination"
           speed={1000}
           slidesPerView={1}
           spaceBetween={0}
+          simulateTouch={false}
           mousewheel={max1024}
           navigation={true}
           pagination={{
