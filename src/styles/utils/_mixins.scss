@@ -34,7 +34,6 @@
 }
 
 @mixin formatText($fw, $fs, $lh:normal) {
-  font-family: "Fira Code Variable", sans-serif;
   font-weight: $fw;
   font-size: $fs;
   line-height: $lh;

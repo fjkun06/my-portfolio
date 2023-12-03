@@ -1,12 +1,25 @@
+"use client";
 import React from "react";
 
 import Image from "next/image";
+import Link from "next/link";
+import { Tooltip } from "react-tooltip";
 
 import { Section } from "@/components";
 
+import { logoData } from "./data";
+
 const SummaryScreen = () => {
   const arr = Array(17).fill(17);
-  console.log(arr);
+  const [link, setCurrentLink] = React.useState({
+    url: "https://github.com/fjkun06",
+    title: "Github"
+  });
+
+  const testx = {
+    url: "https://github.com/testx",
+    title: "Testing"
+  };
 
   return (
     <Section className="about-summary">
@@ -38,17 +51,26 @@ const SummaryScreen = () => {
       <div className="summary-carousel logos">
         {[0, 1].map((x) => (
           <div key={x} className="logos-slide">
-            {arr.map((el, i) => (
+            {logoData.map((logo, i) => (
               <Image
                 key={i}
                 src={`/assets/icons/icon${i + 1}.svg`}
                 alt="logo"
                 height={100}
                 width={100}
+                className="myLogo"
+                onMouseEnter={() => setCurrentLink(logo)}
+                // onMouseLeave={() => setCurrentLink("false")}
+                // data-tooltip-content={<div>Hello world! Im a Tooltip</div>}
               />
             ))}
           </div>
         ))}
+        <Tooltip anchorSelect=".myLogo" place="bottom" variant="light" clickable>
+          <Link href={link.url} target="_blank" passHref={true}>
+            <span className="">{link.title}</span>
+          </Link>
+        </Tooltip>
       </div>
     </Section>
   );
