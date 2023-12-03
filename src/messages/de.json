@@ -21,10 +21,23 @@
     }
   },
     "about":{
-      "summary":"Zusammenfassung",
-      "education":"Bildung && Interessen",
-      "skills":"Weiche && harte Fähigkeiten",
-      "experience":"Berufserfahrung"
+      "summary":{
+        "title":"Zusammenfassung",
+        "question":      "Also, wer bin ich?",
+        "opener":      "Ich bin ein Front-End-Entwickler aus Kamerun.",
+        "desc1": "Ich genieße es, komplexen und schönen Web-Designs Leben einzuhauchen. Ich liebe auch die Logik und Struktur der Programmierung und bin immer bestrebt, eleganten und effizienten Code zu schreiben, unabhängig von der Programmiersprache.",
+        "desc2": " Vom Schreiben meines ersten C-Codes im Jahr 2018 bis hin zu meinem neuesten Github-Commit wächst die Begeisterung für das Lösen von Problemen durch Programmierung exponentiell. Der Abschnitt  <important>Projekte</important> zeigt meine neuesten Projekte.",
+        "contact": "Kontakt aufnehmen"
+      },
+      "education":{
+      "title":"Bildung && Interessen"
+      },
+      "skills":{
+      "title":"Weiche && harte Fähigkeiten"
+      },
+      "experience":{
+        "title":"Berufserfahrung"
+      }
   },
     "home":{
     

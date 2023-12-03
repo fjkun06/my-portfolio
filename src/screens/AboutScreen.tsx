@@ -12,10 +12,15 @@ import "swiper/scss/pagination";
 import { SideNavigation } from "@/components";
 // import useMediaQuery from "@/utils/useMediaQuery";
 
-import SummaryScreen from "./SummaryScreen";
+import SummaryScreen, { ISummary } from "./SummaryScreen";
 
-// import required modules
-const AboutScreen = ({ routes }: { routes: string[] }) => {
+interface IAboutScreen {
+  data: {
+    routes: string[];
+    summary: ISummary["summary"];
+  };
+}
+const AboutScreen: React.FC<IAboutScreen> = ({ data: { routes, summary } }) => {
   //sythax for calling using the Swiper instance in React TypScript
   const [swiper, setSwiper] = React.useState<Swiper>();
 
@@ -63,7 +68,9 @@ const AboutScreen = ({ routes }: { routes: string[] }) => {
           onRealIndexChange={({ activeIndex }) => setActiveIndex(activeIndex)}
         >
           {arr.map((el) => (
-            <SwiperSlide key={el}>{({ isActive }) => <SummaryScreen />}</SwiperSlide>
+            <SwiperSlide key={el}>
+              {({ isActive }) => <SummaryScreen summary={summary} />}
+            </SwiperSlide>
           ))}
         </Swiper>
       </section>

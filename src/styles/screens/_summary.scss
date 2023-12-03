@@ -49,7 +49,7 @@
           }
 
           button {
-            background-color: red;
+            border-bottom: 1px solid darken(vars.$orange,10%);
           }
         }
       }

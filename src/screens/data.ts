@@ -132,3 +132,6 @@ export const logoData = [
     title: "Redux"
   }
 ];
+
+//desc1 twice to avoid errors in translation...but it is replaced immediately
+export const summaryKeys = ["question", "opener", "desc1", "desc1", "contact"];
