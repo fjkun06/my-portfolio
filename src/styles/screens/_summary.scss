@@ -26,6 +26,7 @@
 
       &:first-child {
         @include utils.formatText(450, 1.6rem);
+        @include utils.formatText(450, 1.4rem);
         align-items: flex-start;
         justify-content: center;
         gap: 2rem;
@@ -50,8 +51,27 @@
 
           button {
             border-bottom: 1px solid darken(vars.$orange, 10%);
+            position: relative;
             &:first-child {
               cursor: default;
+            }
+            &:last-child {
+              &::after {
+                transition: opacity 0.25s ease-in-out;
+                opacity: 0;
+                display: block;
+                position: absolute;
+                top: 115%;
+                left: 0;
+                content: "";
+                @include utils.size(100%, 0.1rem);
+                background-color: darken(vars.$orange, 10%);
+              }
+              &:hover {
+                &::after {
+                  opacity: 1;
+                }
+              }
             }
           }
         }
@@ -68,7 +88,7 @@
     @include utils.size(100%, max-content);
     background: transparent;
     overflow: hidden;
-    padding-block: 3rem;
+    padding-block: 4rem;
     white-space: nowrap;
     position: relative;
     display: block !important;

@@ -8,10 +8,10 @@ const HomeScreen = () => {
   const t = useTranslations("home");
 
   return (
-    <main className="portfolio-home">
+    <div className="portfolio-home">
       <UserInfo role={t("role")} greeting={t("greeting")} />
       <CodeReel />
-    </main>
+    </div>
   );
 };
 
