@@ -12,7 +12,7 @@ const About = () => {
   const summaryData = summaryKeys.map((text) => t(`summary.${text}`));
 
   summaryData[3] = t.markup("summary.desc2", {
-    important: (chunks) => `<button>${chunks}</button>`
+    important: (chunks) => `<button class="summary-btn">${chunks}</button>`
   });
 
   // console.log(test);

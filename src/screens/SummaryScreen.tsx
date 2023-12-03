@@ -6,13 +6,14 @@ import Link from "next/link";
 import { Tooltip } from "react-tooltip";
 
 import { Section } from "@/components";
+import { useRouter } from "@/components/Link";
 
 import { logoData } from "./data";
 export interface ISummary {
   summary: string[];
 }
 const SummaryScreen = ({ summary }: ISummary) => {
-  const arr = Array(17).fill(17);
+  const router = useRouter();
   const [link, setCurrentLink] = React.useState({
     url: "https://github.com/fjkun06",
     title: "Github"
@@ -23,6 +24,7 @@ const SummaryScreen = ({ summary }: ISummary) => {
       <header className="">
         <div className="header-left">
           <h2>{summary[0]}</h2>
+
           <p className="">
             {summary.slice(1, 3).map((t, i) => (
               <span key={i} className="">
@@ -32,7 +34,13 @@ const SummaryScreen = ({ summary }: ISummary) => {
             <br />
             <span dangerouslySetInnerHTML={{ __html: summary[3] }} />
             <br />
-            <button className="contact-me">{summary[4]}</button>
+            <button
+              type="button"
+              onClick={() => router.push("/contact")}
+              className="contact-me"
+            >
+              {summary[4]}
+            </button>
           </p>
         </div>
         <div className="header-right" />
