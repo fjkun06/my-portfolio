@@ -1,5 +1,7 @@
 import React from "react";
 
+import Image from "next/image";
+
 import { Section } from "@/components";
 
 const SummaryScreen = () => {
@@ -28,7 +30,15 @@ const SummaryScreen = () => {
             <button className="contact-me">Contact me</button>
           </p>
         </div>
-        <div className="header-right">Header Right</div>
+        <div className="header-right">
+          <Image
+            src="/images/franko.png"
+            alt="a picture of Frank Jordan"
+            width={460}
+            height={460}
+            priority
+          />
+        </div>
       </header>
       <div className="summary-carousel">Carousel Section</div>
     </Section>
