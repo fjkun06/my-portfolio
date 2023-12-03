@@ -2,6 +2,14 @@
 @use "../utils/mixins" as utils;
 @use "../utils/variables" as vars;
 
+@keyframes slide {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-100%);
+  }
+}
 .about-summary {
   // background-color: black;
   header {
@@ -52,7 +60,9 @@
         // background-color: rgb(226, 195, 43);
         background: vars.$blueDark;
         background: transparent;
-        background: url("/images/franko.png") no-repeat center, transparent;
+        background:
+          url("/assets/images/franko.png") no-repeat center,
+          transparent;
         background-size: contain;
         // background: url("/images/frank.png") no-repeat center, #f30;
         // background: url("/images/frank.png") no-repeat center, transparent;
@@ -70,6 +80,60 @@
   }
   .summary-carousel {
     @include utils.size(100%, 40%);
+    @include utils.size(100%, max-content);
     background-color: rgb(26, 91, 26);
+    background: transparent;
   }
+}
+
+.logos {
+  overflow: hidden;
+  padding: 60px 0;
+  // background-color: #f2f2f2 !important;
+  white-space: nowrap;
+  position: relative;
+  display: block !important;
+
+  /* display: inline-block; */
+}
+
+.logos::before {
+  position: absolute;
+  content: "";
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 250px;
+  background: linear-gradient(to left, rgba(255, 255, 255, 0), vars.$blueHover);
+  z-index: 2;
+}
+
+.logos::after {
+  position: absolute;
+  content: "";
+  top: 0;
+  right: 0;
+  height: 100%;
+  width: 250px;
+  background: linear-gradient(to right, rgba(255, 255, 255, 0), vars.$blueHover);
+  z-index: 2;
+}
+
+.logos:hover .logos-slide {
+  animation-play-state: paused;
+}
+
+.logos-slide img {
+  height: 10rem;
+  margin: 0 4rem;
+}
+
+.logos-slide {
+  display: inline-block;
+  display: inline-flex !important;
+  flex-direction: row !important;
+  width: max-content;
+  /* overflow: hidden; */
+  animation: 35s slide infinite linear;
+  // @include utils.blurbackdrop;
 }

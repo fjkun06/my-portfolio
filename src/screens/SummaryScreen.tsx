@@ -5,6 +5,9 @@ import Image from "next/image";
 import { Section } from "@/components";
 
 const SummaryScreen = () => {
+  const arr = Array(17).fill(17);
+  console.log(arr);
+
   return (
     <Section className="about-summary">
       <header className="">
@@ -30,17 +33,23 @@ const SummaryScreen = () => {
             <button className="contact-me">Contact me</button>
           </p>
         </div>
-        <div className="header-right">
-          <Image
-            src="/images/franko.png"
-            alt="a picture of Frank Jordan"
-            width={460}
-            height={460}
-            priority
-          />
-        </div>
+        <div className="header-right" />
       </header>
-      <div className="summary-carousel">Carousel Section</div>
+      <div className="summary-carousel logos">
+        {[0, 1].map((x) => (
+          <div key={x} className="logos-slide">
+            {arr.map((el, i) => (
+              <Image
+                key={i}
+                src={`/assets/icons/icon${i + 1}.svg`}
+                alt="logo"
+                height={100}
+                width={100}
+              />
+            ))}
+          </div>
+        ))}
+      </div>
     </Section>
   );
 };
