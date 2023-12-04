@@ -12,7 +12,6 @@ interface ISideNavigation {
 }
 const SideNavigation: React.FC<ISideNavigation> = ({ routes, ...props }) => {
   const [state, setState] = React.useState(false);
-  const [strings, setStrings] = React.useState(routes);
 
   return (
     <aside>
@@ -31,6 +30,7 @@ const SideNavigation: React.FC<ISideNavigation> = ({ routes, ...props }) => {
             text={routes[i]}
             index={i + 1}
             key={i}
+            callback={() => setState(false)}
           />
         ))}
       </div>

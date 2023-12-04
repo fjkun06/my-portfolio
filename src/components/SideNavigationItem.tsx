@@ -6,6 +6,7 @@ interface ISideNavigationItem extends React.HTMLAttributes<HTMLSpanElement> {
   icon: React.JSX.Element;
   swiperFunction: any;
   currentIndex: number;
+  callback: () => void;
 }
 const SideNavigationItem: React.FC<ISideNavigationItem> = ({
   text,
@@ -13,6 +14,7 @@ const SideNavigationItem: React.FC<ISideNavigationItem> = ({
   icon,
   swiperFunction,
   currentIndex,
+  callback,
   ...rest
 }) => {
   //function to determine if the current slide is ctive
@@ -22,7 +24,10 @@ const SideNavigationItem: React.FC<ISideNavigationItem> = ({
     <span
       {...rest}
       className={isActive(index) ? "active" : ""}
-      onClick={() => swiperFunction.slideTo(index - 1, 1500)}
+      onClick={() => {
+        swiperFunction.slideTo(index - 1, 1500);
+        callback();
+      }}
     >
       {icon}
       {text}
