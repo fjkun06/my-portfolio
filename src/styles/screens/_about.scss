@@ -28,6 +28,7 @@
       @include utils.positioning(3rem, 20%, right);
       z-index: 999;
       cursor: pointer;
+
       svg {
         @include utils.size(inherit);
         transition: fill 0.25s ease-in-out;
