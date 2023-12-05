@@ -131,7 +131,6 @@
   }
   .swipper-wrapper {
     @include utils.flex;
-
     overflow: hidden;
   }
 
@@ -146,7 +145,20 @@
     @include utils.flex(column);
     position: relative;
 
-    /************************************************STYLING SCROLLBAR************************************************/
+    /************************************************STYLING SCROLLBAR AND GENERAL SECTIONS************************************************/
+    section {
+      overflow-x: hidden;
+      overflow-y: scroll;
+      @include utils.size(100%);
+      @include utils.flex(column);
+      justify-content: flex-start;
+      padding-top: 5vh;
+      gap: 5vh;
+      @media only screen and (width < 1300px) {
+        height: calc(100% - 4.4rem);
+      }
+    }
+
     div,
     section {
       //scrollbar

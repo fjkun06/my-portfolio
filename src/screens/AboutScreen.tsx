@@ -11,15 +11,20 @@ import "swiper/scss/pagination";
 import { SideNavigation } from "@/components";
 import { SummaryScreen, EducationScreen } from "@/screens";
 
+import { IEducation } from "./EducationScreen";
 import { ISummary } from "./SummaryScreen";
 
+//interface containing translated text for all sections
 interface IAboutScreen {
   data: {
     routes: string[];
     summary: ISummary["summary"];
+    education: IEducation;
   };
 }
-const AboutScreen: React.FC<IAboutScreen> = ({ data: { routes, summary } }) => {
+const AboutScreen: React.FC<IAboutScreen> = ({
+  data: { routes, summary, education }
+}) => {
   //sythax for calling using the Swiper instance in React TypScript
   const [swiper, setSwiper] = React.useState<Swiper>();
 
@@ -46,12 +51,11 @@ const AboutScreen: React.FC<IAboutScreen> = ({ data: { routes, summary } }) => {
   const [max1024, setAMouseWheel] = React.useState(isLongEnough || isLargeEnough);
   function handleMediaQueryChange(matches: boolean) {
     setAMouseWheel(matches);
-    console.log(matches);
   }
 
   const arr = [
     <SummaryScreen summary={summary} key={1} />,
-    <EducationScreen summary={summary} key={2} />
+    <EducationScreen interests={education.interests} school={education.school} key={2} />
   ];
   return (
     <div className="portfolio-about">

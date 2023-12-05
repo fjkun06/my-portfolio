@@ -11,17 +11,9 @@
   }
 }
 .about-summary {
-  @include utils.size(100%);
-  @include utils.flex(column);
-  justify-content: flex-start;
-  overflow-x: hidden;
-  overflow-y: scroll;
-  padding-top: 5vh;
-  gap: 5vh;
 
-  @media only screen and (width < 1300px) {
-    height: calc(100% - 4.4rem);
-  }
+
+ 
 
   /************************************************HEADER SECTION************************************************/
 

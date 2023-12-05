@@ -3,17 +3,7 @@
 @use "../utils/variables" as vars;
 
 .about-education {
-  @include utils.size(100%);
-  justify-content: center;
-  gap: 4rem;
-  @media only screen and (width < 1300px) {
-    height: calc(100% - 4.4rem);
-  }
-  @media only screen and (width < 1300px) {
-    justify-content: flex-start !important;
-    padding-block: 2rem;
-  }
-  // background-color: rgb(12, 14, 85);
+  padding-top: 2rem !important;
   /************************************************EDUCATION SECTION************************************************/
   h2 {
     @include utils.formatText(450, 4rem);
@@ -91,6 +81,10 @@
   &--interests {
     @include utils.size(100%, max-content);
     gap: 2rem;
+    @media only screen and (width < 480px) {
+     padding-bottom: 2rem;
+    }
+
     ul {
       @include utils.flex(column);
       @include utils.flex;

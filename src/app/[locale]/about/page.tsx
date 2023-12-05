@@ -5,22 +5,43 @@ import { useTranslations } from "next-intl";
 import { sideNavigationDate } from "@/components/data";
 import { AboutScreen } from "@/screens";
 import { summaryKeys } from "@/screens/data";
+import { IEducation } from "@/screens/EducationScreen";
 
 const About = () => {
   const t = useTranslations("about");
   const sideNavigationRoutes = sideNavigationDate.map(({ text }) => t(`${text}.title`));
-  const summaryData = summaryKeys.map((text) => t(`summary.${text}`));
 
+  // Summary screen data
+  const summaryData = summaryKeys.map((text) => t(`summary.${text}`));
   summaryData[3] = t.markup("summary.desc2", {
     important: (chunks) => `<button class="summary-btn">${chunks}</button>`
   });
 
-  // console.log(test);
+  // Education screen data
+  const interests = ["one", "two", "three", "four", "five", "six", "seven", "eight"];
+  const educationData: IEducation = {
+    school: {
+      title: t("education.schools.title"),
+      data: ["ub", "ude"].map((text) => {
+        return {
+          name: t(`education.schools.${text}.name`),
+          endDate: t(`education.schools.${text}.endDate`),
+          grade: t(`education.schools.${text}.grade`),
+          field: t(`education.schools.${text}.field`)
+        };
+      })
+    },
+    interests: {
+      title: t("education.interests.title"),
+      data: interests.map((el) => t(`education.interests.list.${el}`))
+    }
+  };
 
   //translation data for summary section of about page
   const translationData = {
     routes: sideNavigationRoutes,
-    summary: summaryData
+    summary: summaryData,
+    education: educationData
   };
 
   return <AboutScreen data={translationData} />;
