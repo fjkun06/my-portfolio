@@ -12,12 +12,14 @@
 }
 .about-summary {
   @include utils.size(100%);
-  justify-content: space-evenly !important;
+  // justify-content: space-evenly !important;
+  @include utils.flex(column);
+
   @media only screen and (width < 1300px) {
     height: calc(100% - 4.4rem);
   }
   @media only screen and (width < 1300px) {
-    justify-content: space-evenly !important;
+    // justify-content: space-evenly !important;
   }
 
   /************************************************HEADER SECTION************************************************/

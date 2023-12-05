@@ -124,7 +124,7 @@
     }
   }
   section {
-    @include utils.flex;
+    // @include utils.flex;
   }
 
   //swiper
@@ -151,7 +151,7 @@
 
     div,
     section {
-      @include utils.flex(column);
+      // @include utils.flex(column);
     }
   }
 
