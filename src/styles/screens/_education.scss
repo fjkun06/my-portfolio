@@ -4,6 +4,7 @@
 
 .about-education {
   padding-top: 2rem !important;
+ 
   /************************************************EDUCATION SECTION************************************************/
   h2 {
     @include utils.formatText(450, 4rem);
@@ -82,7 +83,7 @@
     @include utils.size(100%, max-content);
     gap: 2rem;
     @media only screen and (width < 480px) {
-     padding-bottom: 2rem;
+      padding-bottom: 2rem;
     }
 
     ul {

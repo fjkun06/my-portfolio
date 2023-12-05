@@ -157,6 +157,12 @@
       @media only screen and (width < 1300px) {
         height: calc(100% - 4.4rem);
       }
+
+      //centering content for very long and large screens
+      @media only screen and (width > 1300px) and (height >= 922px), screen and (height > 1080px) {
+        justify-content: center !important;
+        padding-top: 0 !important;
+      }
     }
 
     div,
