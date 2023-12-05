@@ -1,6 +1,8 @@
 "use client";
 import React from "react";
 
+import { useInView, motion } from "framer-motion";
+
 import SchoolCard, { ISchoolCard } from "@/components/SchoolCard";
 export interface IEducation {
   school: {
@@ -13,24 +15,31 @@ export interface IEducation {
   };
 }
 const EducationScreen = ({ school, interests }: IEducation) => {
-  console.log(interests);
-
+  const ref = React.useRef(null);
+  const isInView = useInView(ref, { amount: 0.5 });
   return (
-    <section className="about-education">
-      <div className="about-education--school">
+    <section ref={ref} className="about-education">
+      <motion.div
+        className="about-education--school"
+        animate={{ y: isInView ? [50, -50, 0] : 0, opacity: isInView ? [0, 1] : 0 }}
+      >
         <h2>{school.title}</h2>
         {school.data.map((data) => (
           <SchoolCard {...data} key={data.name} />
         ))}
-      </div>
-      <div className="about-education--interests">
+      </motion.div>
+      <motion.div
+        className="about-education--interests"
+        animate={{ y: isInView ? [50, -50, 0] : 0, opacity: isInView ? [0, 1] : 0 }}
+        transition={{ delay: 0.25, type: "spring" }}
+      >
         <h2>{interests.title}</h2>
         <ul>
           {interests.data.map((interest) => (
             <li key={interest}>{interest}</li>
           ))}
         </ul>
-      </div>
+      </motion.div>
     </section>
   );
 };

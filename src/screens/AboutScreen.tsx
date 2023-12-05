@@ -9,7 +9,7 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/scss";
 import "swiper/scss/pagination";
 import { SideNavigation } from "@/components";
-import { SummaryScreen, EducationScreen } from "@/screens";
+import { SummaryScreen, EducationScreen, SkillsScreen } from "@/screens";
 
 import { IEducation } from "./EducationScreen";
 import { ISummary } from "./SummaryScreen";
@@ -55,7 +55,8 @@ const AboutScreen: React.FC<IAboutScreen> = ({
 
   const arr = [
     <SummaryScreen summary={summary} key={1} />,
-    <EducationScreen interests={education.interests} school={education.school} key={2} />
+    <EducationScreen interests={education.interests} school={education.school} key={2} />,
+    <SkillsScreen key={3} />
   ];
   return (
     <div className="portfolio-about">
