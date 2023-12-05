@@ -28,14 +28,22 @@ const AboutScreen: React.FC<IAboutScreen> = ({ data: { routes, summary } }) => {
   const [activeIndex, setActiveIndex] = React.useState(0);
 
   //enabling or disabling mouselwheel scrolling
-  const isDesktopOrLaptop = useMediaQuery(
+  const isLongEnough = useMediaQuery(
     {
+      minHeight: 1080
+    },
+    undefined,
+    handleMediaQueryChange
+  );
+  const isLargeEnough = useMediaQuery(
+    {
+      minHeight: 922,
       minWidth: 1300
     },
     undefined,
     handleMediaQueryChange
   );
-  const [max1024, setAMouseWheel] = React.useState(isDesktopOrLaptop);
+  const [max1024, setAMouseWheel] = React.useState(isLongEnough || isLargeEnough);
   function handleMediaQueryChange(matches: boolean) {
     setAMouseWheel(matches);
     console.log(matches);
@@ -60,10 +68,10 @@ const AboutScreen: React.FC<IAboutScreen> = ({ data: { routes, summary } }) => {
           slidesPerView={1}
           spaceBetween={0}
           simulateTouch={false}
-          mousewheel={false}
+          mousewheel={max1024}
           // mousewheel={max1024}
           navigation={true}
-          allowTouchMove={false}
+          allowTouchMove={isLongEnough}
           pagination={{
             clickable: true
           }}

@@ -16,7 +16,7 @@
   justify-content: flex-start;
   overflow-x: hidden;
   overflow-y: scroll;
-  padding-block: 5vh;
+  padding-top: 5vh;
   gap: 5vh;
 
   @media only screen and (width < 1300px) {
@@ -41,9 +41,6 @@
       row-gap: 2rem;
     }
 
-    @media only screen and (width < 480px) {
-      padding-block: 0;
-    }
     @media only screen and (width < 400px) {
       justify-content: flex-end;
       gap: 5rem;
@@ -52,7 +49,7 @@
 
     /************************************************ABOUT ME TEXT SECTION************************************************/
     div {
-      height: 100%;
+      height: max-content;
       @include utils.flex(column);
 
       &:first-child {
@@ -62,10 +59,7 @@
         gap: 2rem;
         width: 60%;
         @media only screen and (width < 1200px) {
-          @include utils.size(94%, 60%);
-        }
-        @media only screen and (width < 980px) {
-          height: 70%;
+          width: 94%;
         }
 
         h2 {
