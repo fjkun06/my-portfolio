@@ -25,8 +25,6 @@
 .portfolio-home {
   @include utils.size(100%);
   @include utils.flex;
-  // padding-inline: 31.1rem;
-  // padding-inline: 15.1vw;
   gap: 8rem;
 
   @media only screen and (width < 1900px) {
@@ -48,6 +46,8 @@
   }
 
   //name section of home page
+  /************************************************User Text SECTION************************************************/
+
   &--left {
     // background: red;
     row-gap: 7.1rem;
@@ -64,6 +64,8 @@
     }
 
     //stzyling main text and name
+
+    /************************************************User MAIN Text SECTION************************************************/
     div:first-of-type {
       justify-content: flex-end;
       span,
@@ -99,9 +101,20 @@
           font-size: 1.8rem;
         }
       }
+      /************************************************CALL TO ACTION SECTION************************************************/
+      .cta {
+        @include utils.flex;
+        justify-content: flex-start;
+        gap: 4rem;
+        margin-top: 4rem;
+        font-size: 2rem;
+        button {
+          text-transform: capitalize;
+        }
+      }
     }
 
-    //styling lines of code
+    /************************************************CODE SNIPPET SECTION************************************************/
     div:last-of-type {
       pre {
         overflow: hidden !important;
@@ -124,6 +137,8 @@
   }
 
   //right section : code reel
+  /************************************************ANIMATED CODE REEL SECTION************************************************/
+
   &--right {
     padding-inline: 1rem;
     height: 100%;

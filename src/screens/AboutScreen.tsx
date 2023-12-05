@@ -10,6 +10,7 @@ import "swiper/scss";
 import "swiper/scss/pagination";
 import { SideNavigation } from "@/components";
 
+import EducationScreen from "./EducationSection";
 import SummaryScreen, { ISummary } from "./SummaryScreen";
 
 interface IAboutScreen {
@@ -68,7 +69,7 @@ const AboutScreen: React.FC<IAboutScreen> = ({ data: { routes, summary } }) => {
         >
           {arr.map((el) => (
             <SwiperSlide key={el}>
-              <SummaryScreen summary={summary} />
+              <EducationScreen summary={summary} />
             </SwiperSlide>
           ))}
         </Swiper>

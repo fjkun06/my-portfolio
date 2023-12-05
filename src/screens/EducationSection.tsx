@@ -13,7 +13,7 @@ import { logoData } from "./data";
 export interface ISummary {
   summary: string[];
 }
-const SummaryScreen = ({ summary }: ISummary) => {
+const EducationScreen = ({ summary }: ISummary) => {
   const router = useRouter();
   const [link, setCurrentLink] = React.useState({
     url: "https://github.com/fjkun06",
@@ -22,36 +22,6 @@ const SummaryScreen = ({ summary }: ISummary) => {
 
   return (
     <Section className="about-summary">
-      <header>
-        <div className="header-left">
-          <motion.h2 animate={{ y: [50, -50, 0], opacity: [0, 1] }}>
-            {summary[0]}
-          </motion.h2>
-
-          <motion.p
-            animate={{ y: [50, -50, 0], opacity: [0, 1] }}
-            transition={{ delay: 0.25, type: "spring" }}
-          >
-            {summary.slice(1, 3).map((t, i) => (
-              <span key={i} className="">
-                {t}
-              </span>
-            ))}
-            <br />
-            <span dangerouslySetInnerHTML={{ __html: summary[3] }} />
-            <br />
-            <button
-              type="button"
-              onClick={() => router.push("/contact")}
-              className="contact-me"
-            >
-              {summary[4]}
-            </button>
-            <Button text={summary[4]} route="/contact" />
-          </motion.p>
-        </div>
-        <div className="header-right" />
-      </header>
       <div className="summary-carousel logos">
         {[0, 1].map((x) => (
           <div key={x} className="logos-slide">
@@ -74,8 +44,31 @@ const SummaryScreen = ({ summary }: ISummary) => {
           </Link>
         </Tooltip>
       </div>
+      <header>
+        <div className="header-left">
+          <motion.h2 animate={{ y: [50, -50, 0], opacity: [0, 1] }}>
+            {summary[0]}
+          </motion.h2>
+
+          <motion.p
+            animate={{ y: [50, -50, 0], opacity: [0, 1] }}
+            transition={{ delay: 0.25, type: "spring" }}
+          >
+            {summary.slice(1, 3).map((t, i) => (
+              <span key={i} className="">
+                {t}
+              </span>
+            ))}
+            <br />
+            <span dangerouslySetInnerHTML={{ __html: summary[3] }} />
+            <br />
+            <Button text={summary[4]} route="/contact" />
+          </motion.p>
+        </div>
+        <div className="header-right" />
+      </header>
     </Section>
   );
 };
 
-export default SummaryScreen;
+export default EducationScreen;

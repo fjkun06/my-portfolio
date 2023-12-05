@@ -102,27 +102,8 @@
           }
 
           button {
-            border-bottom: 1px solid darken(vars.$orange, 10%);
-            position: relative;
             &:first-child {
               cursor: default;
-            }
-            &:last-child {
-              &::after {
-                transition: opacity 0.25s ease-in-out;
-                opacity: 0;
-                display: block;
-                position: absolute;
-                @include utils.positioning(0, 115%);
-                content: "";
-                @include utils.size(100%, 0.1rem);
-                background-color: darken(vars.$orange, 10%);
-              }
-              &:hover {
-                &::after {
-                  opacity: 1;
-                }
-              }
             }
           }
         }
