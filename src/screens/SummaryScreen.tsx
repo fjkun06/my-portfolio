@@ -1,6 +1,7 @@
 "use client";
 import React from "react";
 
+import { motion } from "framer-motion";
 import Image from "next/image";
 import Link from "next/link";
 import { Tooltip } from "react-tooltip";
@@ -23,9 +24,14 @@ const SummaryScreen = ({ summary }: ISummary) => {
     <Section className="about-summary">
       <header>
         <div className="header-left">
-          <h2>{summary[0]}</h2>
+          <motion.h2 animate={{ y: [50, -50, 0], opacity: [0, 1] }}>
+            {summary[0]}
+          </motion.h2>
 
-          <p>
+          <motion.p
+            animate={{ y: [50, -50, 0], opacity: [0, 1] }}
+            transition={{ delay: 0.25, type: "spring" }}
+          >
             {summary.slice(1, 3).map((t, i) => (
               <span key={i} className="">
                 {t}
@@ -41,7 +47,7 @@ const SummaryScreen = ({ summary }: ISummary) => {
             >
               {summary[4]}
             </button>
-          </p>
+          </motion.p>
         </div>
         <div className="header-right" />
       </header>

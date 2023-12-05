@@ -1,4 +1,3 @@
-/* eslint-disable max-len */
 "use client";
 import React from "react";
 
@@ -23,7 +22,8 @@ const AboutScreen: React.FC<IAboutScreen> = ({ data: { routes, summary } }) => {
   //sythax for calling using the Swiper instance in React TypScript
   const [swiper, setSwiper] = React.useState<Swiper>();
 
-  // state that has the current active index, which can be used to force re-rende other components
+  // state that has the current active index,
+  //which can be used to force re - rende other components
   const [activeIndex, setActiveIndex] = React.useState(0);
 
   //enabling or disabling mouselwheel scrolling
