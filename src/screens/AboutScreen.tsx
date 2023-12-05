@@ -9,9 +9,9 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/scss";
 import "swiper/scss/pagination";
 import { SideNavigation } from "@/components";
+import { SummaryScreen, EducationScreen } from "@/screens";
 
-import EducationScreen from "./EducationSection";
-import SummaryScreen, { ISummary } from "./SummaryScreen";
+import { ISummary } from "./SummaryScreen";
 
 interface IAboutScreen {
   data: {
@@ -41,7 +41,10 @@ const AboutScreen: React.FC<IAboutScreen> = ({ data: { routes, summary } }) => {
     console.log(matches);
   }
 
-  const arr = [0, 1, 2, 3];
+  const arr = [
+    <SummaryScreen summary={summary} key={1} />,
+    <EducationScreen summary={summary} key={2} />
+  ];
   return (
     <div className="portfolio-about">
       <SideNavigation
@@ -67,10 +70,8 @@ const AboutScreen: React.FC<IAboutScreen> = ({ data: { routes, summary } }) => {
           onSwiper={(swiper) => setSwiper(swiper)}
           onRealIndexChange={({ activeIndex }) => setActiveIndex(activeIndex)}
         >
-          {arr.map((el) => (
-            <SwiperSlide key={el}>
-              <EducationScreen summary={summary} />
-            </SwiperSlide>
+          {arr.map((el, i) => (
+            <SwiperSlide key={i}>{el}</SwiperSlide>
           ))}
         </Swiper>
       </section>

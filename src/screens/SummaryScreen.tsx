@@ -1,35 +1,39 @@
 "use client";
 import React from "react";
 
-import { motion } from "framer-motion";
+import { useInView, motion } from "framer-motion";
 import Image from "next/image";
 import Link from "next/link";
 import { Tooltip } from "react-tooltip";
 
-import { Button, Section } from "@/components";
-import { useRouter } from "@/components/Link";
+import { Button } from "@/components";
 
 import { logoData } from "./data";
 export interface ISummary {
   summary: string[];
 }
 const SummaryScreen = ({ summary }: ISummary) => {
-  const router = useRouter();
   const [link, setCurrentLink] = React.useState({
     url: "https://github.com/fjkun06",
     title: "Github"
   });
 
+  const ref = React.useRef(null);
+  const isInView = useInView(ref, { amount: 0.5 });
+  console.log(isInView);
+
   return (
-    <Section className="about-summary">
+    <section ref={ref} className="about-summary">
       <header>
         <div className="header-left">
-          <motion.h2 animate={{ y: [50, -50, 0], opacity: [0, 1] }}>
+          <motion.h2
+            animate={{ y: isInView ? [50, -50, 0] : 0, opacity: isInView ? [0, 1] : 0 }}
+          >
             {summary[0]}
           </motion.h2>
 
           <motion.p
-            animate={{ y: [50, -50, 0], opacity: [0, 1] }}
+            animate={{ y: isInView ? [50, -50, 0] : 0, opacity: isInView ? [0, 1] : 0 }}
             transition={{ delay: 0.25, type: "spring" }}
           >
             {summary.slice(1, 3).map((t, i) => (
@@ -40,13 +44,6 @@ const SummaryScreen = ({ summary }: ISummary) => {
             <br />
             <span dangerouslySetInnerHTML={{ __html: summary[3] }} />
             <br />
-            <button
-              type="button"
-              onClick={() => router.push("/contact")}
-              className="contact-me"
-            >
-              {summary[4]}
-            </button>
             <Button text={summary[4]} route="/contact" />
           </motion.p>
         </div>
@@ -74,7 +71,7 @@ const SummaryScreen = ({ summary }: ISummary) => {
           </Link>
         </Tooltip>
       </div>
-    </Section>
+    </section>
   );
 };
 

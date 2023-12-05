@@ -1,7 +1,7 @@
 "use client";
 import React from "react";
 
-// import { useInView, motion } from "framer-motion";
+import { useInView, motion } from "framer-motion";
 
 const Section = ({
   children,
@@ -11,7 +11,7 @@ const Section = ({
   className?: string;
 }) => {
   const ref = React.useRef(null);
-  // const isInView = useInView(ref, { amount: 0.5 });
+  const isInView = useInView(ref, { amount: 0.5 });
 
   return (
     <section ref={ref} className={className}>
