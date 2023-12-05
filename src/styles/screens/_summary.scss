@@ -58,17 +58,11 @@
         justify-content: center;
         gap: 2rem;
         width: 60%;
-        @media only screen and (width < 1700px) {
-          width: 60%;
-        }
         @media only screen and (width < 1200px) {
           @include utils.size(94%, 60%);
         }
         @media only screen and (width < 980px) {
-          @include utils.size(94%, 70%);
-        }
-        @media only screen and (width < 768px) {
-          @include utils.size(94%, 70%);
+          height: 70%;
         }
 
         h2 {
@@ -119,8 +113,7 @@
                 opacity: 0;
                 display: block;
                 position: absolute;
-                top: 115%;
-                left: 0;
+                @include utils.positioning(0, 115%);
                 content: "";
                 @include utils.size(100%, 0.1rem);
                 background-color: darken(vars.$orange, 10%);

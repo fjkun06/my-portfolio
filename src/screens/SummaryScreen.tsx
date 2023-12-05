@@ -21,11 +21,11 @@ const SummaryScreen = ({ summary }: ISummary) => {
 
   return (
     <Section className="about-summary">
-      <header className="">
+      <header>
         <div className="header-left">
           <h2>{summary[0]}</h2>
 
-          <p className="">
+          <p>
             {summary.slice(1, 3).map((t, i) => (
               <span key={i} className="">
                 {t}
@@ -63,7 +63,7 @@ const SummaryScreen = ({ summary }: ISummary) => {
         ))}
         <Tooltip anchorSelect=".myLogo" place="bottom" variant="light" clickable>
           <Link href={link.url} target="_blank" passHref={true}>
-            <span className="">{link.title}</span>
+            <span>{link.title}</span>
           </Link>
         </Tooltip>
       </div>

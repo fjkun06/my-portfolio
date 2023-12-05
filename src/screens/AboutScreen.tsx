@@ -10,7 +10,6 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/scss";
 import "swiper/scss/pagination";
 import { SideNavigation } from "@/components";
-// import useMediaQuery from "@/utils/useMediaQuery";
 
 import SummaryScreen, { ISummary } from "./SummaryScreen";
 
@@ -69,7 +68,7 @@ const AboutScreen: React.FC<IAboutScreen> = ({ data: { routes, summary } }) => {
         >
           {arr.map((el) => (
             <SwiperSlide key={el}>
-              {({ isActive }) => <SummaryScreen summary={summary} />}
+              <SummaryScreen summary={summary} />
             </SwiperSlide>
           ))}
         </Swiper>
