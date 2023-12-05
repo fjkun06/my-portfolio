@@ -17,7 +17,7 @@
     height: calc(100% - 4.4rem);
   }
   @media only screen and (width < 1300px) {
-    justify-content: flex-start !important;
+    justify-content: space-evenly !important;
   }
 
   /************************************************HEADER SECTION************************************************/
@@ -57,7 +57,10 @@
         align-items: flex-start;
         justify-content: center;
         gap: 2rem;
-        width: 50%;
+        width: 60%;
+        @media only screen and (width < 1700px) {
+          width: 60%;
+        }
         @media only screen and (width < 1200px) {
           @include utils.size(94%, 60%);
         }
@@ -138,6 +141,9 @@
         background-size: contain;
         @include utils.size(40rem);
         border-radius: 50%;
+        @media only screen and (width < 1700px) {
+          @include utils.size(30rem);
+        }
         @media only screen and (width < 1600px) {
           @include utils.size(20rem);
         }
