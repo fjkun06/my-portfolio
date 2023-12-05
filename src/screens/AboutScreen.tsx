@@ -60,8 +60,10 @@ const AboutScreen: React.FC<IAboutScreen> = ({ data: { routes, summary } }) => {
           slidesPerView={1}
           spaceBetween={0}
           simulateTouch={false}
-          mousewheel={max1024}
+          mousewheel={false}
+          // mousewheel={max1024}
           navigation={true}
+          allowTouchMove={false}
           pagination={{
             clickable: true
           }}
