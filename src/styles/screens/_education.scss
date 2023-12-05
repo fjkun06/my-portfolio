@@ -1,0 +1,103 @@
+//loading mixins and variable
+@use "../utils/mixins" as utils;
+@use "../utils/variables" as vars;
+
+.about-education {
+  @include utils.size(100%);
+  justify-content: space-evenly !important;
+  @media only screen and (width < 1300px) {
+    height: calc(100% - 4.4rem);
+  }
+  @media only screen and (width < 1300px) {
+    justify-content: space-evenly !important;
+  }
+  // background-color: rgb(12, 14, 85);
+  /************************************************EDUCATION SECTION************************************************/
+  &--school {
+    @include utils.flex(column);
+    @include utils.size(100%, max-content);
+    // background: rgba(vars.$grey, 0.25);
+    padding-bottom: 2rem;
+    gap: 2rem;
+
+    h2 {
+      @include utils.formatText(450, 4rem);
+    }
+    article {
+      @include utils.flex(column);
+      @include utils.size(60%, max-content);
+      align-items: flex-start;
+      border: 1px solid vars.$orange;
+      padding: 1rem;
+      border-radius: 1rem;
+      gap: 1rem;
+      // background: rgba(vars.$grey, 0.25);
+
+      h3 {
+        @include utils.formatText(450, 2.5rem);
+      }
+
+      p {
+        @include utils.flex(column);
+        align-items: flex-start;
+        gap: 0.5rem;
+
+        span.university {
+          // color: red;
+          @include utils.formatText(450, 2.1rem);
+        }
+        span.year {
+          // color: orangered;
+          color: lighten(vars.$grey, 30%);
+
+          @include utils.formatText(450, 1.7rem);
+        }
+        span.grade {
+          color: vars.$orange;
+          @include utils.formatText(450, 1.5rem);
+        }
+      }
+    }
+  }
+
+  /************************************************INTERESTS SECTION************************************************/
+
+  &--interests {
+    @include utils.flex(column);
+    @include utils.size(100%, max-content);
+    gap: 2rem;
+    h2 {
+      @include utils.formatText(450, 4rem);
+    }
+    ul {
+      @include utils.flex(column);
+      @include utils.flex;
+      list-style: none;
+      padding-left: 0;
+      gap: 1rem;
+      width: 70%;
+      flex-wrap: wrap;
+      margin-left: 10%;
+      // background-color: green;
+
+      li {
+        position: relative;
+        padding-left: 1.5rem;
+        margin-bottom: 0.5rem;
+        @include utils.formatText(450, 1.8rem);
+        width: 40%;
+        text-align: left;
+
+        &::before {
+          content: "";
+          position: absolute;
+          left: -2rem;
+          top: -0.25rem;
+          @include utils.size(3rem);
+          background-repeat: no-repeat;
+          background: url("/assets/icons/arrow-forward.svg");
+        }
+      }
+    }
+  }
+}

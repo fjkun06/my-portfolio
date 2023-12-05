@@ -1,72 +1,53 @@
 "use client";
 import React from "react";
-
-import { motion } from "framer-motion";
-import Image from "next/image";
-import Link from "next/link";
-import { Tooltip } from "react-tooltip";
-
-import { Button } from "@/components";
-import { useRouter } from "@/components/Link";
-
-import { logoData } from "./data";
-export interface ISummary {
-  summary: string[];
-}
-const EducationScreen = ({ summary }: ISummary) => {
-  const router = useRouter();
-  const [link, setCurrentLink] = React.useState({
-    url: "https://github.com/fjkun06",
-    title: "Github"
-  });
-
+export interface IEducation {}
+const EducationScreen = ({}: IEducation) => {
   return (
-    <section className="about-summary">
-      <div className="summary-carousel logos">
-        {[0, 1].map((x) => (
-          <div key={x} className="logos-slide">
-            {logoData.map((logo, i) => (
-              <Image
-                key={i}
-                src={`/assets/icons/icon${i + 1}.svg`}
-                alt="logo"
-                height={100}
-                width={100}
-                className="myLogo"
-                onMouseEnter={() => setCurrentLink(logo)}
-              />
-            ))}
-          </div>
-        ))}
-        <Tooltip anchorSelect=".myLogo" place="bottom" variant="light" clickable>
-          <Link href={link.url} target="_blank" passHref={true}>
-            <span>{link.title}</span>
-          </Link>
-        </Tooltip>
+    <section className="about-education">
+      <div className="about-education--school">
+        {/* <h2>Education</h2> */}
+        <h2>Bildung</h2>
+        <article>
+          {/* <h3>Bachelor of Technology in Computer Engineering</h3> */}
+          <h3>Bachelor of Technology in Technischer Informatik</h3>
+          <p>
+            <span className="university">University of Buea</span>
+            <span className="year">
+              <span>2019</span> - <span>2023</span>
+            </span>
+            <span className="grade">
+              <span>Grade</span>: 3.23
+            </span>
+          </p>
+        </article>
+        <article>
+          {/* <h3>Bachelor of Technology in Computer Engineering</h3> */}
+          <h3>Bachelor of Technology in Technischer Informatik</h3>
+          <p>
+            <span className="university">University of Buea</span>
+            <span className="year">
+              <span>2019</span> - <span>2023</span>
+            </span>
+            <span className="grade">
+              <span>Grade</span>: 3.23
+            </span>
+          </p>
+        </article>
       </div>
-      <header>
-        <div className="header-left">
-          <motion.h2 animate={{ y: [50, -50, 0], opacity: [0, 1] }}>
-            {summary[0]}
-          </motion.h2>
-
-          <motion.p
-            animate={{ y: [50, -50, 0], opacity: [0, 1] }}
-            transition={{ delay: 0.25, type: "spring" }}
-          >
-            {summary.slice(1, 3).map((t, i) => (
-              <span key={i} className="">
-                {t}
-              </span>
-            ))}
-            <br />
-            <span dangerouslySetInnerHTML={{ __html: summary[3] }} />
-            <br />
-            <Button text={summary[4]} route="/contact" />
-          </motion.p>
-        </div>
-        <div className="header-right" />
-      </header>
+      <div className="about-education--interests">
+        {/* <h2>Interests && Hobbies</h2> */}
+        <h2>Interessen && Hobbys</h2>
+        <ul>
+          <li>Technology Trends</li>
+          <li>Reading Books (Psychology)</li>
+          <li>Sports (Football, Basketball)</li>
+          <li>Reasearch and Discovery</li>
+          <li>Artificial Intelligence</li>
+          <li>Doing amazing stuff with Code</li>
+          <li>Japanese Anime</li>
+          <li>Gym workouts</li>
+        </ul>
+      </div>
     </section>
   );
 };
