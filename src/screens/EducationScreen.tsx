@@ -6,7 +6,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { Tooltip } from "react-tooltip";
 
-import { Button, Section } from "@/components";
+import { Button } from "@/components";
 import { useRouter } from "@/components/Link";
 
 import { logoData } from "./data";
@@ -21,7 +21,7 @@ const EducationScreen = ({ summary }: ISummary) => {
   });
 
   return (
-    <Section className="about-summary">
+    <section className="about-summary">
       <div className="summary-carousel logos">
         {[0, 1].map((x) => (
           <div key={x} className="logos-slide">
@@ -67,7 +67,7 @@ const EducationScreen = ({ summary }: ISummary) => {
         </div>
         <div className="header-right" />
       </header>
-    </Section>
+    </section>
   );
 };
 
