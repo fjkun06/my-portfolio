@@ -134,6 +134,18 @@ export const logoData = [
   {
     url: "https://www.framer.com/motion/",
     title: "Framer Motion"
+  },
+  {
+    url: "https://www.postman.com/",
+    title: "Postman"
+  },
+  {
+    url: "https://github.com/",
+    title: "Github"
+  },
+  {
+    url: "https://code.visualstudio.com/",
+    title: "Visual Studio Code"
   }
 ];
 

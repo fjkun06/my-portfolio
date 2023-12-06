@@ -11,6 +11,9 @@
     @media only screen and (width < 768px) {
       font-size: 3rem;
     }
+    @media only screen and (width < 500px) {
+      font-size: 2.4rem;
+    }
   }
   div {
     @include utils.flex(column);
@@ -83,7 +86,7 @@
     @include utils.size(100%, max-content);
     gap: 2rem;
     @media only screen and (width < 480px) {
-      padding-bottom: 2rem;
+      padding-bottom: 0rem;
     }
 
     ul {
@@ -91,6 +94,7 @@
         &::before {
           background: url("/assets/icons/arrow-forward.svg");
         }
+       
       }
     }
   }
