@@ -12,4 +12,21 @@
       font-size: 3rem;
     }
   }
+
+  /************************************************SOFT SKILLS SECTION************************************************/
+  &--soft {
+    @include utils.size(100%, max-content);
+    gap: 2rem;
+    @media only screen and (width < 480px) {
+      padding-bottom: 2rem;
+    }
+
+    ul {
+      li {
+        &::before {
+          background: url("/assets/icons/star.svg");
+        }
+      }
+    }
+  }
 }

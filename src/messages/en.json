@@ -65,14 +65,14 @@
       "soft": {
         "title": "Soft Skills",
         "list": {
-          "one": "Technologie-Trends",
-          "two": "Bücher lesen (Psychologie)",
-          "three": "Sport (Fußball, Basketball)",
-          "four": "Forschung und Entdeckung",
-          "five": "Künstliche Intelligenz",
-          "six": "Erstaunliche Dinge mit Code machen",
-          "seven": "Japanische Anime",
-          "eight": "Fitnessstudio-Workouts"
+          "one": "Great Team player",
+          "two": "Effective Communicator",
+          "three": "Critical thinker",
+          "four": "Problem Solver",
+          "five": "Attentive to Detail",
+          "six": "Adaptability to new technologies",
+          "seven": "Effective Time Manager",
+          "eight": "Creativity and Innovation"
         }
       }
     },

@@ -11,7 +11,7 @@ import "swiper/scss/pagination";
 import { SideNavigation } from "@/components";
 import { SummaryScreen, EducationScreen, SkillsScreen } from "@/screens";
 
-import { IEducation } from "./EducationScreen";
+import { IEducation, List } from "./EducationScreen";
 import { ISummary } from "./SummaryScreen";
 
 //interface containing translated text for all sections
@@ -20,10 +20,11 @@ interface IAboutScreen {
     routes: string[];
     summary: ISummary["summary"];
     education: IEducation;
+    skills: List;
   };
 }
 const AboutScreen: React.FC<IAboutScreen> = ({
-  data: { routes, summary, education }
+  data: { routes, summary, education, skills }
 }) => {
   //sythax for calling using the Swiper instance in React TypScript
   const [swiper, setSwiper] = React.useState<Swiper>();
@@ -56,7 +57,7 @@ const AboutScreen: React.FC<IAboutScreen> = ({
   const arr = [
     <SummaryScreen summary={summary} key={1} />,
     <EducationScreen interests={education.interests} school={education.school} key={2} />,
-    <SkillsScreen key={3} />
+    <SkillsScreen key={3} softSkills={skills} />
   ];
   return (
     <div className="portfolio-about">
