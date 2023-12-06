@@ -1,6 +1,8 @@
 "use client";
 import React from "react";
 
+import { useMediaQuery } from "react-responsive";
+
 import { CrossIcon, PlusIcon } from "@/components/icons";
 import SideNavigationItem from "@/components/SideNavigationItem";
 
@@ -13,12 +15,17 @@ interface ISideNavigation {
 const SideNavigation: React.FC<ISideNavigation> = ({ routes, ...props }) => {
   const [state, setState] = React.useState(false);
 
+  //disabling click toggle state on main parent for wide enough screens
+  const isWideEnough = useMediaQuery({
+    maxWidth: 1300
+  });
+
   return (
     <aside>
       <div
         className={`side-navigation ${state ? "aside--open" : ""}`}
         onMouseLeave={() => setState(false)}
-        onClick={() => setState(!state)}
+        onClick={() => isWideEnough && setState(!state)}
       >
         <span className="active heading">
           {sideNavigationDate[props.currentIndex].icon}
@@ -31,7 +38,7 @@ const SideNavigation: React.FC<ISideNavigation> = ({ routes, ...props }) => {
             text={routes[i]}
             index={i + 1}
             key={i}
-            callback={() => setState(false)}
+            callback={() => isWideEnough && setState(false)}
           />
         ))}
       </div>

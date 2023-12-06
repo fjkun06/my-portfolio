@@ -40,6 +40,7 @@ const About = () => {
   //Skills screen data
   const skillsData: List = {
     title: t("skills.soft.title"),
+    subtitle: t("skills.subtitle"),
     data: interests.map((el) => t(`skills.soft.list.${el}`))
   };
 

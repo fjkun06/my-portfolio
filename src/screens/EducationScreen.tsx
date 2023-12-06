@@ -8,6 +8,7 @@ import SchoolCard, { ISchoolCard } from "@/components/SchoolCard";
 
 export interface List {
   title: string;
+  subtitle?: string;
   data: string[];
 }
 export interface IEducation {

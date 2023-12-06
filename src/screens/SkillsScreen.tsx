@@ -31,7 +31,7 @@ const SkillsScreen = ({ softSkills }: { softSkills: List }) => {
         className="about-skills--hard"
         animate={{ y: isInView ? [50, -50, 0] : 0, opacity: isInView ? [0, 1] : 0 }}
       >
-        <h2>Technologies and Tools</h2>
+        <h2>{softSkills.subtitle}</h2>
         <div className="logos-slide">
           {logoData.map((logo, i) => (
             <Link key={i} href={logo.url} target="_blank" passHref={true}>
