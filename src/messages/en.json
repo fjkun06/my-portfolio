@@ -61,7 +61,20 @@
       }
     },
     "skills": {
-      "title": "Soft && Hard Skills"
+      "title": "Skills  && Technologies",
+      "soft": {
+        "title": "Soft Skills",
+        "list": {
+          "one": "Technologie-Trends",
+          "two": "Bücher lesen (Psychologie)",
+          "three": "Sport (Fußball, Basketball)",
+          "four": "Forschung und Entdeckung",
+          "five": "Künstliche Intelligenz",
+          "six": "Erstaunliche Dinge mit Code machen",
+          "seven": "Japanische Anime",
+          "eight": "Fitnessstudio-Workouts"
+        }
+      }
     },
     "experience": {
       "title": "Professional Experience"

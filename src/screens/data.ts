@@ -130,6 +130,10 @@ export const logoData = [
   {
     url: "https://redux.js.org/",
     title: "Redux"
+  },
+  {
+    url: "https://www.framer.com/motion/",
+    title: "Framer Motion"
   }
 ];
 

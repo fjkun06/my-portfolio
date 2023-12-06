@@ -3,16 +3,19 @@ import React from "react";
 
 import { useInView, motion } from "framer-motion";
 
+import { ListItem } from "@/components";
 import SchoolCard, { ISchoolCard } from "@/components/SchoolCard";
+
+export interface List {
+  title: string;
+  data: string[];
+}
 export interface IEducation {
   school: {
     title: string;
     data: ISchoolCard[];
   };
-  interests: {
-    title: string;
-    data: string[];
-  };
+  interests: List;
 }
 const EducationScreen = ({ school, interests }: IEducation) => {
   const ref = React.useRef(null);
@@ -36,7 +39,7 @@ const EducationScreen = ({ school, interests }: IEducation) => {
         <h2>{interests.title}</h2>
         <ul>
           {interests.data.map((interest) => (
-            <li key={interest}>{interest}</li>
+            <ListItem key={interest} text={interest} />
           ))}
         </ul>
       </motion.div>

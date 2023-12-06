@@ -49,19 +49,32 @@
       "interests": {
         "title": "Interessen && Hobbys",
         "list": {
-          "one":"Technologie-Trends",
-          "two":"Bücher lesen (Psychologie)",
-          "three":"Sport (Fußball, Basketball)",
-          "four":"Forschung und Entdeckung",
-          "five":"Künstliche Intelligenz",
-          "six":"Erstaunliche Dinge mit Code machen",
-          "seven":"Japanische Anime",
-          "eight":"Fitnessstudio-Workouts"
+          "one": "Technologie-Trends",
+          "two": "Bücher lesen (Psychologie)",
+          "three": "Sport (Fußball, Basketball)",
+          "four": "Forschung und Entdeckung",
+          "five": "Künstliche Intelligenz",
+          "six": "Erstaunliche Dinge mit Code machen",
+          "seven": "Japanische Anime",
+          "eight": "Fitnessstudio-Workouts"
         }
       }
     },
     "skills": {
-      "title": "Weiche && harte Fähigkeiten"
+      "title": "Fähigkeiten && Technologien",
+      "soft": {
+        "title": "Soft Skills",
+        "list": {
+          "one": "Großer Teamplayer",
+          "two": "Effizienter Kommunikator",
+          "three": "Kritischer Denker",
+          "four": "Problemlöser",
+          "five": "Aufmerksam für Details",
+          "six": "Anpassungsfähigkeit an neue Technologien",
+          "seven": "Effizientes Zeitmanagement",
+          "eight": "Kreativität und Innovation"
+        }
+      }
     },
     "experience": {
       "title": "Berufserfahrung"
