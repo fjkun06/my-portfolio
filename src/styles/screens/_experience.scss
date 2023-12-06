@@ -1,0 +1,9 @@
+//loading mixins and variable
+@use "sass:color";
+@use "../utils/mixins" as utils;
+@use "../utils/variables" as vars;
+
+.about-skills {
+  padding-top: 2rem !important;
+  /************************************************EDUCATION SECTION************************************************/
+}

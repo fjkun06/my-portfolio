@@ -6,15 +6,7 @@
   padding-top: 2rem !important;
 
   /************************************************EDUCATION SECTION************************************************/
-  h2 {
-    @include utils.formatText(450, 4rem);
-    @media only screen and (width < 768px) {
-      font-size: 3rem;
-    }
-    @media only screen and (width < 500px) {
-      font-size: 2.4rem;
-    }
-  }
+
   div {
     @include utils.flex(column);
   }
