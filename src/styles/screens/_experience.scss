@@ -22,8 +22,15 @@
       }
 
       .data {
+        @include utils.flex(column);
+
         ul {
-          @include utils.flex;
+          @include utils.flex(column);
+          gap: 1rem;
+          list-style-type: disc;
+          li {
+            text-align: left;
+          }
         }
       }
     }

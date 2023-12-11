@@ -22,6 +22,8 @@ const ExperienceScreen = () => {
         transition={{ delay: 0.25, type: "spring" }}
       >
         <ExperienceCard />
+        <ExperienceCard />
+        <ExperienceCard />
       </motion.div>
     </section>
   );

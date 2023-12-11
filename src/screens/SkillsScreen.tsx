@@ -35,7 +35,13 @@ const SkillsScreen = ({ softSkills }: { softSkills: List }) => {
         <h2>{softSkills.subtitle}</h2>
         <div className="logos-slide">
           {logoData.map((logo, i) => (
-            <Link key={i} href={logo.url} target="_blank" passHref={true}>
+            <Link
+              key={i}
+              href={logo.url}
+              target="_blank"
+              passHref={true}
+              className="pill"
+            >
               <span className="">{logo.title}</span>
               <Image
                 src={`/assets/icons/icon${i + 1}.svg`}
