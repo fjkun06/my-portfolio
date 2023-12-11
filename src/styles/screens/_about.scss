@@ -189,7 +189,6 @@
     div,
     section {
       //scrollbar
-
       &::-webkit-scrollbar {
         width: 0.5rem;
       }
@@ -212,7 +211,7 @@
   }
 
   /************************************************STYLING LIST && LIST ITEMS************************************************/
-  ul {
+  ul.list {
     @include utils.flex(column);
     @include utils.flex;
     list-style: none;
@@ -234,9 +233,9 @@
       margin-left: 5%;
       column-gap: 4rem;
     }
-    @media only screen and (width < 500px) {
+    @media only screen and (width < 700px) {
       margin-left: 15%;
-      gap: 0.5rem;
+      gap: 1rem;
     }
 
     li {
@@ -255,7 +254,7 @@
       @media only screen and (width < 500px) {
         font-size: 1.5rem;
       }
-      @media only screen and (width < 500px) {
+      @media only screen and (width < 700px) {
         width: 100%;
       }
 

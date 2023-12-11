@@ -38,7 +38,7 @@ const EducationScreen = ({ school, interests }: IEducation) => {
         transition={{ delay: 0.25, type: "spring" }}
       >
         <h2>{interests.title}</h2>
-        <ul>
+        <ul className="list">
           {interests.data.map((interest) => (
             <ListItem key={interest} text={interest} />
           ))}

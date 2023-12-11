@@ -21,7 +21,7 @@ const SkillsScreen = ({ softSkills }: { softSkills: List }) => {
         className="about-skills--soft"
       >
         <h2>{softSkills.title}</h2>
-        <ul>
+        <ul className="list">
           {softSkills.data.map((skill) => (
             <ListItem key={skill} text={skill} />
           ))}
@@ -30,6 +30,7 @@ const SkillsScreen = ({ softSkills }: { softSkills: List }) => {
       <motion.div
         className="about-skills--hard"
         animate={{ y: isInView ? [50, -50, 0] : 0, opacity: isInView ? [0, 1] : 0 }}
+        transition={{ delay: 0.25, type: "spring" }}
       >
         <h2>{softSkills.subtitle}</h2>
         <div className="logos-slide">

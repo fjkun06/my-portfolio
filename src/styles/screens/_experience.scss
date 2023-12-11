@@ -3,7 +3,29 @@
 @use "../utils/mixins" as utils;
 @use "../utils/variables" as vars;
 
-.about-skills {
-  padding-top: 2rem !important;
+.about-experience {
   /************************************************EDUCATION SECTION************************************************/
+
+  &--list {
+    // background-color: red;
+    @include utils.size(70%, max-content);
+    padding-block: 2rem;
+
+    article {
+      @include utils.flex;
+      justify-content: flex-start;
+      // background-color: green;
+      gap: 3rem;
+
+      .date {
+        color: vars.$grey;
+      }
+
+      .data {
+        ul {
+          @include utils.flex;
+        }
+      }
+    }
+  }
 }
