@@ -1,5 +1,7 @@
 import React from "react";
 
+import { experienceSkills } from "@/screens/data";
+
 export interface IExperienceCard {}
 const ExperienceCard = ({}: IExperienceCard) => {
   return (
@@ -14,21 +16,23 @@ const ExperienceCard = ({}: IExperienceCard) => {
         <ul>
           <li>
             Utilized diverse front-end technologies to design views, yielding a notable
-            20% rise in user engagement and a significant 15% decrease in bounce rates.
+            20% rise in user engagement.
           </li>
           <li>
             Played an active role in providing valuable insights to internal stakeholders,
-            directly influencing project decisions and demonstrating a robust grasp of
-            complex technicalities.
+            demonstrating a grasp of complex technicalities.
           </li>
           <li>
             Showcased unwavering commitment to learning and applying new technologies and
-            methodologies, resulting in a notable 10% reduction in project development
-            time.
+            methodologies.
           </li>
         </ul>
         <div className="technologies">
-          <span className="pill">React.js</span>
+          {experienceSkills.wandaprep.map((skill) => (
+            <span className="pill" key={skill}>
+              {skill}
+            </span>
+          ))}
         </div>
       </div>
     </article>

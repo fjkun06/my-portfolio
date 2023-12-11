@@ -23,7 +23,6 @@ const ExperienceScreen = () => {
       >
         <ExperienceCard />
         <ExperienceCard />
-        <ExperienceCard />
       </motion.div>
     </section>
   );

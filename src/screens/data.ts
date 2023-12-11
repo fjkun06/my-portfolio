@@ -154,8 +154,7 @@ export const summaryKeys = ["question", "opener", "desc1", "desc1", "contact"];
 
 export const experienceSkills = {
   wandaprep: [
-    "HTML",
-    "CSS (SCSS)",
+    "SCSS",
     "JavaScript",
     "TypeScript",
     "React.js (Next.js)",
