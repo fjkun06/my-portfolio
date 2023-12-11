@@ -15,6 +15,19 @@ const ExperienceCard = ({}: IExperienceCard) => {
         <h3 className="">Frontend Developer @ WandaPrep</h3>
         <ul>
           <li>
+            Nutzung verschiedener Front-End-Technologien für die Gestaltung von Ansichten,
+            was zu einer beachtlichen Steigerung der Benutzeraktivität um 20 % führte.
+          </li>
+          <li>
+            Spielte eine aktive Rolle bei der Bereitstellung wertvoller Einblicke für
+            interne Stakeholder und bewies dabei ein Verständnis für komplexe technische
+            Zusammenhänge.
+          </li>
+          <li>
+            Unermüdliches Engagement beim Erlernen und Anwenden neuer Technologien und
+            Methoden.
+          </li>
+          {/* <li>
             Utilized diverse front-end technologies to design views, yielding a notable
             20% rise in user engagement.
           </li>
@@ -25,7 +38,7 @@ const ExperienceCard = ({}: IExperienceCard) => {
           <li>
             Showcased unwavering commitment to learning and applying new technologies and
             methodologies.
-          </li>
+          </li> */}
         </ul>
         <div className="technologies">
           {experienceSkills.wandaprep.map((skill) => (
