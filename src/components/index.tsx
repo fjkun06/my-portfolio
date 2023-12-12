@@ -14,3 +14,4 @@ export { default as Button } from "@/components/Button";
 export { default as SchoolCard } from "@/components/SchoolCard";
 export { default as ListItem } from "@/components/ListItem";
 export { default as ExperienceCard } from "@/components/ExperienceCard";
+export { default as InputComponent } from "@/components/InputComponent";

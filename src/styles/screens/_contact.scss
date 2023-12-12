@@ -45,19 +45,18 @@
         }
         input,
         textarea {
-          border-radius: 0.5rem;
-          border-radius: 8px;
-          border: 1px solid #1e2d3d;
-          background: #011221;
+          border-radius: 0.8rem;
+          border: 0.1rem solid vars.$lineColor;
+          background: vars.$blueDark;
           caret-color: vars.$grey;
           padding-left: 0.5rem;
           color: vars.$grey;
-          outline: 0.2rem solid vars.$blueDark;
-          transition: outline 0.25s ease-in-out;
+          outline: 0.2rem solid transparent;
+          transition: outline 0.15s ease-in-out;
           font-size: 1.6rem;
           width: 100%;
           &:focus {
-            outline: 0.2rem solid vars.$lineColor;
+            outline: 0.2rem solid vars.$grey;
           }
         }
 
@@ -72,6 +71,17 @@
     /************************************************OUTPUT DATA SECTION************************************************/
     .output-data {
       background-color: purple;
+      max-width: max-content;
+
+      pre {
+        background-color: transparent !important;
+        max-width: 100%;
+        overflow: hidden !important;
+
+        span {
+          text-wrap: wrap !important;
+        }
+      }
     }
   }
 }

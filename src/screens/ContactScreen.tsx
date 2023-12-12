@@ -1,6 +1,6 @@
 import React from "react";
 
-import { Button } from "@/components";
+import { Button, CodeSnippet } from "@/components";
 
 const ContactScreen = () => {
   return (
@@ -17,13 +17,30 @@ const ContactScreen = () => {
             <span>_email:</span>
             <input type="text" name="" id="email" />
           </label>
-          <label htmlFor="name">
+          <label htmlFor="message">
             <span>_message:</span>
             <textarea name="" id="message" rows={6} cols={28} />
           </label>
-          <Button text="submit-message" />
+          <Button text="submit-message" className="sendBtn" />
         </div>
-        <div className="output-data">Ouput Data</div>
+        <div className="output-data">
+          Ouput Data
+          <CodeSnippet
+            snippet={`
+const button = document.querySelector('.sendBtn');
+
+const message = {
+	name: "Jonathan Davis",
+	email: "jonathan-davis@gmail.com",
+	message: "Hey! Just checked your website and it looks awesome! Also, I checked your articled on Medium. Lerned a few nice tips. Thanks!",
+	date: "Thu 21 Apr"
+}
+
+button.addEventListener('click', () => {
+	form.send(message);
+})`}
+          />
+        </div>
       </section>
     </div>
   );
