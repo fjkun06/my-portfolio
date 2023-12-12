@@ -1,12 +1,17 @@
+"use client";
+
 import React from "react";
 
-import InputComponent from "./InputComponent";
-interface ILabelContainer extends React.LabelHTMLAttributes<HTMLLabelElement> {}
-const LabelContainer: React.FC<ILabelContainer> = ({ ...props }) => {
+interface ILabelContainer extends React.LabelHTMLAttributes<HTMLLabelElement> {
+  children: React.ReactNode;
+  text: string;
+}
+
+const LabelContainer: React.FC<ILabelContainer> = ({ children, text, ...props }) => {
   return (
-    <label {...props}>
-      <span>_age:</span>
-      <InputComponent inputType="input" type="text" name="" id="age" />
+    <label {...props} htmlFor={text}>
+      <span>{`_${text}:`}</span>
+      {children}
     </label>
   );
 };
