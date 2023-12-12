@@ -1,0 +1,9 @@
+//loading mixins and variable
+@use "../utils/mixins" as utils;
+@use "../utils/variables" as vars;
+
+.about-contact {
+  @include utils.size(100%);
+  @include utils.flex;
+  /************************************************EDUCATION SECTION************************************************/
+}
