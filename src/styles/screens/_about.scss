@@ -153,15 +153,25 @@
       @include utils.flex(column);
       justify-content: flex-start;
       padding-top: 5vh;
-      gap: 5vh;
+      gap: 2vh;
+
+      //adding spacing between sections on larger and wider screens
+      @media only screen and (height > 922px) and (width > 600px) {
+        gap: 5vh;
+        padding-top: 5vh !important;
+      }
+
       @media only screen and (width < 1300px) {
         height: calc(100% - 4.4rem);
       }
 
       //centering content for very long and large screens
-      @media only screen and (width > 1300px) and (height >= 922px), screen and (height > 1080px) {
+      @media only screen and (1300px < width < 2000px) and (height <= 980px), screen and (height > 1080px) {
         justify-content: center !important;
         padding-top: 0 !important;
+      }
+      @media only screen and (width > 1300px) and (height > 980px), screen and (height > 1080px) {
+        justify-content: flex-start !important;
       }
     }
 
@@ -188,6 +198,70 @@
 
   .swiper-pagination-bullet {
     background: vars.$white;
+  }
+
+  /************************************************STYLING LIST && LIST ITEMS************************************************/
+  ul {
+    @include utils.flex(column);
+    @include utils.flex;
+    list-style: none;
+    padding-left: 0;
+    padding-bottom: 0vh;
+    gap: 1rem;
+    width: 70%;
+    flex-wrap: wrap;
+    margin-left: 8%;
+    @media only screen and (width < 1700px) {
+      width: 80%;
+      margin-left: 11%;
+    }
+    @media only screen and (width < 1500px) {
+      width: 90%;
+    }
+    @media only screen and (width < 980px) {
+      width: 100%;
+      margin-left: 5%;
+      column-gap: 4rem;
+    }
+    @media only screen and (width < 500px) {
+      margin-left: 15%;
+      gap: 0.5rem;
+    }
+
+    li {
+      position: relative;
+      padding-left: 1.5rem;
+      margin-bottom: 0.5rem;
+      @include utils.formatText(450, 1.8rem);
+      width: 40%;
+      text-align: left;
+      @media only screen and (width < 1700px) {
+        font-size: 1.6rem;
+      }
+      @media only screen and (width < 700px) {
+        text-wrap: wrap;
+      }
+      @media only screen and (width < 500px) {
+        font-size: 1.5rem;
+      }
+      @media only screen and (width < 500px) {
+        width: 100%;
+      }
+
+      &::before {
+        content: "";
+        position: absolute;
+        left: -2rem;
+        top: -0.25rem;
+        @include utils.size(3rem);
+        @media only screen and (width < 500px) {
+          @include utils.size(2.5rem);
+          left: -1.5rem;
+          top: -0.25rem;
+        }
+        background-repeat: no-repeat;
+      }
+    }
   }
 }
 

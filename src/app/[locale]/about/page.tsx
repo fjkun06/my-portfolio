@@ -5,7 +5,7 @@ import { useTranslations } from "next-intl";
 import { sideNavigationDate } from "@/components/data";
 import { AboutScreen } from "@/screens";
 import { summaryKeys } from "@/screens/data";
-import { IEducation } from "@/screens/EducationScreen";
+import { IEducation, List } from "@/screens/EducationScreen";
 
 const About = () => {
   const t = useTranslations("about");
@@ -37,11 +37,19 @@ const About = () => {
     }
   };
 
+  //Skills screen data
+  const skillsData: List = {
+    title: t("skills.soft.title"),
+    subtitle: t("skills.subtitle"),
+    data: interests.map((el) => t(`skills.soft.list.${el}`))
+  };
+
   //translation data for summary section of about page
   const translationData = {
     routes: sideNavigationRoutes,
     summary: summaryData,
-    education: educationData
+    education: educationData,
+    skills: skillsData
   };
 
   return <AboutScreen data={translationData} />;

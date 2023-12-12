@@ -61,7 +61,21 @@
       }
     },
     "skills": {
-      "title": "Soft && Hard Skills"
+      "title": "Skills  && Technologies",
+      "subtitle": "Technologies und Tools",
+      "soft": {
+        "title": "Soft Skills",
+        "list": {
+          "one": "Great Team player",
+          "two": "Effective Communicator",
+          "three": "Critical thinker",
+          "four": "Problem Solver",
+          "five": "Attentive to Detail",
+          "six": "Adaptability to new technologies",
+          "seven": "Effective Time Manager",
+          "eight": "Creativity and Innovation"
+        }
+      }
     },
     "experience": {
       "title": "Professional Experience"
