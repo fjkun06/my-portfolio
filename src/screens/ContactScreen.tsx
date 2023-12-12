@@ -73,6 +73,9 @@ const ContactScreen = () => {
               value={message}
             />
           </LabelContainer>
+          <a href="mailto:masteryoda@starwars.com? cc=skywalker@starwars.com& bcc=leia@starwars.com& subject=May%20the%20Force%20be%20with%20you&body=May%20the%20Force%20be'%20with%20us%20all%3A%0D%0A%0D%0ACheers%2C%0D%0AHappy%20Customer">
+            I love star wars
+          </a>
           <Button text="submit-message" className="sendBtn" />
         </div>
         <div className="output-data">
