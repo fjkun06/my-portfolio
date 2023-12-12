@@ -53,7 +53,7 @@ const ContactScreen = () => {
 
   //return this if successful
   console.log(state);
-  
+
   if (state.succeeded) {
     return <p>Thanks for joining!</p>;
   }
@@ -106,7 +106,15 @@ button.addEventListener('click', () => {
           />
         </div>
 
-        <div className="success"></div>
+        <div className="success">
+          <h3 className="">Thank you! 😇</h3>
+          <br />
+          <span>
+            Your message has been delivered. You will recieve answer really soon!
+          </span>
+          <br />
+          <span>...redirecting in 5s</span>
+        </div>
       </section>
     </div>
   );

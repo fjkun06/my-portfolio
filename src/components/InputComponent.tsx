@@ -9,10 +9,10 @@ const InputComponent: React.FC<InputComponentProps<"input" | "textarea">> = (pro
 
   if (inputType === "input") {
     const inputProps = rest as React.InputHTMLAttributes<HTMLInputElement>;
-    return <input type="text" {...inputProps} />;
+    return <input required type="text" {...inputProps} />;
   } else {
     const textAreaProps = rest as React.TextareaHTMLAttributes<HTMLTextAreaElement>;
-    return <textarea {...textAreaProps} />;
+    return <textarea required {...textAreaProps} />;
   }
 };
 

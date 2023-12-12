@@ -19,7 +19,8 @@
     gap: 5vh;
     // background-color: red;
 
-    div,form {
+    div,
+    form {
       @include utils.size(100%);
       @include utils.flex(column);
       justify-content: flex-start;
@@ -36,6 +37,7 @@
       padding-inline: 2rem;
       gap: 1rem;
       width: 70%;
+      display: none;
 
       /*******************label*******************/
       label {
@@ -77,6 +79,7 @@
     .output-data {
       @include utils.blurbackdrop(vars.$blueDark, 0.5);
       min-width: max-content;
+      display: none;
 
       pre {
         background-color: transparent !important;
@@ -86,6 +89,21 @@
           font-size: 1.6rem;
           text-wrap: wrap !important;
         }
+      }
+    }
+
+    /************************************************SUCCESS BOX SECTION************************************************/
+    .success {
+      @include utils.blurbackdrop(vars.$blueDark, 0.5);
+      @include utils.size(40rem);
+      border: 0.1rem solid vars.$lineColor;
+      justify-content: center;
+      align-self: flex-start;
+      padding: 0rem 1rem;
+
+      span {
+        @include utils.flex;
+        text-align: center;
       }
     }
   }
