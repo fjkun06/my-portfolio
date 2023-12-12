@@ -51,6 +51,8 @@ const About = () => {
     title: t("experience.title"),
     xp1: t("experience.xp1"),
     xp2: t("experience.xp2"),
+    date1: t("experience.date1"),
+    date2: t("experience.date2"),
     data: interests.slice(0, 5).map((el) => t(`experience.list.${el}`))
   };
 

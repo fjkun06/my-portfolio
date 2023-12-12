@@ -5,19 +5,15 @@ import { experienceSkills } from "@/screens/data";
 export interface IExperienceCard {
   title: string;
   data: string[];
+  date?: string;
 }
-const ExperienceCard = ({ title, data }: IExperienceCard) => {
+const ExperienceCard = ({ title, data, date }: IExperienceCard) => {
   return (
     <article>
       <div className="data">
         <div className="info">
           <h3 className="">{title}</h3>
-          {/* <h3 className="">Frontend Developer @ WandaPrep</h3> */}
-          <div className="date">
-            <span className="">Jan</span>
-            <span className=""> — </span>
-            <span className="">Nov 2023</span>
-          </div>
+          <div className="date">{date}</div>
         </div>
         <ul>
           {data.map((el) => (
