@@ -2,10 +2,14 @@ import React from "react";
 
 import { useTranslations } from "next-intl";
 
-const About = () => {
-  const t = useTranslations("index");
+import { sideNavigationDate } from "@/components/data";
+import { AboutScreen } from "@/screens";
 
-  return <>About Page {t("title")}#</>;
+const About = () => {
+  const t = useTranslations("about");
+  const sideNavigationRoutes = sideNavigationDate.map(({ text }) => t(text));
+
+  return <AboutScreen routes={sideNavigationRoutes} />;
 };
 
 export default About;

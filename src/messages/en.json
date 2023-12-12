@@ -20,10 +20,17 @@
       "href":"/contact"
     }
   },
+  "about":{
+      "summary":"Summary",
+      "education":"Education && Interests",
+      "skills":" Soft && Hard Skills",
+      "experience":" Professional Experience"
+  },
   "home":{
     
       "greeting":"Hi all, I am",
       "role":"Front-end Developer"
     
-  }
+  },
+  "find-me":"find me in:"
 }

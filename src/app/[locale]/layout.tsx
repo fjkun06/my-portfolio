@@ -28,12 +28,15 @@ export default function LocaleLayout({ children, params: { locale } }: ILocaleLa
 
   //loading translation files
   const t = useTranslations("routes");
+  const tFooter = useTranslations("");
   //fetch text and href data from language files
   const navbarRoutes = routes.map((el) => [t(`${el}.text`), t(`${el}.href`)]);
 
   return (
     <html lang={locale}>
-      <BodyWrapper routes={navbarRoutes}>{children}</BodyWrapper>
+      <BodyWrapper footerText={tFooter("find-me")} routes={navbarRoutes}>
+        {children}
+      </BodyWrapper>
     </html>
   );
 }

@@ -5,11 +5,11 @@ import Link from "next/link";
 import { footerItems } from "@/components/data";
 import { GithubIcon } from "@/components/icons";
 
-const Footer = () => {
+const Footer = ({ findMe }: { findMe: string }) => {
   return (
     <footer>
       <div className="footer-media">
-        <span className="find-me">find me in: </span>
+        <span className="find-me"> {findMe} </span>
         {footerItems.map(({ icon, href }) => (
           <Link href={href} target="_blank" passHref={true} key={href}>
             {icon}
