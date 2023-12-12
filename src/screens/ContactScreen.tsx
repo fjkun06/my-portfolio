@@ -1,6 +1,7 @@
+/* eslint-disable max-len */
 import React from "react";
 
-import { Button, CodeSnippet } from "@/components";
+import { Button, CodeSnippet, InputComponent, LabelContainer } from "@/components";
 
 const ContactScreen = () => {
   return (
@@ -11,8 +12,9 @@ const ContactScreen = () => {
           Input Data
           <label htmlFor="name">
             <span>_name:</span>
-            <input type="text" name="" id="name" />
+            <InputComponent inputType="input" type="text" name="" id="name" />
           </label>
+          <LabelContainer />
           <label htmlFor="email">
             <span>_email:</span>
             <input type="text" name="" id="email" />
