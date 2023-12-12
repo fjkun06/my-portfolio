@@ -1,8 +1,9 @@
 /* eslint-disable max-len */
 "use client";
-import React, { useId } from "react";
+import React from "react";
 
 import { useForm, ValidationError } from "@formspree/react";
+import { AnimatePresence, motion } from "framer-motion";
 
 import { Button, CodeSnippet, InputComponent, LabelContainer } from "@/components";
 
@@ -51,46 +52,66 @@ const ContactScreen = () => {
     }
   ];
 
-  //return this if successful
-  console.log(state);
-
-  if (state.succeeded) {
-    return <p>Thanks for joining!</p>;
-  }
-
   return (
     <div className="portfolio-contact">
       <h1>Get in touch</h1>
-      <section>
-        <form className="input-data" onSubmit={handleSubmit}>
-          <h2> Input Data</h2>
-          {inputs.map(({ type, value, onChange, text, name }) => (
-            <LabelContainer text={text} key={text}>
-              <InputComponent
-                inputType={type as any}
-                id={text}
-                onChange={onChange as any}
-                value={value}
-                name={name}
+      <motion.section layout>
+        <AnimatePresence>
+          {!state.succeeded && (
+            <motion.form
+              layout
+              className="input-data"
+              onSubmit={handleSubmit}
+              animate={{
+                y: [10, -10, 0],
+                opacity: [0, 1],
+                transition: { type: "spring" }
+              }}
+              exit={{ y: 50, opacity: 0, transition: { delay: 0.1 } }}
+              transition={{ ease: "easeInOut" }}
+            >
+              <h2> Input Data</h2>
+              {inputs.map(({ type, value, onChange, text, name }) => (
+                <LabelContainer text={text} key={text}>
+                  <InputComponent
+                    inputType={type as any}
+                    id={text}
+                    onChange={onChange as any}
+                    value={value}
+                    name={name}
+                  />
+                  <ValidationError
+                    prefix={name.toUpperCase()}
+                    field={name}
+                    errors={state.errors}
+                  />
+                </LabelContainer>
+              ))}
+              <Button
+                text="submit-message"
+                className="sendBtn"
+                type="submit"
+                disabled={state.submitting}
               />
-              <ValidationError
-                prefix={name.toUpperCase()}
-                field={name}
-                errors={state.errors}
-              />
-            </LabelContainer>
-          ))}
-          <Button
-            text="submit-message"
-            className="sendBtn"
-            type="submit"
-            disabled={state.submitting}
-          />
-        </form>
-        <div className="output-data">
-          <h2> Output Data</h2>
-          <CodeSnippet
-            snippet={`
+            </motion.form>
+          )}
+        </AnimatePresence>
+        <AnimatePresence>
+          {!state.succeeded && (
+            <motion.div
+              layout
+              className="output-data"
+              animate={{
+                y: [10, -10, 0],
+                opacity: [0, 1],
+                transition: { delay: 0.1, duration: 1 }
+              }}
+              exit={{ y: 50, opacity: 0, transition: { delay: 0.1 } }}
+              transition={{ type: "spring", ease: "easeInOut" }}
+            >
+              <h2> Output Data</h2>
+              <CodeSnippet
+                snippet={`
 const button = document.querySelector('.sendBtn');
 
 const message = {
@@ -103,19 +124,30 @@ const message = {
 button.addEventListener('click', () => {
 	form.send(message);
 })`}
-          />
-        </div>
-
-        <div className="success">
-          <h3 className="">Thank you! 😇</h3>
-          <br />
-          <span>
-            Your message has been delivered. You will recieve answer really soon!
-          </span>
-          <br />
-          <span>...redirecting in 5s</span>
-        </div>
-      </section>
+              />
+            </motion.div>
+          )}
+        </AnimatePresence>
+        <AnimatePresence mode="wait">
+          {state.succeeded && (
+            <motion.div
+              layout
+              className="success"
+              animate={{ y: [50, -50, 0], opacity: [0, 1], transition: { delay: 0.75 } }}
+              exit={{ y: 50, opacity: 0 }}
+              transition={{ type: "spring", ease: "easeInOut" }}
+            >
+              <h3 className="">Thank you! 😇</h3>
+              <br />
+              <span>
+                Your message has been delivered. You will recieve answer really soon!
+              </span>
+              <br />
+              <span>...redirecting in 5s</span>
+            </motion.div>
+          )}
+        </AnimatePresence>
+      </motion.section>
     </div>
   );
 };
