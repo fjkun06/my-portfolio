@@ -2,33 +2,84 @@
 @use "../utils/mixins" as utils;
 @use "../utils/variables" as vars;
 
+@keyframes slide {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-100%);
+  }
+}
 .about-summary {
-  // background-color: black;
+  @include utils.size(100%);
+  justify-content: space-evenly !important;
+  @media only screen and (width < 1300px) {
+    height: calc(100% - 4.4rem);
+  }
+  @media only screen and (width < 1300px) {
+    justify-content: space-evenly !important;
+  }
+
+  /************************************************HEADER SECTION************************************************/
+
   header {
-    // @include utils.size(100%, max-content);
     @include utils.size(100%, 60%);
     @include utils.flex;
     padding-block: 4rem;
-    justify-content: space-evenly; // background-color: blueviolet;
-    justify-content: center; // background-color: blueviolet;
+    justify-content: space-around;
+    background: rgba(vars.$grey, 0.25);
+    @media only screen and (width < 1200px) {
+      height: 75%;
+      padding-block: 2rem;
+      flex-direction: column-reverse;
+    }
+    @media only screen and (width < 768px) {
+      height: 80%;
+    }
+    @media only screen and (width < 480px) {
+      height: 100%;
+      padding-block: 0;
+    }
+    @media only screen and (width < 400px) {
+      height: 90%;
+      justify-content: flex-end;
+      gap: 5rem;
+      padding-top: 1rem;
+    }
+
+    /************************************************ABOUT ME TEXT SECTION************************************************/
     div {
-      // @include utils.size(50%, 100%);
       height: 100%;
       @include utils.flex(column);
 
       &:first-child {
-        background-color: blueviolet;
-        background-color: transparent;
-        // @include utils.size(70%, 100%);
-        @include utils.formatText(450, 1.6rem);
+        @include utils.formatText(450, 1.4rem);
         align-items: flex-start;
         justify-content: center;
         gap: 2rem;
-        width: 50%;
+        width: 60%;
+        @media only screen and (width < 1200px) {
+          @include utils.size(94%, 60%);
+        }
+        @media only screen and (width < 980px) {
+          height: 70%;
+        }
 
         h2 {
-          font-size: 7rem;
+          font-size: 6rem;
           text-align: left;
+          @media only screen and (width < 1600px) {
+            font-size: 5rem;
+          }
+          @media only screen and (width < 1200px) {
+            font-size: 4rem;
+          }
+          @media only screen and (width < 768px) {
+            font-size: 3rem;
+          }
+          @media only screen and (width < 480px) {
+            font-size: 2.4rem;
+          }
         }
         p {
           width: 100%;
@@ -40,36 +91,124 @@
             &:is(:first-child) {
               margin-bottom: 2rem;
               font-size: 2.5rem;
+              @media only screen and (width < 1600px) {
+                font-size: 2.2rem;
+              }
+              @media only screen and (width < 480px) {
+                font-size: 1.6rem;
+                margin-bottom: 1rem;
+              }
             }
           }
 
           button {
-            background-color: red;
+            border-bottom: 1px solid darken(vars.$orange, 10%);
+            position: relative;
+            &:first-child {
+              cursor: default;
+            }
+            &:last-child {
+              &::after {
+                transition: opacity 0.25s ease-in-out;
+                opacity: 0;
+                display: block;
+                position: absolute;
+                @include utils.positioning(0, 115%);
+                content: "";
+                @include utils.size(100%, 0.1rem);
+                background-color: darken(vars.$orange, 10%);
+              }
+              &:hover {
+                &::after {
+                  opacity: 1;
+                }
+              }
+            }
           }
         }
       }
-      &:last-child {
-        // background-color: rgb(226, 195, 43);
-        background: vars.$blueDark;
-        background: transparent;
-        background: url("/images/franko.png") no-repeat center, transparent;
-        background-size: contain;
-        // background: url("/images/frank.png") no-repeat center, #f30;
-        // background: url("/images/frank.png") no-repeat center, transparent;
-        @include utils.size(30%, 100%);
-        @include utils.size(40rem);
-        padding-block: 4rem;
-        background-blend-mode: luminosity;
 
-        img {
-          mix-blend-mode: multiply;
-          display: none;
+      /************************************************CIRCULAR PICTURE************************************************/
+      &:last-child {
+        background: url("/assets/images/frank.png") no-repeat center;
+        background-size: contain;
+        @include utils.size(40rem);
+        border-radius: 50%;
+        @media only screen and (width < 1700px) {
+          @include utils.size(30rem);
+        }
+        @media only screen and (width < 1600px) {
+          @include utils.size(20rem);
+        }
+        @media only screen and (width < 980px) {
+          @include utils.size(16rem);
+        }
+        @media only screen and (width < 480px) {
+          @include utils.size(10rem);
         }
       }
     }
   }
+
+  /************************************************CAROUSEL SECTION************************************************/
+
   .summary-carousel {
-    @include utils.size(100%, 40%);
-    background-color: rgb(26, 91, 26);
+    @include utils.size(100%, max-content);
+    background: transparent;
+    overflow: hidden;
+    padding-block: 4rem;
+    white-space: nowrap;
+    position: relative;
+    display: block !important;
+    @media only screen and (width < 360px) {
+      padding-block: 2rem;
+    }
+    //pause carousel animation on hover
+    &:hover {
+      .logos-slide {
+        animation-play-state: paused;
+      }
+    }
+
+    //little portal on edges of carousel
+    &::before,
+    &::after {
+      position: absolute;
+      content: "";
+      top: 0;
+      @include utils.size(5rem, 100%);
+
+      z-index: 2;
+    }
+    &::before {
+      left: 0;
+      background: linear-gradient(to left, rgba(255, 255, 255, 0), vars.$blueDark);
+    }
+    &::after {
+      right: 0;
+      background: linear-gradient(to right, rgba(255, 255, 255, 0), vars.$blueDark);
+    }
+
+    .logos-slide {
+      display: inline-flex !important;
+      flex-direction: row !important;
+      width: max-content;
+      animation: 60s slide infinite linear;
+      img {
+        height: 10rem;
+        //spacing between logos
+        margin: 0 4rem;
+        cursor: pointer;
+
+        @media only screen and (width < 768px) {
+          height: 5rem;
+          margin: 0;
+        }
+        @media only screen and (width < 360px) {
+          height: 4rem;
+          margin: 0;
+        }
+      }
+    }
   }
 }

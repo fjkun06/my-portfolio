@@ -20,6 +20,7 @@
     "react-dom": "^18",
     "react-responsive": "^9.0.2",
     "react-syntax-highlighter": "^15.5.0",
+    "react-tooltip": "^5.24.0",
     "swiper": "^11.0.5"
   },
   "devDependencies": {

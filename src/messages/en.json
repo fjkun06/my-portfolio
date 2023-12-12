@@ -21,10 +21,23 @@
     }
   },
   "about":{
-      "summary":"Summary",
-      "education":"Education && Interests",
-      "skills":" Soft && Hard Skills",
-      "experience":" Professional Experience"
+      "summary":{
+        "title":      "Summary",
+        "question":      "So, who am I?",
+        "opener":      "I'm a Front-end Developer from Cameroon.",
+        "desc1": " I enjoy breathing life into complex and beautiful Web Designs. I equally love the logic and structure of coding and always thrive to write elegant and efficient code, irrespective of the programming language.",
+        "desc2": "From writing my first C code in 2018, to my latest Github commit the excitement of solving problems via programming just keeps growing exponentially. The <important>Projects</important>  section showcases my most recent projects.",
+        "contact": "Get in touch"
+      },
+      "education":{
+        "title":      "Education && Interests"
+      },
+      "skills":{
+        "title":      "Soft && Hard Skills"
+      },
+      "experience":{
+        "title":      "Professional Experience"
+      }
   },
   "home":{
     

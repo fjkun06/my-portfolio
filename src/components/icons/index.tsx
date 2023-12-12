@@ -10,3 +10,5 @@ export { default as SkillsIcon } from "@/components/icons/SkillsIcon";
 export { default as EducationIcon } from "@/components/icons/EducationIcon";
 export { default as SummaryIcon } from "@/components/icons/SummaryIcon";
 export { default as ProfessionalIcon } from "@/components/icons/ProfessionalIcon";
+export { default as PlusIcon } from "@/components/icons/PlusIcon";
+export { default as CrossIcon } from "@/components/icons/CrossIcon";

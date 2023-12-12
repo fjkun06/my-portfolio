@@ -1,4 +1,3 @@
-/* eslint-disable max-len */
 "use client";
 import React from "react";
 
@@ -10,22 +9,27 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/scss";
 import "swiper/scss/pagination";
 import { SideNavigation } from "@/components";
-// import useMediaQuery from "@/utils/useMediaQuery";
 
-import SummaryScreen from "./SummaryScreen";
+import SummaryScreen, { ISummary } from "./SummaryScreen";
 
-// import required modules
-const AboutScreen = ({ routes }: { routes: string[] }) => {
+interface IAboutScreen {
+  data: {
+    routes: string[];
+    summary: ISummary["summary"];
+  };
+}
+const AboutScreen: React.FC<IAboutScreen> = ({ data: { routes, summary } }) => {
   //sythax for calling using the Swiper instance in React TypScript
   const [swiper, setSwiper] = React.useState<Swiper>();
 
-  // state that has the current active index, which can be used to force re-rende other components
+  // state that has the current active index,
+  //which can be used to force re - rende other components
   const [activeIndex, setActiveIndex] = React.useState(0);
 
   //enabling or disabling mouselwheel scrolling
   const isDesktopOrLaptop = useMediaQuery(
     {
-      minWidth: 1024
+      minWidth: 1300
     },
     undefined,
     handleMediaQueryChange
@@ -38,19 +42,20 @@ const AboutScreen = ({ routes }: { routes: string[] }) => {
 
   const arr = [0, 1, 2, 3];
   return (
-    <main className="portfolio-about">
+    <div className="portfolio-about">
       <SideNavigation
         currentIndex={activeIndex}
         swiperFunction={swiper}
         routes={routes}
       />
-      <section>
+      <section className="slide-container">
         <Swiper
           direction={"vertical"}
           effect="pagination"
           speed={1000}
           slidesPerView={1}
           spaceBetween={0}
+          simulateTouch={false}
           mousewheel={max1024}
           navigation={true}
           pagination={{
@@ -62,11 +67,13 @@ const AboutScreen = ({ routes }: { routes: string[] }) => {
           onRealIndexChange={({ activeIndex }) => setActiveIndex(activeIndex)}
         >
           {arr.map((el) => (
-            <SwiperSlide key={el}>{({ isActive }) => <SummaryScreen />}</SwiperSlide>
+            <SwiperSlide key={el}>
+              <SummaryScreen summary={summary} />
+            </SwiperSlide>
           ))}
         </Swiper>
       </section>
-    </main>
+    </div>
   );
 };
 

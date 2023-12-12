@@ -6,34 +6,70 @@
   @include utils.size(100%);
   @include utils.flex;
   overflow: hidden;
-  @media only screen and (width < 1024px) {
+  @media only screen and (width < 1300px) {
     flex-direction: column;
-    overflow-y: scroll;
+    // overflow-y: scroll;
     justify-content: flex-start;
     gap: 0rem;
+    display: block;
   }
 
-  //navigation bar (aside)
+  /************************************************SIDE NAVIGATION SECTION************************************************/
+
   aside {
-    background-color: transparent;
+    position: relative;
+    background-color: vars.$blueDark;
+    @include utils.size(31.1rem, 100%);
+    @include utils.flex;
+    margin-top: 1rem;
+
+    //hiding plus icon large screens
+    .plus-icon {
+      @include utils.size(2.5rem);
+      @include utils.positioning(3rem, 20%, right);
+      z-index: 999;
+      cursor: pointer;
+
+      svg {
+        @include utils.size(inherit);
+        transition: fill 0.25s ease-in-out;
+        color: vars.$grey;
+
+        &:hover {
+          color: vars.$white;
+        }
+      }
+      display: none;
+    }
+
+    @media only screen and (width < 1300px) {
+      margin-top: 0;
+      @include utils.size(100%, 4.4rem);
+      .plus-icon {
+        display: block;
+      }
+    }
+  }
+  /************************************************SIDE NAVIGATION SUB-SECTION************************************************/
+
+  .side-navigation {
+    background-color: inherit;
     @include utils.size(31.1rem, 100%);
     @include utils.flex(column);
     justify-content: flex-start;
     min-width: 31.1rem;
-    margin-top: 1rem;
     border-right: 1px solid vars.$lineColor;
+    transition: all 0.5s ease-in-out;
 
-    @media only screen and (width < 1024px) {
-      flex-direction: column;
+    @media only screen and (width < 1300px) {
       flex-direction: row;
       flex-wrap: wrap;
-      // gap: 1rem;
-      margin-top: 0;
-      align-items: flex-start;
-      justify-content: flex-start;
-      @include utils.size(100%, 31.1rem);
-      @include utils.size(100%, fit-content);
-      background-color: red;
+      @include utils.justifyAlignSame(flex-start);
+      @include utils.size(100%);
+      @include utils.positioning(0, 0);
+      overflow: hidden;
+      z-index: 999;
+      border-radius: 0.8rem;
     }
 
     span {
@@ -46,9 +82,7 @@
       cursor: pointer;
       transition: color 0.25s ease-in-out;
       text-align: left;
-      width: 100%;
-
-      height: max-content;
+      @include utils.size(100%, max-content);
 
       &:hover,
       &:is(.active) {
@@ -65,11 +99,31 @@
         transition: all 0.25s ease-in-out;
       }
     }
+
+    //giving sub navigation items an indentation
+    span:not(.heading) {
+      @media only screen and (width < 1300px) {
+        padding-left: 5rem;
+      }
+    }
+    //hiding aside heading on large screens
+    span:is(.heading),
+    span.heading {
+      @media only screen and (width > 1300px) {
+        display: none;
+      }
+    }
   }
 
+  /************************************************SWIPER SECTION************************************************/
   //main content for swipers
+  section.slide-container {
+    @include utils.size(calc(100% - 31.1rem), 100%);
+    @media only screen and (width < 1300px) {
+      width: 100%;
+    }
+  }
   section {
-    @include utils.size(100%);
     @include utils.flex;
   }
 
@@ -86,9 +140,11 @@
 
   .swiper-slide {
     text-align: center;
-    padding-right: 4rem;
-    @media only screen and (width < 1024px) {
+    @media only screen and (width < 1300px) {
       padding-inline: unset;
+    }
+    @media only screen and (width < 1200px) {
+      justify-content: flex-start;
     }
     @include utils.flex(column);
     position: relative;
@@ -102,4 +158,9 @@
   .swiper-pagination-bullet {
     background: vars.$white;
   }
+}
+
+.aside--open {
+  height: calc(5 * 4.7rem) !important;
+  padding-block: 1rem;
 }

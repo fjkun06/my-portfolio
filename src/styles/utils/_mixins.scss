@@ -14,8 +14,8 @@
   text-overflow: ellipsis;
 }
 
-@mixin justifyAlignSame($jc:center,$ai:$jc){
- justify-content: $jc;
+@mixin justifyAlignSame($jc: center, $ai: $jc) {
+  justify-content: $jc;
   align-items: $ai;
 }
 
@@ -33,12 +33,10 @@
   @content;
 }
 
-@mixin formatText($fw, $fs, $lh:normal) {
-  font-family: "Fira Code Variable", sans-serif;
+@mixin formatText($fw, $fs, $lh: normal) {
   font-weight: $fw;
   font-size: $fs;
   line-height: $lh;
-  font-style: normal;
 }
 
 //sets width and height
@@ -71,6 +69,7 @@
 
 //positioning absolutely positioned elements
 @mixin positioning($dir_value, $top, $direction: left) {
+  position: absolute;
   top: $top;
   #{$direction}: $dir_value;
 }

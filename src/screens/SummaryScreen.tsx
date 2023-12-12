@@ -1,46 +1,78 @@
+"use client";
 import React from "react";
 
+import { motion } from "framer-motion";
 import Image from "next/image";
+import Link from "next/link";
+import { Tooltip } from "react-tooltip";
 
 import { Section } from "@/components";
+import { useRouter } from "@/components/Link";
 
-const SummaryScreen = () => {
+import { logoData } from "./data";
+export interface ISummary {
+  summary: string[];
+}
+const SummaryScreen = ({ summary }: ISummary) => {
+  const router = useRouter();
+  const [link, setCurrentLink] = React.useState({
+    url: "https://github.com/fjkun06",
+    title: "Github"
+  });
+
   return (
     <Section className="about-summary">
-      <header className="">
+      <header>
         <div className="header-left">
-          <h2>So, who am I?</h2>
-          <p className="">
-            <span>I'm a Front-end Developer from Cameroon.</span>
-            <span>
-              I enjoy breathing life into complex and beautiful Web Designs. I equally
-              love the logic and structure of coding and always thrive to write elegant
-              and efficient code, irrespective of the programming language.
-            </span>
-            <span>
-              From writing my first C code in 2018, to my latest Github commit the
-              excitement of solving problems via programming just keeps growing
-              exponentially.
-            </span>
-            <span>
-              The <button className="">Projects</button> section showcases my most recent
-              projects.
-            </span>
+          <motion.h2 animate={{ y: [50, -50, 0], opacity: [0, 1] }}>
+            {summary[0]}
+          </motion.h2>
+
+          <motion.p
+            animate={{ y: [50, -50, 0], opacity: [0, 1] }}
+            transition={{ delay: 0.25, type: "spring" }}
+          >
+            {summary.slice(1, 3).map((t, i) => (
+              <span key={i} className="">
+                {t}
+              </span>
+            ))}
             <br />
-            <button className="contact-me">Contact me</button>
-          </p>
+            <span dangerouslySetInnerHTML={{ __html: summary[3] }} />
+            <br />
+            <button
+              type="button"
+              onClick={() => router.push("/contact")}
+              className="contact-me"
+            >
+              {summary[4]}
+            </button>
+          </motion.p>
         </div>
-        <div className="header-right">
-          <Image
-            src="/images/franko.png"
-            alt="a picture of Frank Jordan"
-            width={460}
-            height={460}
-            priority
-          />
-        </div>
+        <div className="header-right" />
       </header>
-      <div className="summary-carousel">Carousel Section</div>
+      <div className="summary-carousel logos">
+        {[0, 1].map((x) => (
+          <div key={x} className="logos-slide">
+            {logoData.map((logo, i) => (
+              <Image
+                key={i}
+                src={`/assets/icons/icon${i + 1}.svg`}
+                alt="logo"
+                height={100}
+                width={100}
+                className="myLogo"
+                onMouseEnter={() => setCurrentLink(logo)}
+              />
+            ))}
+          </div>
+        ))}
+        <Tooltip anchorSelect=".myLogo" place="bottom" variant="light" clickable>
+          <Link href={link.url} target="_blank" passHref={true}>
+            <span>{link.title}</span>
+          </Link>
+        </Tooltip>
+      </div>
     </Section>
   );
 };

@@ -17,9 +17,7 @@ nav {
   }
 
   .navbar {
-    position: absolute;
-    top: 0;
-    left: 0;
+    @include utils.positioning(0, 0);
     z-index: 9999;
     @include utils.flex;
     justify-content: flex-start;
@@ -40,7 +38,6 @@ nav {
   position: relative;
   background: vars.$blueDark;
   height: 6.125rem;
-  // height: 6.625rem;
   transition: all 0.5s ease-in-out;
 
   @media only screen and (width > 1300px) {
@@ -192,9 +189,6 @@ nav {
 
 .navbar--open {
   height: calc(100% - 5rem);
-  @media only screen and (width < 768px) {
-    height: calc(100% - 5rem);
-  }
 }
 .underlined {
   border-bottom: 1px solid vars.$lineColor !important;
