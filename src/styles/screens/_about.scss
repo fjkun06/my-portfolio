@@ -169,7 +169,7 @@
       //adding spacing between sections on larger and wider screens
       @media only screen and (height > 922px) and (width > 600px) {
         gap: 5vh;
-        padding-top: 5vh !important;
+        padding-block: 5vh !important;
       }
 
       @media only screen and (width < 1300px) {
@@ -179,11 +179,11 @@
       //centering content for very long and large screens
       @media only screen and (1300px < width < 2000px) and (height <= 980px), screen and (height > 1080px) {
         justify-content: center !important;
-        padding-top: 0 !important;
+        padding-block: 0 !important;
       }
       @media only screen and (width > 1300px) and (height > 980px), screen and (height > 1080px) {
         justify-content: flex-start !important;
-        padding-top: 5vh !important;
+        padding-block: 5vh !important;
       }
     }
 

@@ -5,53 +5,57 @@
 
 .about-experience {
   /************************************************EXPERIENCE SECTION************************************************/
+
   &--list {
-    // background-color: red;
     @include utils.size(80%, max-content);
     padding-block: 2rem;
     @include utils.flex(column);
     gap: 5rem;
-    padding-bottom: 5rem;
-    // @media only screen and (width > 1900px) {
-    //   width: 85%;
-    // }
 
     article {
       @include utils.flex;
       justify-content: flex-start;
-      // background-color: green;
-      // background-color: vars.$blueDark;
       @include utils.blurbackdrop(vars.$blueDark, 0.75);
       border: 1px solid vars.$orange;
       width: 100%;
       gap: 5rem;
       border-radius: 1rem;
       padding: 1rem;
-
-      /************************************************EXPERIENCE CARD DATE SECTION************************************************/
-      .date {
-        color: vars.$grey;
-        // background-color: red;
-        align-self: flex-start;
-        width: fit-content;
-        font-size: 1.8rem;
-        width: 17rem;
-      }
+      max-width: 92.6rem;
+      //mobile
 
       /************************************************EXPERIENCE CARD SECTION************************************************/
       .data {
         @include utils.flex(column);
-        width: 83%;
         align-items: flex-start;
         gap: 1rem;
+        width: 100%;
 
-        h3 {
-          font-size: 2rem;
+        /************************************************EXPERIENCE CARD HEADING SECTION************************************************/
+        .info {
+          @include utils.flex;
+          flex-wrap: wrap;
+          justify-content: space-between;
+          height: 100%;
+          width: 100%;
+          @include utils.size(100%);
+
+          h3 {
+            font-size: 2rem;
+          }
+
+          /************************************************EXPERIENCE CARD DATE SECTION************************************************/
+          .date {
+            color: vars.$grey;
+            width: fit-content;
+            font-size: 1.8rem;
+            width: 17rem;
+          }
         }
 
         ul {
           @include utils.flex(column);
-          gap: 0.5rem;
+          gap: 1rem;
           list-style-type: disc;
           margin-left: 5%;
           align-items: flex-start;
@@ -61,7 +65,7 @@
             color: color.scale(vars.$grey, $lightness: 65%);
             // color: rgb(148, 163, 184);
 
-            // font-size: 1.5rem;
+            font-size: 1.4rem;
           }
         }
         /************************************************EXPERIENCE CARD SKILLS SECTION************************************************/
