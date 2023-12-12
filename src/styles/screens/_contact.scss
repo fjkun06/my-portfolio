@@ -2,8 +2,76 @@
 @use "../utils/mixins" as utils;
 @use "../utils/variables" as vars;
 
-.about-contact {
+.portfolio-contact {
   @include utils.size(100%);
-  @include utils.flex;
-  /************************************************EDUCATION SECTION************************************************/
+  @include utils.flex(column);
+  /************************************************HEADING SECTION************************************************/
+  h1 {
+    font-size: 7rem;
+  }
+
+  section {
+    @include utils.size(100%);
+    @include utils.size(70%);
+    @include utils.flex;
+    gap: 5vh;
+    // background-color: red;
+
+    div {
+      @include utils.size(100%);
+      @include utils.flex(column);
+    }
+
+    /************************************************INPUT DATA SECTION************************************************/
+    .input-data {
+      // background-color: green;
+      width: 100%;
+      @include utils.flex(column);
+      align-items: flex-start;
+      padding: 1rem;
+      gap: 2rem;
+
+      /*******************label*******************/
+      label {
+        // background-color: blue;
+        padding: 1rem;
+        padding-left: 0;
+        gap: 0.5rem;
+        @include utils.flex(column);
+        align-items: flex-start;
+        width: 100%;
+        span {
+          color: vars.$grey;
+        }
+        input,
+        textarea {
+          border-radius: 0.5rem;
+          border-radius: 8px;
+          border: 1px solid #1e2d3d;
+          background: #011221;
+          caret-color: vars.$grey;
+          padding-left: 0.5rem;
+          color: vars.$grey;
+          outline: 0.2rem solid vars.$blueDark;
+          transition: outline 0.25s ease-in-out;
+          font-size: 1.6rem;
+          width: 100%;
+          &:focus {
+            outline: 0.2rem solid vars.$lineColor;
+          }
+        }
+
+        input {
+          height: 4.1rem;
+        }
+        textarea {
+          padding: 1rem;
+        }
+      }
+    }
+    /************************************************OUTPUT DATA SECTION************************************************/
+    .output-data {
+      background-color: purple;
+    }
+  }
 }
