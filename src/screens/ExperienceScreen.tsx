@@ -17,7 +17,6 @@ export interface IExperienceData extends IExperienceCard {
 const ExperienceScreen = ({ experience: { title, xp1, xp2, data } }: IExperience) => {
   const ref = React.useRef(null);
   const isInView = useInView(ref, { amount: 0.5 });
-  console.log(title);
 
   return (
     <section ref={ref} className="about-experience">
