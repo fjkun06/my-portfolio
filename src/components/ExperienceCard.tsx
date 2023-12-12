@@ -27,19 +27,7 @@ const ExperienceCard = ({}: IExperienceCard) => {
             Unermüdliches Engagement beim Erlernen und Anwenden neuer Technologien und
             Methoden.
           </li>
-          {/* <li>
-            Utilized diverse front-end technologies to design views, yielding a notable
-            20% rise in user engagement.
-          </li>
-          <li>
-            Played an active role in providing valuable insights to internal stakeholders,
-            demonstrating a grasp of complex technicalities.
-          </li>
-          <li>
-            Showcased unwavering commitment to learning and applying new technologies and
-            methodologies.
-          </li> */}
-        </ul>
+             </ul>
         <div className="technologies">
           {experienceSkills.wandaprep.map((skill) => (
             <span className="pill" key={skill}>

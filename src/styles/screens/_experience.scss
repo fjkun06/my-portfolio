@@ -21,7 +21,7 @@
       justify-content: flex-start;
       // background-color: green;
       // background-color: vars.$blueDark;
-      // @include utils.blurbackdrop(vars.$blueDark, 0.75);
+      @include utils.blurbackdrop(vars.$blueDark, 0.75);
       border: 1px solid vars.$orange;
       width: 100%;
       gap: 5rem;
@@ -57,6 +57,10 @@
           align-items: flex-start;
           li {
             text-align: left;
+            color: vars.$grey;
+            color: color.scale(vars.$grey, $lightness: 65%);
+            // color: rgb(148, 163, 184);
+
             // font-size: 1.5rem;
           }
         }
