@@ -10,4 +10,5 @@ export { default as CodeReel } from "@/components/CodeReel";
 export { default as UserInfo } from "@/components/UserInfo";
 export { default as SideNavigation } from "@/components/SideNavigation";
 export { default as SideNavigationItem } from "@/components/SideNavigationItem";
-export { default as Section } from "@/components/Section";
+export { default as Button } from "@/components/Button";
+export { default as SchoolCard } from "@/components/SchoolCard";

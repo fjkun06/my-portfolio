@@ -18,6 +18,7 @@ const SideNavigation: React.FC<ISideNavigation> = ({ routes, ...props }) => {
       <div
         className={`side-navigation ${state ? "aside--open" : ""}`}
         onMouseLeave={() => setState(false)}
+        onClick={() => setState(!state)}
       >
         <span className="active heading">
           {sideNavigationDate[props.currentIndex].icon}

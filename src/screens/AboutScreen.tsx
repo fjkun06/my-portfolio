@@ -9,16 +9,22 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/scss";
 import "swiper/scss/pagination";
 import { SideNavigation } from "@/components";
+import { SummaryScreen, EducationScreen } from "@/screens";
 
-import SummaryScreen, { ISummary } from "./SummaryScreen";
+import { IEducation } from "./EducationScreen";
+import { ISummary } from "./SummaryScreen";
 
+//interface containing translated text for all sections
 interface IAboutScreen {
   data: {
     routes: string[];
     summary: ISummary["summary"];
+    education: IEducation;
   };
 }
-const AboutScreen: React.FC<IAboutScreen> = ({ data: { routes, summary } }) => {
+const AboutScreen: React.FC<IAboutScreen> = ({
+  data: { routes, summary, education }
+}) => {
   //sythax for calling using the Swiper instance in React TypScript
   const [swiper, setSwiper] = React.useState<Swiper>();
 
@@ -27,20 +33,30 @@ const AboutScreen: React.FC<IAboutScreen> = ({ data: { routes, summary } }) => {
   const [activeIndex, setActiveIndex] = React.useState(0);
 
   //enabling or disabling mouselwheel scrolling
-  const isDesktopOrLaptop = useMediaQuery(
+  const isLongEnough = useMediaQuery(
     {
+      minHeight: 1080
+    },
+    undefined,
+    handleMediaQueryChange
+  );
+  const isLargeEnough = useMediaQuery(
+    {
+      minHeight: 922,
       minWidth: 1300
     },
     undefined,
     handleMediaQueryChange
   );
-  const [max1024, setAMouseWheel] = React.useState(isDesktopOrLaptop);
+  const [max1024, setAMouseWheel] = React.useState(isLongEnough || isLargeEnough);
   function handleMediaQueryChange(matches: boolean) {
     setAMouseWheel(matches);
-    console.log(matches);
   }
 
-  const arr = [0, 1, 2, 3];
+  const arr = [
+    <SummaryScreen summary={summary} key={1} />,
+    <EducationScreen interests={education.interests} school={education.school} key={2} />
+  ];
   return (
     <div className="portfolio-about">
       <SideNavigation
@@ -57,7 +73,9 @@ const AboutScreen: React.FC<IAboutScreen> = ({ data: { routes, summary } }) => {
           spaceBetween={0}
           simulateTouch={false}
           mousewheel={max1024}
+          // mousewheel={max1024}
           navigation={true}
+          allowTouchMove={isLongEnough}
           pagination={{
             clickable: true
           }}
@@ -66,10 +84,8 @@ const AboutScreen: React.FC<IAboutScreen> = ({ data: { routes, summary } }) => {
           onSwiper={(swiper) => setSwiper(swiper)}
           onRealIndexChange={({ activeIndex }) => setActiveIndex(activeIndex)}
         >
-          {arr.map((el) => (
-            <SwiperSlide key={el}>
-              <SummaryScreen summary={summary} />
-            </SwiperSlide>
+          {arr.map((el, i) => (
+            <SwiperSlide key={i}>{el}</SwiperSlide>
           ))}
         </Swiper>
       </section>

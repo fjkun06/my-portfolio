@@ -1,0 +1,141 @@
+//loading mixins and variable
+@use "../utils/mixins" as utils;
+@use "../utils/variables" as vars;
+
+.about-education {
+  padding-top: 2rem !important;
+ 
+  /************************************************EDUCATION SECTION************************************************/
+  h2 {
+    @include utils.formatText(450, 4rem);
+    @media only screen and (width < 768px) {
+      font-size: 3rem;
+    }
+  }
+  div {
+    @include utils.flex(column);
+  }
+
+  &--school {
+    @include utils.size(100%, max-content);
+    gap: 2rem;
+
+    article {
+      @include utils.flex(column);
+      @include utils.size(60%, max-content);
+      align-items: flex-start;
+      border: 1px solid vars.$orange;
+      padding: 1rem;
+      border-radius: 1rem;
+      gap: 1rem;
+      @media only screen and (width < 1500px) {
+        width: 70%;
+      }
+      @media only screen and (width < 980px) {
+        width: 90%;
+      }
+      h3 {
+        @include utils.formatText(450, 2.5rem);
+        text-align: left;
+        @media only screen and (width < 1700px) {
+          font-size: 2.2rem;
+        }
+        @media only screen and (width < 768px) {
+          font-size: 2rem;
+        }
+      }
+
+      p {
+        @include utils.flex(column);
+        align-items: flex-start;
+        gap: 0.5rem;
+
+        span.university {
+          // color: red;
+          @include utils.formatText(450, 2.1rem);
+          @media only screen and (width < 1700px) {
+            font-size: 1.9rem;
+          }
+          @media only screen and (width < 768px) {
+            font-size: 1.8rem;
+          }
+        }
+        span.year {
+          // color: orangered;
+          color: lighten(vars.$grey, 30%);
+
+          @include utils.formatText(450, 1.7rem);
+          @media only screen and (width < 1700px) {
+            font-size: 1.6rem;
+          }
+        }
+        span.grade {
+          color: vars.$orange;
+          @include utils.formatText(450, 1.5rem);
+        }
+      }
+    }
+  }
+
+  /************************************************INTERESTS SECTION************************************************/
+
+  &--interests {
+    @include utils.size(100%, max-content);
+    gap: 2rem;
+    @media only screen and (width < 480px) {
+      padding-bottom: 2rem;
+    }
+
+    ul {
+      @include utils.flex(column);
+      @include utils.flex;
+      list-style: none;
+      padding-left: 0;
+      gap: 1rem;
+      width: 70%;
+      flex-wrap: wrap;
+      margin-left: 8%;
+      @media only screen and (width < 1700px) {
+        width: 80%;
+        margin-left: 11%;
+      }
+      @media only screen and (width < 1500px) {
+        width: 90%;
+      }
+      @media only screen and (width < 980px) {
+        width: 100%;
+        margin-left: 5%;
+        column-gap: 4rem;
+      }
+      @media only screen and (width < 400px) {
+        margin-left: 15%;
+        gap: 0.5rem;
+      }
+
+      li {
+        position: relative;
+        padding-left: 1.5rem;
+        margin-bottom: 0.5rem;
+        @include utils.formatText(450, 1.8rem);
+        width: 40%;
+        text-align: left;
+        @media only screen and (width < 1700px) {
+          font-size: 1.6rem;
+        }
+        @media only screen and (width < 400px) {
+          width: 100%;
+        }
+
+        &::before {
+          content: "";
+          position: absolute;
+          left: -2rem;
+          top: -0.25rem;
+          @include utils.size(3rem);
+          background-repeat: no-repeat;
+          background: url("/assets/icons/arrow-forward.svg");
+        }
+      }
+    }
+  }
+}

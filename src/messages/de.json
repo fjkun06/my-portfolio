@@ -1,50 +1,75 @@
 {
   "index": {
-    "title":"Hallo Welt"
+    "title": "Hallo Welt"
   },
-  "routes":{
+  "routes": {
     "home": {
       "text": "_hallo",
-      "href":"/"
+      "href": "/"
     },
     "about": {
       "text": "_über-mich",
-      "href":"/about"
+      "href": "/about"
     },
     "projects": {
       "text": "_projekte",
-      "href":"/projects"
+      "href": "/projects"
     },
     "contact": {
       "text": "_kontaktiere-mich",
-      "href":"/contact"
+      "href": "/contact"
     }
   },
-    "about":{
-      "summary":{
-        "title":"Zusammenfassung",
-        "question":      "Also, wer bin ich?",
-        "opener":      "Ich bin ein Front-End-Entwickler aus Kamerun.",
-        "desc1": "Ich genieße es, komplexen und schönen Web-Designs Leben einzuhauchen. Ich liebe auch die Logik und Struktur der Programmierung und bin immer bestrebt, eleganten und effizienten Code zu schreiben, unabhängig von der Programmiersprache.",
-        "desc2": " Vom Schreiben meines ersten C-Codes im Jahr 2018 bis hin zu meinem neuesten Github-Commit wächst die Begeisterung für das Lösen von Problemen durch Programmierung exponentiell. Der Abschnitt  <important>Projekte</important> zeigt meine neuesten Projekte.",
-        "contact": "Kontakt aufnehmen"
+  "about": {
+    "summary": {
+      "title": "Zusammenfassung",
+      "question": "Also, wer bin ich?",
+      "opener": "Ich bin ein Front-End-Entwickler aus Kamerun.",
+      "desc1": "Ich genieße es, komplexen und schönen Web-Designs Leben einzuhauchen. Ich liebe auch die Logik und Struktur der Programmierung und bin immer bestrebt, eleganten und effizienten Code zu schreiben, unabhängig von der Programmiersprache.",
+      "desc2": " Vom Schreiben meines ersten C-Codes im Jahr 2018 bis hin zu meinem neuesten Github-Commit wächst die Begeisterung für das Lösen von Problemen durch Programmierung exponentiell. Der Abschnitt  <important>Projekte</important> zeigt meine neuesten Projekte.",
+      "contact": "Kontakt aufnehmen"
+    },
+    "education": {
+      "title": "Bildung && Interessen",
+      "schools": {
+        "title": "Bildung",
+        "ub": {
+          "name": "Universität Buea",
+          "endDate": "2023",
+          "grade": "Note: 3,23",
+          "field": "Bachelor of Science in Technischer Informatik"
+        },
+        "ude": {
+          "name": "Universität Duisburg-Essen",
+          "endDate": "Aktuelle",
+          "grade": "",
+          "field": "Bachelor of Science in Technischer Informatik"
+        }
       },
-      "education":{
-      "title":"Bildung && Interessen"
-      },
-      "skills":{
-      "title":"Weiche && harte Fähigkeiten"
-      },
-      "experience":{
-        "title":"Berufserfahrung"
+      "interests": {
+        "title": "Interessen && Hobbys",
+        "list": {
+          "one":"Technologie-Trends",
+          "two":"Bücher lesen (Psychologie)",
+          "three":"Sport (Fußball, Basketball)",
+          "four":"Forschung und Entdeckung",
+          "five":"Künstliche Intelligenz",
+          "six":"Erstaunliche Dinge mit Code machen",
+          "seven":"Japanische Anime",
+          "eight":"Fitnessstudio-Workouts"
+        }
       }
+    },
+    "skills": {
+      "title": "Weiche && harte Fähigkeiten"
+    },
+    "experience": {
+      "title": "Berufserfahrung"
+    }
   },
-    "home":{
-    
-      "greeting":"Hallo zusammen, ich bin",
-      "role":"Front-End-Entwickler"
-    
+  "home": {
+    "greeting": "Hallo zusammen, ich bin",
+    "role": "Front-End-Entwickler"
   },
-  "find-me":"profile:"
-
+  "find-me": "profile:"
 }
