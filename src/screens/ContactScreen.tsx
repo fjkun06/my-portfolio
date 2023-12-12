@@ -1,6 +1,8 @@
 /* eslint-disable max-len */
 "use client";
-import React from "react";
+import React, { useId } from "react";
+
+import { useForm, ValidationError } from "@formspree/react";
 
 import { Button, CodeSnippet, InputComponent, LabelContainer } from "@/components";
 
@@ -22,62 +24,69 @@ const ContactScreen = () => {
     setMessage(e.target.value);
   };
 
+  //form submission state
+  const [state, handleSubmit] = useForm("xqkvropo");
+
   const inputs = [
     {
       type: "input",
       value: name,
       onChange: onNameChange,
-      text: "name"
+      text: "name",
+      name: "name"
     },
     {
       type: "input",
       value: email,
       onChange: onEmailChange,
-      text: "email"
+      text: "email",
+      name: "email"
     },
     {
       type: "textarea",
       value: message,
       onChange: onMessageChange,
-      text: "message"
+      text: "message",
+      name: "message"
     }
   ];
+
+  //return this if successful
+  console.log(state);
+  
+  if (state.succeeded) {
+    return <p>Thanks for joining!</p>;
+  }
 
   return (
     <div className="portfolio-contact">
       <h1>Get in touch</h1>
       <section>
-        <div className="input-data">
+        <form className="input-data" onSubmit={handleSubmit}>
           <h2> Input Data</h2>
-          <LabelContainer text="name">
-            <InputComponent
-              inputType="input"
-              id="name"
-              onChange={onNameChange}
-              value={name}
-            />
-          </LabelContainer>
-          <LabelContainer text="email">
-            <InputComponent
-              inputType="input"
-              id="email"
-              onChange={onEmailChange}
-              value={email}
-            />
-          </LabelContainer>
-          <LabelContainer text="message">
-            <InputComponent
-              inputType="textarea"
-              id="message"
-              onChange={onMessageChange}
-              value={message}
-            />
-          </LabelContainer>
-          <a href="mailto:masteryoda@starwars.com? cc=skywalker@starwars.com& bcc=leia@starwars.com& subject=May%20the%20Force%20be%20with%20you&body=May%20the%20Force%20be'%20with%20us%20all%3A%0D%0A%0D%0ACheers%2C%0D%0AHappy%20Customer">
-            I love star wars
-          </a>
-          <Button text="submit-message" className="sendBtn" />
-        </div>
+          {inputs.map(({ type, value, onChange, text, name }) => (
+            <LabelContainer text={text} key={text}>
+              <InputComponent
+                inputType={type as any}
+                id={text}
+                onChange={onChange as any}
+                value={value}
+                name={name}
+              />
+              <ValidationError
+                prefix={name.toUpperCase()}
+                field={name}
+                errors={state.errors}
+              />
+            </LabelContainer>
+          ))}
+          <Button
+            text="submit-message"
+            className="sendBtn"
+            type="submit"
+            disabled={state.submitting}
+          />
+        </form>
         <div className="output-data">
           <h2> Output Data</h2>
           <CodeSnippet
@@ -96,6 +105,8 @@ button.addEventListener('click', () => {
 })`}
           />
         </div>
+
+        <div className="success"></div>
       </section>
     </div>
   );

@@ -19,7 +19,7 @@
     gap: 5vh;
     // background-color: red;
 
-    div {
+    div,form {
       @include utils.size(100%);
       @include utils.flex(column);
       justify-content: flex-start;
@@ -30,7 +30,7 @@
     /************************************************INPUT DATA SECTION************************************************/
     .input-data {
       @include utils.blurbackdrop(vars.$blueDark, 0.75);
-      background-color: red;
+      // background-color: red;
       border-radius: 5rem;
       align-items: flex-start;
       padding-inline: 2rem;
