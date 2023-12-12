@@ -153,12 +153,23 @@
       @include utils.flex(column);
       justify-content: flex-start;
       padding-top: 5vh;
-      gap: 2vh;
+      gap: 5vh;
+
+      //styling headings
+      h2 {
+        @include utils.formatText(450, 4rem);
+        @media only screen and (width < 768px) {
+          font-size: 3rem;
+        }
+        @media only screen and (width < 500px) {
+          font-size: 2.4rem;
+        }
+      }
 
       //adding spacing between sections on larger and wider screens
       @media only screen and (height > 922px) and (width > 600px) {
         gap: 5vh;
-        padding-top: 5vh !important;
+        padding-block: 5vh !important;
       }
 
       @media only screen and (width < 1300px) {
@@ -168,17 +179,17 @@
       //centering content for very long and large screens
       @media only screen and (1300px < width < 2000px) and (height <= 980px), screen and (height > 1080px) {
         justify-content: center !important;
-        padding-top: 0 !important;
+        padding-block: 0 !important;
       }
       @media only screen and (width > 1300px) and (height > 980px), screen and (height > 1080px) {
         justify-content: flex-start !important;
+        padding-block: 5vh !important;
       }
     }
 
     div,
     section {
       //scrollbar
-
       &::-webkit-scrollbar {
         width: 0.5rem;
       }
@@ -201,7 +212,7 @@
   }
 
   /************************************************STYLING LIST && LIST ITEMS************************************************/
-  ul {
+  ul.list {
     @include utils.flex(column);
     @include utils.flex;
     list-style: none;
@@ -223,9 +234,9 @@
       margin-left: 5%;
       column-gap: 4rem;
     }
-    @media only screen and (width < 500px) {
+    @media only screen and (width < 700px) {
       margin-left: 15%;
-      gap: 0.5rem;
+      gap: 1rem;
     }
 
     li {
@@ -244,7 +255,7 @@
       @media only screen and (width < 500px) {
         font-size: 1.5rem;
       }
-      @media only screen and (width < 500px) {
+      @media only screen and (width < 700px) {
         width: 100%;
       }
 

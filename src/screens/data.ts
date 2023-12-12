@@ -151,3 +151,16 @@ export const logoData = [
 
 //desc1 twice to avoid errors in translation...but it is replaced immediately
 export const summaryKeys = ["question", "opener", "desc1", "desc1", "contact"];
+
+export const experienceSkills = {
+  wandaprep: [
+    "SCSS",
+    "JavaScript",
+    "TypeScript",
+    "React.js (Next.js)",
+    "D3.js",
+    "Tailwind CSS"
+  ],
+  positiveImpact: ["HTML", "CSS", "JavaScript"],
+  jongoHub: ["HTML", "CSS", "JavaScript"]
+};
