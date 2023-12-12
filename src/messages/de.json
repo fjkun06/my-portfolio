@@ -78,7 +78,16 @@
       }
     },
     "experience": {
-      "title": "Berufserfahrung"
+      "title": "Berufserfahrung",
+      "xp1": "Frontend-Entwickler @ WandaPrep",
+      "xp2": "Ehrenamtlicher Frontend-Entwickler @ Positive Impact Events",
+      "list": {
+        "one": "Nutzung verschiedener Front-End-Technologien für die Gestaltung von Ansichten, was zu einer beachtlichen Steigerung der Benutzeraktivität um 20 % führte.",
+        "two": "Spielte eine aktive Rolle bei der Bereitstellung wertvoller Einblicke für interne Stakeholder und bewies dabei ein Verständnis für komplexe technische Zusammenhänge.",
+        "three": "Unermüdliches Engagement beim Erlernen und Anwenden neuer Technologien und Methoden.",
+        "four": "Hat mit Designern zusammengearbeitet, um benutzerorientierte Webanwendungen zu erstellen und bereitzustellen, die die Erwartungen der Kunden übertreffen.",
+        "five": "Konstante Unterstützung der Teammitglieder und Förderung einer kollaborativen Arbeitsumgebung. Dies führte zu einer Steigerung der Effizienz bei der Projektabwicklung um 15 % und zu einem zusammenhängenden, motivierten Team."
+      }
     }
   },
   "home": {

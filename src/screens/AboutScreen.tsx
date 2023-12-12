@@ -17,6 +17,7 @@ import {
 } from "@/screens";
 
 import { IEducation, List } from "./EducationScreen";
+import { IExperienceData } from "./ExperienceScreen";
 import { ISummary } from "./SummaryScreen";
 
 //interface containing translated text for all sections
@@ -26,10 +27,11 @@ interface IAboutScreen {
     summary: ISummary["summary"];
     education: IEducation;
     skills: List;
+    experience: IExperienceData;
   };
 }
 const AboutScreen: React.FC<IAboutScreen> = ({
-  data: { routes, summary, education, skills }
+  data: { routes, summary, education, skills, experience }
 }) => {
   //sythax for calling using the Swiper instance in React TypScript
   const [swiper, setSwiper] = React.useState<Swiper>();
@@ -63,7 +65,7 @@ const AboutScreen: React.FC<IAboutScreen> = ({
     <SummaryScreen summary={summary} key={1} />,
     <EducationScreen interests={education.interests} school={education.school} key={2} />,
     <SkillsScreen key={3} softSkills={skills} />,
-    <ExperienceScreen key={4} />
+    <ExperienceScreen key={4} experience={experience} />
   ];
   return (
     <div className="portfolio-about">

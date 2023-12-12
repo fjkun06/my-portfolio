@@ -78,7 +78,16 @@
       }
     },
     "experience": {
-      "title": "Professional Experience"
+      "title": "Professional Experience",
+      "xp1": "Frontend Developer @ WandaPrep",
+      "xp2": "Volunteer Frontend Developer @ Positive Impact Events",
+      "list": {
+        "one": " Utilized diverse front-end technologies to design views, yielding a notable 20% rise in user engagement.",
+        "two": "Played an active role in providing valuable insights to internal stakeholders, demonstrating a grasp of complex technicalities.",
+        "three": " Showcased unwavering commitment to learning and applying new technologies and methodologies.",
+        "four": "Collaborated with designers to create and deploy user-centric web applications surpassing client expectations.",
+        "five": "Consistently supported team members, fostering a collaborative work environment. Resulted in a 15% increase in project delivery efficiency and a cohesive, motivated team. "
+      }
     }
   },
   "home": {

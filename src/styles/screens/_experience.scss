@@ -22,7 +22,6 @@
       border-radius: 1rem;
       padding: 1rem;
       max-width: 92.6rem;
-      //mobile
 
       /************************************************EXPERIENCE CARD SECTION************************************************/
       .data {
@@ -36,20 +35,19 @@
           @include utils.flex;
           flex-wrap: wrap;
           justify-content: space-between;
-          height: 100%;
-          width: 100%;
           @include utils.size(100%);
 
           h3 {
             font-size: 2rem;
+            text-align: left;
           }
 
           /************************************************EXPERIENCE CARD DATE SECTION************************************************/
           .date {
             color: vars.$grey;
-            width: fit-content;
             font-size: 1.8rem;
             width: 17rem;
+            text-align: left;
           }
         }
 
@@ -63,9 +61,9 @@
             text-align: left;
             color: vars.$grey;
             color: color.scale(vars.$grey, $lightness: 65%);
-            // color: rgb(148, 163, 184);
-
-            font-size: 1.4rem;
+            @media only screen and (width < 768px) {
+              font-size: 1.4rem;
+            }
           }
         }
         /************************************************EXPERIENCE CARD SKILLS SECTION************************************************/

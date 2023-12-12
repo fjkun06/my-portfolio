@@ -6,6 +6,7 @@ import { sideNavigationDate } from "@/components/data";
 import { AboutScreen } from "@/screens";
 import { summaryKeys } from "@/screens/data";
 import { IEducation, List } from "@/screens/EducationScreen";
+import { IExperienceData } from "@/screens/ExperienceScreen";
 
 const About = () => {
   const t = useTranslations("about");
@@ -19,6 +20,7 @@ const About = () => {
 
   // Education screen data
   const interests = ["one", "two", "three", "four", "five", "six", "seven", "eight"];
+
   const educationData: IEducation = {
     school: {
       title: t("education.schools.title"),
@@ -44,12 +46,21 @@ const About = () => {
     data: interests.map((el) => t(`skills.soft.list.${el}`))
   };
 
+  // Experience screen data
+  const experienceData: IExperienceData = {
+    title: t("experience.title"),
+    xp1: t("experience.xp1"),
+    xp2: t("experience.xp2"),
+    data: interests.slice(0, 5).map((el) => t(`experience.list.${el}`))
+  };
+
   //translation data for summary section of about page
   const translationData = {
     routes: sideNavigationRoutes,
     summary: summaryData,
     education: educationData,
-    skills: skillsData
+    skills: skillsData,
+    experience: experienceData
   };
 
   return <AboutScreen data={translationData} />;
