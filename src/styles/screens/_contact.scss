@@ -13,13 +13,17 @@
   /************************************************HEADING SECTION************************************************/
   h1 {
     font-size: 7rem;
-    @media only screen and (width < 768px) {
+    @media only screen and (width < 1024px) {
       font-size: 5rem;
     }
-    @media only screen and (width < 480px) {
-      font-size: 3rem;
+    @media only screen and (width < 768px) {
+      font-size: 4rem;
     }
-    // text-transform: uppercase;
+    @media only screen and (width < 600px) {
+      font-size: 3rem;
+      text-align: center;
+      padding-inline: 2vw;
+    }
   }
 
   section {
@@ -58,7 +62,6 @@
       width: 70%;
       border: 0.1rem solid vars.$lineColor;
       min-width: 50rem;
-      // display: none;
       @media only screen and (width < 768px) {
         min-width: unset;
         width: 90%;

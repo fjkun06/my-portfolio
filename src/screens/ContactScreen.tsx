@@ -4,6 +4,7 @@ import React from "react";
 
 import { useForm, ValidationError } from "@formspree/react";
 import { AnimatePresence, motion } from "framer-motion";
+import { useRouter } from "next/navigation";
 
 import { Button, CodeSnippet, InputComponent, LabelContainer } from "@/components";
 
@@ -75,9 +76,30 @@ const ContactScreen: React.FC<IContactScreen> = ({
     }
   ];
 
+  //redirect to homepage after successful form submission
+  const { push } = useRouter();
+  const delay = 5;
+  React.useEffect(() => {
+    const timer = setTimeout(() => {
+      state.succeeded && push("/");
+    }, delay * 1000);
+    return () => {
+      clearTimeout(timer);
+    };
+  }, [state.succeeded, push]);
+
   return (
     <div className="portfolio-contact">
-      <h1>{heading}</h1>
+      <motion.h1
+        animate={{
+          y: [10, -10, 0],
+          opacity: [0, 1],
+          transition: { delay: 0.1, duration: 0.5 }
+        }}
+        transition={{ type: "spring", ease: "easeInOut" }}
+      >
+        {heading}
+      </motion.h1>
       <motion.section layout>
         <AnimatePresence>
           {!state.succeeded && (
