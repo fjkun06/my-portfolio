@@ -1,7 +1,6 @@
 import React from "react";
-export interface Icon {
-  callback?: () => void;
-}
+
+import { Icon } from "./interface";
 const AmericaIcon: React.FC<Icon> = () => {
   return (
     <span className="nav-flag">

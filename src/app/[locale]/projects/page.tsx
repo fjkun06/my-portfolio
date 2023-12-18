@@ -1,11 +1,13 @@
 import React from "react";
 
-import { useTranslations } from "next-intl";
+import { ProjectsScreen } from "@/screens";
+
+// import { useTranslations } from "next-intl";
 
 const Projects = () => {
-  const t = useTranslations("index");
+  // const t = useTranslations("projects");
 
-  return <div>Projects Page {t("title")}#</div>;
+  return <ProjectsScreen />;
 };
 
 export default Projects;

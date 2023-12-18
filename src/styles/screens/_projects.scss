@@ -1,0 +1,22 @@
+//loading mixins and variable
+@use "../utils/mixins" as utils;
+@use "../utils/variables" as vars;
+
+.portfolio-projects {
+  @include utils.size(100%);
+  @include utils.flex(column);
+
+  justify-content: flex-start;
+  padding-block: 5vh;
+  gap: 5vh;
+
+  /************************************************CARDS SECTION************************************************/
+  section {
+    @include utils.size(70%, max-content);
+    @include utils.flex;
+    gap: 5vh;
+    @media only screen and (width < 768px) {
+      width: 100%;
+    }
+  }
+}
