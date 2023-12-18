@@ -143,7 +143,7 @@ button.addEventListener('click', () => {
                 Your message has been delivered. You will recieve answer really soon!
               </span>
               <br />
-              <span>...redirecting in 5s</span>
+              <span>...redirecting in 3s</span>
             </motion.div>
           )}
         </AnimatePresence>

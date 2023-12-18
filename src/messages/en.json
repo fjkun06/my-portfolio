@@ -96,5 +96,9 @@
     "greeting": "Hi all, I am",
     "role": "Front-end Developer"
   },
+  "contact": {
+    "heading": "Hallo zusammen, ich bin",
+    "role": "Front-End-Entwickler"
+  },
   "find-me": "find me in:"
 }
