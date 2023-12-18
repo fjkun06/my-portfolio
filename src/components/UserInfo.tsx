@@ -22,7 +22,9 @@ const UserInfo = ({
       <motion.div className="" animate={{ y: [50, -50, 0], opacity: [0, 1] }}>
         <span className="">{greeting}</span>
         <span className="title">Frank Jordan Z.</span>
-        <h3 className="">&gt; {role}</h3>
+        <h3 className="">
+          <mark> &gt; {role}</mark>
+        </h3>
         <div className="cta">
           {callToActions.map(([text, route], i) => (
             <Button text={text} route={route} key={i} />

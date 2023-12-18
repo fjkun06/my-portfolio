@@ -2,10 +2,18 @@ import React from "react";
 
 import { useTranslations } from "next-intl";
 
-const Contact = () => {
-  const t = useTranslations("index");
+import { ContactScreen } from "@/screens";
+import { contactItems } from "@/screens/data";
 
-  return <div>Contact Page {t("title")}#</div>;
+const Contact = () => {
+  const t = useTranslations("contact");
+
+  const data: any = {};
+
+  //looping through key array to get translations
+  contactItems.forEach((el) => (data[`${el}`] = t(el)));
+
+  return <ContactScreen {...data} />;
 };
 
 export default Contact;

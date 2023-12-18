@@ -81,6 +81,8 @@
       "title": "Professional Experience",
       "xp1": "Frontend Developer @ WandaPrep",
       "xp2": "Volunteer Frontend Developer @ Positive Impact Events",
+      "date1": "Jan — Nov 2023",
+      "date2": "May — Sep 2021",
       "list": {
         "one": " Utilized diverse front-end technologies to design views, yielding a notable 20% rise in user engagement.",
         "two": "Played an active role in providing valuable insights to internal stakeholders, demonstrating a grasp of complex technicalities.",
@@ -93,6 +95,18 @@
   "home": {
     "greeting": "Hi all, I am",
     "role": "Front-end Developer"
+  },
+  "contact": {
+    "heading": "Get in touch",
+    "input": "Input Data",
+    "output": "Output Data",
+    "name": "name",
+    "email": "email",
+    "message": "message",
+    "button": "submit-message",
+    "thanks": "Thank you! 😇",
+    "tmessage": "Your message has been delivered. You will recieve answer really soon!",
+    "redirect": "...redirecting in 3s"
   },
   "find-me": "find me in:"
 }

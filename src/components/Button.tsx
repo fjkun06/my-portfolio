@@ -2,11 +2,14 @@
 import React from "react";
 
 import { useRouter } from "@/components/Link";
-
-const Button = ({ text, route }: { text: string; route?: string }) => {
+interface IButton extends React.ButtonHTMLAttributes<HTMLButtonElement> {
+  text: string;
+  route?: string;
+}
+const Button: React.FC<IButton> = ({ text, route, ...rest }) => {
   const router = useRouter();
   return (
-    <button type="button" onClick={() => route && router.push(route)}>
+    <button type="button" onClick={() => route && router.push(route)} {...rest}>
       {text}
     </button>
   );

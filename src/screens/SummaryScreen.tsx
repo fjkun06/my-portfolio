@@ -26,14 +26,16 @@ const SummaryScreen = ({ summary }: ISummary) => {
       <header>
         <div className="header-left">
           <motion.h2
-            animate={{ y: isInView ? [50, -50, 0] : 0, opacity: isInView ? [0, 1] : 0 }}
+            animate={{ y: isInView ? [20, -20, 0] : 0, opacity: isInView ? [0, 1] : 0 }}
+            initial={{ opacity: 0 }}
           >
             {summary[0]}
           </motion.h2>
 
           <motion.p
-            animate={{ y: isInView ? [50, -50, 0] : 0, opacity: isInView ? [0, 1] : 0 }}
+            animate={{ y: isInView ? [20, -20, 0] : 0, opacity: isInView ? [0, 1] : 0 }}
             transition={{ delay: 0.25, type: "spring" }}
+            initial={{ opacity: 0 }}
           >
             {summary.slice(1, 3).map((t, i) => (
               <span key={i} className="">

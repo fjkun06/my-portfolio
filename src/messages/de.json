@@ -81,6 +81,8 @@
       "title": "Berufserfahrung",
       "xp1": "Frontend-Entwickler @ WandaPrep",
       "xp2": "Ehrenamtlicher Frontend-Entwickler @ Positive Impact Events",
+      "date1": "Jan — Nov 2023",
+      "date2": "Mai — Sep 2021",
       "list": {
         "one": "Nutzung verschiedener Front-End-Technologien für die Gestaltung von Ansichten, was zu einer beachtlichen Steigerung der Benutzeraktivität um 20 % führte.",
         "two": "Spielte eine aktive Rolle bei der Bereitstellung wertvoller Einblicke für interne Stakeholder und bewies dabei ein Verständnis für komplexe technische Zusammenhänge.",
@@ -93,6 +95,18 @@
   "home": {
     "greeting": "Hallo zusammen, ich bin",
     "role": "Front-End-Entwickler"
+  },
+  "contact": {
+    "heading": "Nehmen Sie Kontakt auf",
+    "input": "Eingangsdaten",
+    "output": "Ausgabe Daten",
+    "name": "name",
+    "email": "email",
+    "message": "nachricht",
+    "button": "nachricht-abshicken",
+    "thanks": "Vielen Dank! 😇",
+    "tmessage": "Ihre Nachricht wurde zugestellt. Sie werden bald eine Antwort erhalten!",
+    "redirect": "...Weiterleitung in 3s"
   },
   "find-me": "profile:"
 }

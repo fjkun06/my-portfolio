@@ -3,8 +3,6 @@
 @use "../utils/variables" as vars;
 
 .about-education {
-  padding-top: 2rem !important;
-
   /************************************************EDUCATION SECTION************************************************/
 
   div {
@@ -86,7 +84,6 @@
         &::before {
           background: url("/assets/icons/arrow-forward.svg");
         }
-       
       }
     }
   }

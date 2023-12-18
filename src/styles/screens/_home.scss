@@ -73,6 +73,9 @@
         @include utils.formatText(450, 1.8rem);
         color: vars.$milkyWhite;
         font-size: 1.3rem;
+        mark {
+          background-color: vars.$orange;
+        }
 
         &:is(.title) {
           font-size: 6.2rem;
@@ -173,6 +176,11 @@
         overflow: hidden !important;
         code {
           @include utils.size(100%);
+          text-wrap: wrap !important;
+
+          span {
+            text-wrap: wrap !important;
+          }
         }
       }
       //fourth child
