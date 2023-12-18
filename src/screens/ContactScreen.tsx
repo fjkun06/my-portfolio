@@ -8,12 +8,35 @@ import { AnimatePresence, motion } from "framer-motion";
 import { Button, CodeSnippet, InputComponent, LabelContainer } from "@/components";
 
 import { today } from "./data";
+export interface IContactScreen {
+  heading: string;
+  input: string;
+  output: string;
+  name: string;
+  email: string;
+  message: string;
+  button: string;
+  thanks: string;
+  tmessage: string;
+  redirect: string;
+}
 
-const ContactScreen = () => {
+const ContactScreen: React.FC<IContactScreen> = ({
+  heading,
+  input,
+  output,
+  name,
+  email,
+  message,
+  button,
+  thanks,
+  tmessage,
+  redirect
+}) => {
   //state hooks for updating fields
-  const [name, setName] = React.useState("");
-  const [email, setEmail] = React.useState("");
-  const [message, setMessage] = React.useState("");
+  const [_name, setName] = React.useState("");
+  const [_email, setEmail] = React.useState("");
+  const [_message, setMessage] = React.useState("");
   const onEmailChange: React.ChangeEventHandler<HTMLInputElement> = (e) => {
     setEmail(e.target.value);
   };
@@ -31,30 +54,30 @@ const ContactScreen = () => {
   const inputs = [
     {
       type: "input",
-      value: name,
+      value: _name,
       onChange: onNameChange,
-      text: "name",
+      text: name,
       name: "name"
     },
     {
       type: "input",
-      value: email,
+      value: _email,
       onChange: onEmailChange,
-      text: "email",
+      text: email,
       name: "email"
     },
     {
       type: "textarea",
-      value: message,
+      value: _message,
       onChange: onMessageChange,
-      text: "message",
+      text: message,
       name: "message"
     }
   ];
 
   return (
     <div className="portfolio-contact">
-      <h1>Get in touch</h1>
+      <h1>{heading}</h1>
       <motion.section layout>
         <AnimatePresence>
           {!state.succeeded && (
@@ -65,12 +88,12 @@ const ContactScreen = () => {
               animate={{
                 y: [10, -10, 0],
                 opacity: [0, 1],
-                transition: { type: "spring" }
+                transition: { delay: 0.5, duration: 0.5 }
               }}
               exit={{ y: 50, opacity: 0, transition: { delay: 0.1 } }}
-              transition={{ ease: "easeInOut" }}
+              transition={{ type: "spring", ease: "easeInOut" }}
             >
-              <h2> Input Data</h2>
+              <h2> {input}</h2>
               {inputs.map(({ type, value, onChange, text, name }) => (
                 <LabelContainer text={text} key={text}>
                   <InputComponent
@@ -88,7 +111,7 @@ const ContactScreen = () => {
                 </LabelContainer>
               ))}
               <Button
-                text="submit-message"
+                text={button}
                 className="sendBtn"
                 type="submit"
                 disabled={state.submitting}
@@ -104,20 +127,20 @@ const ContactScreen = () => {
               animate={{
                 y: [10, -10, 0],
                 opacity: [0, 1],
-                transition: { delay: 0.1, duration: 1 }
+                transition: { delay: 1, duration: 0.5 }
               }}
               exit={{ y: 50, opacity: 0, transition: { delay: 0.1 } }}
               transition={{ type: "spring", ease: "easeInOut" }}
             >
-              <h2> Output Data</h2>
+              <h2> {output}</h2>
               <CodeSnippet
                 snippet={`
 const button = document.querySelector('.sendBtn');
 
 const message = {
-	name: "${name}",
-	email: "${email}",
-	message: "${message}",
+	name: "${_name}",
+	email: "${_email}",
+	message: "${_message}",
 	date: "${today}"
 }
 
@@ -137,13 +160,11 @@ button.addEventListener('click', () => {
               exit={{ y: 50, opacity: 0 }}
               transition={{ type: "spring", ease: "easeInOut" }}
             >
-              <h3 className="">Thank you! 😇</h3>
+              <h3 className="">{thanks}</h3>
               <br />
-              <span>
-                Your message has been delivered. You will recieve answer really soon!
-              </span>
+              <span>{tmessage}</span>
               <br />
-              <span>...redirecting in 3s</span>
+              <span>{redirect}</span>
             </motion.div>
           )}
         </AnimatePresence>

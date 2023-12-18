@@ -166,3 +166,16 @@ export const experienceSkills = {
 };
 
 export const today = new Date().toString().split(" ").slice(0, 4).join(" ");
+
+export const contactItems = [
+  "heading",
+  "input",
+  "output",
+  "name",
+  "email",
+  "message",
+  "button",
+  "thanks",
+  "tmessage",
+  "redirect"
+];

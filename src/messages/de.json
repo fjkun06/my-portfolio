@@ -97,8 +97,16 @@
     "role": "Front-End-Entwickler"
   },
   "contact": {
-    "heading": "Hallo zusammen, ich bin",
-    "role": "Front-End-Entwickler"
+    "heading": "Nehmen Sie Kontakt auf",
+    "input": "Eingangsdaten",
+    "output": "Ausgabe Daten",
+    "name": "name",
+    "email": "email",
+    "message": "nachricht",
+    "button": "nachricht-abshicken",
+    "thanks": "Vielen Dank! 😇",
+    "tmessage": "Ihre Nachricht wurde zugestellt. Sie werden bald eine Antwort erhalten!",
+    "redirect": "...Weiterleitung in 3s"
   },
   "find-me": "profile:"
 }
