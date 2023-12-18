@@ -1,13 +1,12 @@
 import React from "react";
 
-import { experienceSkills } from "@/screens/data";
-
 export interface IExperienceCard {
   title: string;
   data: string[];
+  skills: string[];
   date?: string;
 }
-const ExperienceCard = ({ title, data, date }: IExperienceCard) => {
+const ExperienceCard = ({ title, data, date, skills }: IExperienceCard) => {
   return (
     <article>
       <div className="data">
@@ -21,7 +20,7 @@ const ExperienceCard = ({ title, data, date }: IExperienceCard) => {
           ))}
         </ul>
         <div className="technologies">
-          {experienceSkills.wandaprep.map((skill) => (
+          {skills.map((skill) => (
             <span className="pill" key={skill}>
               {skill}
             </span>

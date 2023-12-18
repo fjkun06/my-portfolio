@@ -34,7 +34,7 @@ const AboutScreen: React.FC<IAboutScreen> = ({
   data: { routes, summary, education, skills, experience }
 }) => {
   //sythax for calling using the Swiper instance in React TypScript
-  const [swiper, setSwiper] = React.useState<Swiper>();
+  const [swiper, setSwiper] = React.useState<typeof Swiper>();
 
   // state that has the current active index,
   //which can be used to force re - rende other components
@@ -90,7 +90,7 @@ const AboutScreen: React.FC<IAboutScreen> = ({
           }}
           modules={[Parallax, Mousewheel, Pagination]}
           className="mySwiper"
-          onSwiper={(swiper) => setSwiper(swiper)}
+          onSwiper={(swiper) => setSwiper(swiper as any)}
           onRealIndexChange={({ activeIndex }) => setActiveIndex(activeIndex)}
         >
           {arr.map((el, i) => (

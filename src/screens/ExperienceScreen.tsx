@@ -6,6 +6,8 @@ import { useInView, motion } from "framer-motion";
 import { ExperienceCard } from "@/components";
 import { IExperienceCard } from "@/components/ExperienceCard";
 
+import { experienceSkills } from "./data";
+
 interface IExperience {
   experience: IExperienceData;
 }
@@ -22,6 +24,8 @@ const ExperienceScreen = ({
   const ref = React.useRef(null);
   const isInView = useInView(ref, { amount: 0.5 });
 
+  const { wandaprep, positiveImpact } = experienceSkills;
+
   return (
     <section ref={ref} className="about-experience">
       <motion.div
@@ -36,14 +40,15 @@ const ExperienceScreen = ({
         transition={{ delay: 0.25, type: "spring" }}
       >
         {[
-          [xp1, data.slice(0, 3), date1],
-          [xp2, data.slice(3), date2]
-        ].map(([title, data, date], i) => (
+          [xp1, data.slice(0, 3), date1, wandaprep],
+          [xp2, data.slice(3), date2, positiveImpact]
+        ].map(([title, data, date, skill], i) => (
           <ExperienceCard
             key={i}
             title={title as string}
             data={data as string[]}
             date={date as string}
+            skills={skill as string[]}
           />
         ))}
       </motion.div>
