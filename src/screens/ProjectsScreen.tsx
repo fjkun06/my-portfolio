@@ -5,6 +5,8 @@ import { AnimatePresence, motion } from "framer-motion";
 
 import { ProjectCard } from "@/components";
 
+import { experienceSkills } from "./data";
+
 const ProjectsScreen = () => {
   return (
     <div className="portfolio-projects">
@@ -19,10 +21,10 @@ const ProjectsScreen = () => {
         Projects
       </motion.h1>
       <motion.section layout>
-        <ProjectCard />
-        <ProjectCard />
-        <ProjectCard />
-        <ProjectCard />
+        <ProjectCard skills={experienceSkills.wandaprep} />
+        <ProjectCard skills={experienceSkills.wandaprep} />
+        <ProjectCard skills={experienceSkills.wandaprep} />
+        <ProjectCard skills={experienceSkills.wandaprep} />
       </motion.section>
     </div>
   );

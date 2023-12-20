@@ -5,18 +5,32 @@
 .portfolio-projects {
   @include utils.size(100%);
   @include utils.flex(column);
-
   justify-content: flex-start;
   padding-block: 5vh;
   gap: 5vh;
   overflow-y: scroll;
 
+  //scrollbar
+  &::-webkit-scrollbar {
+    width: 0.5rem;
+  }
+
+  /* Track */
+  &::-webkit-scrollbar-track {
+    background: transparent;
+  }
+
+  /* Handle */
+  &::-webkit-scrollbar-thumb {
+    background: rgba(darken(vars.$grey, 20%), 0.5);
+    border-radius: 10rem;
+  }
+
   /************************************************PROJECTS SECTION************************************************/
   section {
-    @include utils.size(90%, max-content);
     @include utils.size(100%, max-content);
     @include utils.flex;
-    // background-color: greenyellow;
+
     padding: 2rem;
     gap: 5vh;
     flex-wrap: wrap;
@@ -27,43 +41,108 @@
     /************************************************CARDS SECTION************************************************/
     article {
       @include utils.flex(column);
-      gap: 1rem;
       width: 40rem;
       background-color: vars.$blueDark;
       border-radius: 0.5rem 0.5rem 0 0;
 
-      // overflow: hidden;
+      @media only screen and (width < 920px) {
+        width: 90%;
+      }
+
+      @media only screen and (width < 480px) {
+        width: 100%;
+      }
 
       /*********CARD IMAGE SECTION************************************************/
       .image {
-        // @include utils.size(40rem, 30rem);
-
+        width: 100%;
         border-radius: inherit;
         overflow: hidden;
+
         img {
           aspect-ratio: auto;
           max-width: unset;
+          width: 100%;
         }
       }
 
-      /*********CARD IMAGE SECTION************************************************/
-      /*********CARD TITLE SECTION******************************/
-      h3 {
-        font-size: 1.8rem;
-      }
-      /*********CARD DESCRIPTION SECTION******************************/
-      p {
-        font-size: 1.4rem;
-        line-height: 2rem;
-      }
-      /*********CARD LINKS SECTION******************************/
-      .links {
-        background-color: red;
-        @include utils.flex;
-        justify-content: flex-start;
-        gap: 1rem;
-        svg {
-          @include utils.size(2.5rem);
+      /*********CARD DATA SECTION************************************************/
+      .data {
+        padding-inline: 0.05rem;
+        /*********CARD TITLE SECTION******************************/
+        h3 {
+          font-size: 1.8rem;
+          padding-block: 1rem;
+        }
+        hr {
+          padding-bottom: 2rem;
+          border-top-color: vars.$orange;
+        }
+        /*********CARD DESCRIPTION SECTION******************************/
+        p {
+          font-size: 1.4rem;
+          line-height: 2rem;
+        }
+        /*********CARD SKILLS SECTION******************************/
+        .technologies {
+          @include utils.flex;
+          justify-content: flex-start;
+          flex-wrap: wrap;
+          gap: 1rem;
+          padding: 2rem 0.05rem;
+          span {
+            width: max-content;
+            font-size: 1.4rem;
+            user-select: none;
+          }
+        }
+        /*********CARD LINKS SECTION******************************/
+        .links {
+          margin-bottom: 1rem;
+          @include utils.flex;
+          justify-content: flex-start;
+          gap: 1rem;
+
+          span {
+            @include utils.size(2.5rem);
+            position: relative;
+            transition: all 0.25s ease-in-out;
+
+            &:hover {
+              &::after {
+                opacity: 1;
+                scale: 1.25;
+              }
+            }
+
+            svg {
+              @include utils.size(2.5rem);
+              @include utils.size(inherit);
+              z-index: 999;
+              cursor: pointer;
+              transition: all 0.25s ease-in-out;
+              &:hover {
+                color: vars.$orange;
+              }
+
+              &::after {
+                position: absolute;
+                content: "";
+                @include utils.size(2.5rem);
+                scale: 2;
+                background: transparent;
+                background: white;
+                top: 0%;
+                left: 0%;
+                border-radius: 50%;
+                border: 0.01rem solid white;
+                // opacity: 0;
+                z-index: 0;
+                transition: all 0.5s ease-in-out;
+                cursor: default;
+              }
+            }
+          }
         }
       }
     }

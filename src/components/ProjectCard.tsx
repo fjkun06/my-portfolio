@@ -18,7 +18,7 @@ const ProjectCard = ({ title, description, repoUrl, liveUrl, skills }: IProjectC
         <Image src="/assets/images/image2.png" width={400} height={300} alt="" />
       </div>
       <div className="data">
-        <h3 className="">{title ?? "Project Title"}</h3>
+        <h3 className="">{title ?? "Project Title"}</h3> <hr/>
         <p>
           Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugiat maiores illo
           nemo nobis adipisci cupiditate ad excepturi, sed dolorem omnis reiciendis
