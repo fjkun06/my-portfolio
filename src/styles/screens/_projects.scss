@@ -9,14 +9,63 @@
   justify-content: flex-start;
   padding-block: 5vh;
   gap: 5vh;
+  overflow-y: scroll;
 
-  /************************************************CARDS SECTION************************************************/
+  /************************************************PROJECTS SECTION************************************************/
   section {
-    @include utils.size(70%, max-content);
+    @include utils.size(90%, max-content);
+    @include utils.size(100%, max-content);
     @include utils.flex;
+    // background-color: greenyellow;
+    padding: 2rem;
     gap: 5vh;
+    flex-wrap: wrap;
     @media only screen and (width < 768px) {
       width: 100%;
+    }
+
+    /************************************************CARDS SECTION************************************************/
+    article {
+      @include utils.flex(column);
+      gap: 1rem;
+      width: 40rem;
+      background-color: vars.$blueDark;
+      border-radius: 0.5rem 0.5rem 0 0;
+
+      // overflow: hidden;
+
+      /*********CARD IMAGE SECTION************************************************/
+      .image {
+        // @include utils.size(40rem, 30rem);
+
+        border-radius: inherit;
+        overflow: hidden;
+        img {
+          aspect-ratio: auto;
+          max-width: unset;
+        }
+      }
+
+      /*********CARD IMAGE SECTION************************************************/
+      /*********CARD TITLE SECTION******************************/
+      h3 {
+        font-size: 1.8rem;
+      }
+      /*********CARD DESCRIPTION SECTION******************************/
+      p {
+        font-size: 1.4rem;
+        line-height: 2rem;
+      }
+      /*********CARD LINKS SECTION******************************/
+      .links {
+        background-color: red;
+        @include utils.flex;
+        justify-content: flex-start;
+        gap: 1rem;
+        svg {
+          @include utils.size(2.5rem);
+        }
+      }
     }
   }
 }

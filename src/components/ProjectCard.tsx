@@ -2,7 +2,7 @@ import React from "react";
 
 import Image from "next/image";
 
-import { GithubIcon, LinkedInIcon } from "@/components/icons";
+import { GithubIcon, LinkIcon } from "@/components/icons";
 export interface IProjectCard {
   title?: string;
   description?: string[];
@@ -13,7 +13,10 @@ export interface IProjectCard {
 const ProjectCard = ({ title, description, repoUrl, liveUrl, skills }: IProjectCard) => {
   return (
     <article>
-      <Image src="" width={400} height={300} alt="" />
+      {/* <Image src="/assets/images/image.jpg" width={400} height={300} alt="" /> */}
+      <div className="image">
+        <Image src="/assets/images/image2.png" width={400} height={300} alt="" />
+      </div>
       <div className="data">
         <h3 className="">{title ?? "Project Title"}</h3>
         <p>
@@ -30,7 +33,7 @@ const ProjectCard = ({ title, description, repoUrl, liveUrl, skills }: IProjectC
         </div>
         <div className="links">
           <GithubIcon callback={() => console.log("hello world")} />
-          <LinkedInIcon callback={() => console.log("hello world")} />
+          <LinkIcon callback={() => console.log("hello world")} />
         </div>
       </div>
     </article>
