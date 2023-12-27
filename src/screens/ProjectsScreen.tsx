@@ -5,9 +5,14 @@ import { AnimatePresence, motion } from "framer-motion";
 
 import { ProjectCard } from "@/components";
 
-import { experienceSkills } from "./data";
+import { experienceSkills, projects } from "./data";
 
-const ProjectsScreen = () => {
+interface IProjectsScreen {
+  title: string;
+  descriptions: Array<string>;
+}
+
+const ProjectsScreen: React.FC<IProjectsScreen> = ({ title, descriptions }) => {
   return (
     <div className="portfolio-projects">
       <motion.h1
@@ -18,13 +23,17 @@ const ProjectsScreen = () => {
         }}
         transition={{ type: "spring", ease: "easeInOut" }}
       >
-        Projects
+        {title}
       </motion.h1>
       <motion.section layout>
+        {/* <ProjectCard skills={experienceSkills.wandaprep} />
         <ProjectCard skills={experienceSkills.wandaprep} />
         <ProjectCard skills={experienceSkills.wandaprep} />
-        <ProjectCard skills={experienceSkills.wandaprep} />
-        <ProjectCard skills={experienceSkills.wandaprep} />
+        <ProjectCard skills={experienceSkills.wandaprep} /> */}
+
+        {projects.map((project, i) => (
+          <ProjectCard {...project} description={descriptions[i]} key={i} />
+        ))}
       </motion.section>
     </div>
   );
