@@ -45,13 +45,18 @@
     article {
       @include utils.flex(column);
       width: 40rem;
-      background-color: vars.$blueDark;
+      background-color: vars.$blueDarkest;
       border-radius: 0.5rem 0.5rem 0 0;
+      transition: all 0.25s ease-in-out;
+      &:hover{
+        // scale: 1.05;
+        transform: scale(1.015) translateY(-1.5rem) !important;
+      }
 
       @media only screen and (width > 2220px) {
         width: 40%;
       }
-      @media only screen and (width < 920px) {
+      @media only screen and (width < 925px) {
         width: 90%;
       }
 

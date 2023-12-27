@@ -27,7 +27,7 @@ const ProjectsScreen: React.FC<IProjectsScreen> = ({ title, descriptions }) => {
       </motion.h1>
       <motion.section layout>
         {projects.map((project, i) => (
-          <ProjectCard {...project} description={descriptions[i]} key={i} />
+          <ProjectCard {...project} description={descriptions[i]} key={i} index={i} />
         ))}
       </motion.section>
     </div>
