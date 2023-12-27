@@ -2,10 +2,13 @@
 import React from "react";
 
 import { motion } from "framer-motion";
-
-import { ProjectCard } from "@/components";
+import dynamic from "next/dynamic";
 
 import { projects } from "./data";
+
+const ProjectCard = dynamic(() => import("@/components/ProjectCard"), {
+  ssr: false
+});
 
 interface IProjectsScreen {
   title: string;

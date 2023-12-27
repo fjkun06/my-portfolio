@@ -4,10 +4,10 @@ import dynamic from "next/dynamic";
 import { useTranslations } from "next-intl";
 
 const ProjectsScreen = dynamic(() => import("@/screens/ProjectsScreen"), {
-  ssr: false
+  ssr: true
 });
 
-const Projects = () => {
+const Tester = () => {
   const t = useTranslations("projects");
   const projectTranslations = {
     title: t("heading"),
@@ -15,8 +15,8 @@ const Projects = () => {
       .fill(4)
       .map((_, i) => t(`description${i + 1}`))
   };
-
+  console.log(projectTranslations);
   return <ProjectsScreen {...projectTranslations} />;
 };
 
-export default Projects;
+export default Tester;
