@@ -94,7 +94,7 @@ const AboutScreen: React.FC<IAboutScreen> = ({
           onRealIndexChange={({ activeIndex }) => setActiveIndex(activeIndex)}
         >
           {arr.map((el, i) => (
-            <SwiperSlide key={i}>{el}</SwiperSlide>
+            <SwiperSlide key={i}>{({ isActive }) => isActive && el}</SwiperSlide>
           ))}
         </Swiper>
       </section>

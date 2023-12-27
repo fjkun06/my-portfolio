@@ -1,7 +1,7 @@
 import React from "react";
-export interface Icon {
-  callback?: () => void;
-}
+
+import { Icon } from "./interface";
+
 const XingIcon: React.FC<Icon> = ({ callback }) => {
   return (
     <span onClick={callback}>

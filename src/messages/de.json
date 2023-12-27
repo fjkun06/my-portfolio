@@ -108,5 +108,13 @@
     "tmessage": "Ihre Nachricht wurde zugestellt. Sie werden bald eine Antwort erhalten!",
     "redirect": "...Weiterleitung in 3s"
   },
+  "projects": {
+    "heading": "Projekte",
+    "description1": "Leitung der Entwicklung einer mehrsprachigen Website für ein Webentwicklungs- und Beratungsunternehmen, 'Digital' mit einem funktionsübergreifenden Team. Das Projekt umfasste verschiedene Technologien und Fähigkeiten um optimale Ergebnisse zu erzielen.",
+    "description2": "Brytzone, eine umfassende mehrsprachige Bildungsplattform, die für Universitätsstudenten zugeschnitten ist. Sie ermöglicht es den Studenten, sich über die neuesten Informationen ihrer Fakultät/Schule auf dem Laufenden zu bleiben, wertvolle Praktika zu finden, aktiv aktiv an Umfragen teilzunehmen, um ihre akademischen Leistungen zu verbessern, und sich durch Projekte, mit denen sie sich möglicherweise schon vor Verlassen der Universität einen Arbeitsplatz sichern können.",
+    "description3": "Entwicklung der FlippBidd-Landingpage, einer beeindruckenden Demonstration von Frontend Entwicklungsfähigkeiten. Diese ästhetisch ansprechende Landing Page wurde akribisch und entwickelt, um pixelgenau zu sein, und unterstreicht Kreativität und Aufmerksamkeit für Details",
+    "description4": "Ein ästhetisch ansprechendes und vollständig responsives Frontend-Projekt, das zwei Sprachen einwandfrei unterbringt. Durch die Nutzung von Fachwissen in Figma und i18n, wurde diese Landing Page sorgfältig erstellt. Während des gesamten Projekts pflegte ich enge Zusammenarbeit mit dem Kunden, um sicherzustellen, dass seine Vorstellungen in ein benutzerfreundliches Design umgesetzt wurde. Insbesondere wurde eine WhatsApp-Funktionalität implementiert, die die Nutzer beim Anklicken eines bestimmten Buttons zu WhatsApp weiterleitet.",
+    "message": "nachricht"
+  },
   "find-me": "profile:"
 }

@@ -1,0 +1,142 @@
+//loading mixins and variable
+@use "../utils/mixins" as utils;
+@use "../utils/variables" as vars;
+
+.portfolio-projects {
+  @include utils.size(100%);
+  @include utils.flex(column);
+  justify-content: flex-start;
+  padding-block: 5vh;
+  gap: 5vh;
+  overflow-y: scroll;
+
+  //scrollbar
+  &::-webkit-scrollbar {
+    width: 0.5rem;
+  }
+
+  /* Track */
+  &::-webkit-scrollbar-track {
+    background: transparent;
+  }
+
+  /* Handle */
+  &::-webkit-scrollbar-thumb {
+    background: rgba(darken(vars.$grey, 20%), 0.5);
+    border-radius: 10rem;
+  }
+
+  /************************************************PROJECTS SECTION************************************************/
+  section {
+    @include utils.size(100%, max-content);
+    @include utils.flex;
+
+    padding: 2rem;
+    gap: 5vh;
+    flex-wrap: wrap;
+    @media only screen and (width < 768px) {
+      width: 100%;
+    }
+    @media only screen and (height < 920px) {
+      column-gap: 10rem;
+    }
+
+    /************************************************CARDS SECTION************************************************/
+    article {
+      @include utils.flex(column);
+      width: 40rem;
+      background-color: vars.$blueDarkest;
+      border-radius: 0.5rem 0.5rem 0 0;
+      transition: all 0.25s ease-in-out;
+      &:hover{
+        transform: scale(1.015) translateY(-1.5rem) !important;
+      }
+
+      @media only screen and (width > 2220px) {
+        width: 40%;
+      }
+      @media only screen and (width < 925px) {
+        width: 90%;
+      }
+
+      @media only screen and (height < 480px) {
+        width: 100%;
+      }
+
+      /*********CARD IMAGE SECTION************************************************/
+      .image {
+        width: 100%;
+        border-radius: inherit;
+        overflow: hidden;
+
+        img {
+          aspect-ratio: auto;
+          max-width: unset;
+          width: 100%;
+          height: auto;
+        }
+      }
+
+      /*********CARD DATA SECTION************************************************/
+      .data {
+        padding-left: 0.1rem;
+        /*********CARD TITLE SECTION******************************/
+        h3 {
+          font-size: 1.8rem;
+          padding-block: 1rem;
+          padding-left: 0.5rem;
+        }
+        hr {
+          padding-bottom: 2rem;
+          border-top-color: vars.$orange;
+        }
+        /*********CARD DESCRIPTION SECTION******************************/
+        p {
+          font-size: 1.4rem;
+          line-height: 2rem;
+          padding-inline: 0.5rem;
+          //add ellipsis to text from the 6th line
+          @include utils.ellipsis(6);
+        }
+        /*********CARD SKILLS SECTION******************************/
+        .technologies {
+          @include utils.flex;
+          justify-content: flex-start;
+          flex-wrap: wrap;
+          gap: 1rem;
+          padding: 2rem 0.5rem;
+          span {
+            width: max-content;
+            font-size: 1.4rem;
+            user-select: none;
+          }
+        }
+        /*********CARD LINKS SECTION******************************/
+        .links {
+          margin-bottom: 1rem;
+          padding-left: 0.5rem;
+
+          @include utils.flex;
+          justify-content: flex-start;
+          gap: 1rem;
+
+          span {
+            @include utils.size(2.5rem);
+            position: relative;
+            transition: all 0.25s ease-in-out;
+            svg {
+              @include utils.size(2.5rem);
+              @include utils.size(inherit);
+              z-index: 999;
+              cursor: pointer;
+              transition: all 0.25s ease-in-out;
+              &:hover {
+                color: vars.$orange;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

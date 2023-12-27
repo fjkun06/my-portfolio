@@ -179,3 +179,43 @@ export const contactItems = [
   "tmessage",
   "redirect"
 ];
+
+export const projects = [
+  {
+    title: "Digtal Multilingual Website",
+    repoUrl: "https://github.com/fjkun06/Digtal",
+    liveUrl: "https://digtall.netlify.app",
+    skills: ["JavaScript", "React.js", "i18n", "CSS (SCSS)", "RESTful APIs", "HTML5"],
+    src: "digtal.webp"
+  },
+  {
+    title: "Brytzone Educational Platform (Ongoing)",
+    repoUrl: "https://github.com/fjkun06/brytzone",
+    liveUrl: "https://brytzone-1.vercel.app/",
+    skills: [
+      "TypeScript",
+      "Next.js",
+      "i18n",
+      "Mongo DB",
+      "Express.js",
+      "JWT",
+      "Node.js",
+      "SVG"
+    ],
+    src: "brytzone.webp"
+  },
+  {
+    title: "FlippBidd Landing Page",
+    repoUrl: "https://github.com/fjkun06/FlippBid",
+    liveUrl: "https://flipp-bid.vercel.app/",
+    skills: ["Next.js", "TypeScript", "Figma", "SCSS"],
+    src: "flippbidd.webp"
+  },
+  {
+    title: "First Trucks Sarl",
+    repoUrl: "https://github.com/fjkun06/first_trucks-e-commerce",
+    liveUrl: "https://first-trucks-e-commerce-6uzz.vercel.app/",
+    skills: ["TypeScript", "CSS", "i18n", "Next.js", "SVG"],
+    src: "trucks.webp"
+  }
+];

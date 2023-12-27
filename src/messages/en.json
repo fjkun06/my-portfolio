@@ -108,5 +108,13 @@
     "tmessage": "Your message has been delivered. You will recieve answer really soon!",
     "redirect": "...redirecting in 3s"
   },
+  "projects": {
+    "heading": "Projects",
+    "description1": " Led the development of a Multilingual website for a web development and consulting company, 'Digital', in collaboration with a cross-functional team. The project encompassed various technologies and skills to achieve optimal results.",
+    "description2": "Brytzone, a comprehensive multilingual educational platform tailored for University students. It empowers students to stay up-to-date with the latest information in their faculty/school, find valuable internships, actively participate in polls to enhance their academics, and gain exposure through projects to potentially secure employment opportunities even before leaving the university.",
+    "description3": "Developed the FlippBidd landing page, a stunning showcase of frontend development skills. This aesthetically pleasing landing page was meticulously designed and developed to be pixel-perfect, highlighting creativity and attention to details.",
+    "description4": " An aesthetically pleasing and fully responsive frontend project that accommodates two languages flawlessly. Leveraging expertise in Figma and i18n, this landing page was meticulously crafted. Throughout the project, I maintained close collaboration with the client, ensuring their vision was accurately translated into a user-friendly design. Notably, a WhatsApp functionality was implemented, directing users to WhatsApp upon clicking a specific button.",
+    "message": "nachricht"
+  },
   "find-me": "find me in:"
 }
