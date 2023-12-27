@@ -1,11 +1,11 @@
 "use client";
 import React from "react";
 
-import { AnimatePresence, motion } from "framer-motion";
+import { motion } from "framer-motion";
 
 import { ProjectCard } from "@/components";
 
-import { experienceSkills, projects } from "./data";
+import { projects } from "./data";
 
 interface IProjectsScreen {
   title: string;
@@ -26,11 +26,6 @@ const ProjectsScreen: React.FC<IProjectsScreen> = ({ title, descriptions }) => {
         {title}
       </motion.h1>
       <motion.section layout>
-        {/* <ProjectCard skills={experienceSkills.wandaprep} />
-        <ProjectCard skills={experienceSkills.wandaprep} />
-        <ProjectCard skills={experienceSkills.wandaprep} />
-        <ProjectCard skills={experienceSkills.wandaprep} /> */}
-
         {projects.map((project, i) => (
           <ProjectCard {...project} description={descriptions[i]} key={i} />
         ))}

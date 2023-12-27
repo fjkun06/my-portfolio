@@ -1,7 +1,9 @@
+"use client";
 import React from "react";
 
 import Image from "next/image";
 import Link from "next/link";
+import { Tooltip } from "react-tooltip";
 
 import { GithubIcon, GlobeIcon } from "@/components/icons";
 export interface IProjectCard {
@@ -20,6 +22,20 @@ const ProjectCard = ({
   skills,
   src
 }: IProjectCard) => {
+  const links = [
+    {
+      href: repoUrl,
+      icon: <GithubIcon />,
+      cls: "repo",
+      text: "Github Repository"
+    },
+    {
+      href: liveUrl,
+      icon: <GlobeIcon />,
+      cls: "live",
+      text: "Live Version"
+    }
+  ];
   return (
     <article>
       <div className="image">
@@ -36,12 +52,23 @@ const ProjectCard = ({
           ))}
         </div>
         <div className="links">
-          <Link href={repoUrl as string} target="_blank" passHref={true}>
-            <GithubIcon />
-          </Link>
-          <Link href={liveUrl as string} target="_blank" passHref={true}>
-            <GlobeIcon />
-          </Link>
+          {[
+            links.map(({ href, icon, cls, text }) => (
+              <>
+                <Link
+                  href={href as string}
+                  target="_blank"
+                  passHref={true}
+                  className={cls}
+                >
+                  {icon}
+                </Link>
+                <Tooltip anchorSelect={`.${cls}`} place="top" variant="light">
+                  <span>{text}</span>
+                </Tooltip>
+              </>
+            ))
+          ]}
         </div>
       </div>
     </article>

@@ -185,21 +185,30 @@ export const projects = [
     title: "Digtal Multilingual Website",
     repoUrl: "https://github.com/fjkun06/Digtal",
     liveUrl: "https://digtall.netlify.app",
-    skills: ["JavaScript", "React.js", "i18n", "CSS (SCSS)", "RESTful APIs"],
+    skills: ["JavaScript", "React.js", "i18n", "CSS (SCSS)", "RESTful APIs", "HTML5"],
     src: "/assets/images/digtal.png"
   },
   {
     title: "Brytzone Educational Platform (Ongoing)",
     repoUrl: "https://github.com/fjkun06/brytzone",
     liveUrl: "https://brytzone-1.vercel.app/",
-    skills: ["TypeScript", "Next.js", "i18n", "Mongo DB", "Express.js"],
+    skills: [
+      "TypeScript",
+      "Next.js",
+      "i18n",
+      "Mongo DB",
+      "Express.js",
+      "JWT",
+      "Node.js",
+      "SVG"
+    ],
     src: "/assets/images/brytzone.png"
   },
   {
     title: "FlippBidd Landing Page",
     repoUrl: "https://github.com/fjkun06/FlippBid",
     liveUrl: "https://flipp-bid.vercel.app/",
-    skills: ["Next.js", "TypeScript", "Figma", "SCSS", "HTML5"],
+    skills: ["Next.js", "TypeScript", "Figma", "SCSS"],
     src: "/assets/images/flippbidd.png"
   },
   {
