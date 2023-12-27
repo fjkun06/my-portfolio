@@ -1,5 +1,4 @@
-"use client";
-import React, { createContext, useState } from "react";
+import React from "react";
 
 import { Footer, NavBar } from "@/components";
 
@@ -8,24 +7,13 @@ interface IBodyWrapper {
   routes: string[][];
   footerText: string;
 }
-export const NavbarContext = createContext<any>(null);
 const BodyWrapper: React.FC<IBodyWrapper> = ({ children, routes, footerText }) => {
-  const [isNavbarOpen, setState] = useState(true);
-
-  //useEffect to reset content display
-  React.useEffect(() => {
-    () => setState(true);
-  });
-
   return (
-    <NavbarContext.Provider value={{ isNavbarOpen, setState }}>
-      <body>
-        <NavBar items={routes} />
-        {children}
-        {/* {isNavbarOpen && children} */}
-        <Footer findMe={footerText} />
-      </body>
-    </NavbarContext.Provider>
+    <body>
+      <NavBar items={routes} />
+      {children}
+      <Footer findMe={footerText} />
+    </body>
   );
 };
 
