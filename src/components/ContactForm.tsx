@@ -37,46 +37,45 @@ interface IContactForm {
   };
   handleSubmit: any;
   button: string;
+  _gone: boolean;
 }
 const ContactForm: React.FC<IContactForm> = ({
   input,
   inputs,
   state,
   handleSubmit,
-  button
+  button,
+  _gone
 }) => {
   return (
-    <form
-      className="input-data"
-      onSubmit={handleSubmit}
-      // animate={{
-      //   y: [10, -10, 0],
-      //   opacity: [0, 1],
-      //   transition: { delay: 0.5, duration: 0.5 }
-      // }}
-      // exit={{ y: 50, opacity: 0, transition: { delay: 0.1 } }}
-      // transition={{ type: "spring", ease: "easeInOut" }}
-    >
-      <h2> {input}</h2>
-      {inputs.map(({ type, value, onChange, text, name }) => (
-        <LabelContainer text={text} key={text}>
-          <InputComponent
-            inputType={type as any}
-            id={text}
-            onChange={onChange as any}
-            value={value}
-            name={name}
+    <>
+      {!_gone && (
+        <form
+          className={` ${state.succeeded ? "fadeout" : "input-data"}`}
+          onSubmit={handleSubmit}
+        >
+          <h2> {input}</h2>
+          {inputs.map(({ type, value, onChange, text, name }) => (
+            <LabelContainer text={text} key={text}>
+              <InputComponent
+                inputType={type as any}
+                id={text}
+                onChange={onChange as any}
+                value={value}
+                name={name}
+              />
+              <span className="">{state.errors}</span>
+            </LabelContainer>
+          ))}
+          <Button
+            text={button}
+            className="sendBtn"
+            type="submit"
+            disabled={state.submitting}
           />
-          <span className="">{state.errors}</span>
-        </LabelContainer>
-      ))}
-      <Button
-        text={button}
-        className="sendBtn"
-        type="submit"
-        disabled={state.submitting}
-      />
-    </form>
+        </form>
+      )}
+    </>
   );
 };
 

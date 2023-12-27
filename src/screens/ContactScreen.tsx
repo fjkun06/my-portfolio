@@ -1,4 +1,3 @@
-/* eslint-disable max-len */
 "use client";
 import React from "react";
 
@@ -45,6 +44,7 @@ const ContactScreen: React.FC<IContactScreen> = ({
   const [_name, setName] = React.useState("");
   const [_email, setEmail] = React.useState("");
   const [_message, setMessage] = React.useState("");
+  const [_gone, setGone] = React.useState(false);
   const onEmailChange: React.ChangeEventHandler<HTMLInputElement> = (e) => {
     setEmail(e.target.value);
   };
@@ -94,16 +94,31 @@ const ContactScreen: React.FC<IContactScreen> = ({
       clearTimeout(timer);
     };
   }, [state.succeeded, push]);
+  React.useEffect(() => {
+    const timer = setTimeout(() => state.succeeded && setGone(true), delay * 100);
+    return () => {
+      clearTimeout(timer);
+    };
+  }, [state.succeeded, push]);
+  console.log(state.succeeded);
 
   //grouping props per component
-  const thankYou = { thanks, tmessage, redirect, success: state.succeeded };
-  const outputCardProps = { success: !state.succeeded, output, _name, _email, _message };
+  const thankYou = { thanks, tmessage, redirect, success: state.succeeded, _gone };
+  const outputCardProps = {
+    success: state.succeeded,
+    output,
+    _name,
+    _email,
+    _message,
+    _gone
+  };
   const inputCardProps = {
     input,
     inputs,
     state,
     handleSubmit,
-    button
+    button,
+    _gone
   };
 
   return (
