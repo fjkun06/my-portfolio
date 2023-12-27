@@ -5,7 +5,7 @@ import dynamic from "next/dynamic";
 import { projects } from "./data";
 
 const ProjectCard = dynamic(() => import("@/components/ProjectCard"), {
-  ssr: true
+  ssr: false
 });
 
 interface IProjectsScreen {

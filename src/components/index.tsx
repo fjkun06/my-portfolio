@@ -17,3 +17,6 @@ export { default as ExperienceCard } from "@/components/ExperienceCard";
 export { default as InputComponent } from "@/components/InputComponent";
 export { default as LabelContainer } from "@/components/LabelContainer";
 export { default as ProjectCard } from "@/components/ProjectCard";
+export { default as ContactThankYouCard } from "@/components/ContactThankYouCard";
+export { default as ContactOutputCard } from "@/components/ContactOutputCard";
+export { default as ContactForm } from "@/components/ContactForm";

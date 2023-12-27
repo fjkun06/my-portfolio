@@ -4,7 +4,7 @@ import dynamic from "next/dynamic";
 import { useTranslations } from "next-intl";
 
 const ProjectsScreen = dynamic(() => import("@/screens/ProjectsScreen"), {
-  ssr: true
+  ssr: false
 });
 
 const Projects = () => {

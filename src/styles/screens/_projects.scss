@@ -7,20 +7,6 @@ $delays:
   3 1.55s,
   4 2.05s;
 
-@keyframes dance {
-  33% {
-    transform: translateY(1rem);
-  }
-  65% {
-    transform: translateY(-1rem);
-  }
-
-  100% {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
 @keyframes scaledown {
   0% {
     transform: scale(1.15);
@@ -54,14 +40,6 @@ $delays:
     background: rgba(darken(vars.$grey, 20%), 0.5);
     border-radius: 10rem;
   }
-
-  /************************************************PAGE HEADING************************************************/
-  h1 {
-    opacity: 0;
-    transform: translateY(0);
-    animation: dance 0.5s ease-in-out 0.1s 1 forwards;
-  }
-
   /************************************************PROJECTS SECTION************************************************/
   section {
     @include utils.size(100%, max-content);

@@ -1,9 +1,29 @@
 //loading mixins and variable
+@use "sass:color";
+
 @use "../utils/mixins" as utils;
 @use "../utils/variables" as vars;
 /************************************************HEADING SECTION************************************************/
+
+@keyframes dance {
+  33% {
+    transform: translateY(1rem);
+  }
+  65% {
+    transform: translateY(-1rem);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
 h1 {
   font-size: 7rem;
+  opacity: 0;
+  transform: translateY(0);
+  animation: dance 0.5s ease-in-out 0.1s 1 forwards;
   @media only screen and (width < 1024px) {
     font-size: 5rem;
   }
@@ -81,6 +101,7 @@ h1 {
         width: 100%;
         span {
           color: vars.$grey;
+          color: color.scale(vars.$grey, $lightness: 50%);
         }
         input,
         textarea {
@@ -90,6 +111,7 @@ h1 {
           caret-color: vars.$grey;
           padding-left: 0.5rem;
           color: vars.$grey;
+          color: color.scale(vars.$grey, $lightness: 50%);
           outline: 0.2rem solid transparent;
           transition: outline 0.15s ease-in-out;
           font-size: 1.6rem;

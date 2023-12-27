@@ -1,8 +1,11 @@
 import React from "react";
 
+import dynamic from "next/dynamic";
 import { useTranslations } from "next-intl";
 
-import { ContactScreen } from "@/screens";
+const ContactScreen = dynamic(() => import("@/screens/ContactScreen"), {
+  ssr: true
+});
 import { contactItems } from "@/screens/data";
 
 const Contact = () => {
