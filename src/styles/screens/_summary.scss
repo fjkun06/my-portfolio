@@ -100,7 +100,7 @@
 
       /************************************************CIRCULAR PICTURE************************************************/
       &:last-child {
-        background: url("/assets/images/frank.png") no-repeat center;
+        background: url("/assets/images/frank.webp") no-repeat center;
         background-size: contain;
         @include utils.size(40rem);
         border-radius: 50%;

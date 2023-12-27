@@ -46,12 +46,17 @@ const ProjectCard = ({
       initial={{ opacity: 0 }}
       animate={{
         opacity: [0, 0.65, 1],
-        scale: [1.03,  1.015, 1],
+        scale: [1.03, 1.015, 1],
         transition: { delay, duration: 0.5 }
       }}
     >
       <div className="image">
-        <Image src={src as string} width={400} height={300} alt="project-picture" />
+        <Image
+          src={`/assets/images/${src}`}
+          width={400}
+          height={300}
+          alt="project-picture"
+        />
       </div>
       <div className="data">
         <h3 className="">{title ?? "Project Title"}</h3> <hr />

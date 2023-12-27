@@ -186,7 +186,7 @@ export const projects = [
     repoUrl: "https://github.com/fjkun06/Digtal",
     liveUrl: "https://digtall.netlify.app",
     skills: ["JavaScript", "React.js", "i18n", "CSS (SCSS)", "RESTful APIs", "HTML5"],
-    src: "/assets/images/digtal.png"
+    src: "digtal.webp"
   },
   {
     title: "Brytzone Educational Platform (Ongoing)",
@@ -202,20 +202,20 @@ export const projects = [
       "Node.js",
       "SVG"
     ],
-    src: "/assets/images/brytzone.png"
+    src: "brytzone.webp"
   },
   {
     title: "FlippBidd Landing Page",
     repoUrl: "https://github.com/fjkun06/FlippBid",
     liveUrl: "https://flipp-bid.vercel.app/",
     skills: ["Next.js", "TypeScript", "Figma", "SCSS"],
-    src: "/assets/images/flippbidd.png"
+    src: "flippbidd.webp"
   },
   {
     title: "First Trucks Sarl",
     repoUrl: "https://github.com/fjkun06/first_trucks-e-commerce",
     liveUrl: "https://first-trucks-e-commerce-6uzz.vercel.app/",
     skills: ["TypeScript", "CSS", "i18n", "Next.js", "SVG"],
-    src: "/assets/images/trucks.png"
+    src: "trucks.webp"
   }
 ];
