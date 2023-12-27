@@ -1,4 +1,5 @@
 //loading mixins and variable
+@use "sass:color";
 @use "../utils/mixins" as utils;
 @use "../utils/variables" as vars;
 footer {
@@ -20,7 +21,7 @@ footer {
     &-media a,
     &-github a {
       @include utils.flex;
-      color: vars.$grey;
+      color: color.scale(vars.$grey, $lightness: 50%);
       @include utils.formatText(450, 1.6rem);
       height: 100%;
 
@@ -28,7 +29,7 @@ footer {
         @include utils.size(2.5rem);
         cursor: pointer;
         transition: all 0.25s ease-in-out;
-        color: darken(vars.$grey, 15%);
+        color: color.scale(vars.$grey, $lightness: 50%);
       }
     }
 

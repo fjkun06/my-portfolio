@@ -29,13 +29,13 @@ const ProjectCard = ({
     {
       href: repoUrl,
       icon: <GithubIcon />,
-      cls: "repo",
+      cls: "repository",
       text: "Github Repository"
     },
     {
       href: liveUrl,
       icon: <GlobeIcon />,
-      cls: "live",
+      cls: "live-version",
       text: "Live Version"
     }
   ];
@@ -54,12 +54,14 @@ const ProjectCard = ({
         <Image
           src={`/assets/images/${src}`}
           width={400}
-          height={300}
+          height={200}
           alt="project-picture"
+          priority
+          quality={100}
         />
       </div>
       <div className="data">
-        <h3 className="">{title ?? "Project Title"}</h3> <hr />
+        <h2 className="">{title ?? "Project Title"}</h2> <hr />
         <p>{description}</p>
         <div className="technologies">
           {skills?.map((skill) => (
@@ -71,7 +73,7 @@ const ProjectCard = ({
         <div className="links">
           {[
             links.map(({ href, icon, cls, text }) => (
-              <>
+              <span key={cls}>
                 <Link
                   href={href as string}
                   target="_blank"
@@ -83,7 +85,7 @@ const ProjectCard = ({
                 <Tooltip anchorSelect={`.${cls}`} place="top" variant="light">
                   <span>{text}</span>
                 </Tooltip>
-              </>
+              </span>
             ))
           ]}
         </div>

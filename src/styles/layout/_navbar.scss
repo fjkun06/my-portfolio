@@ -1,3 +1,4 @@
+@use "sass:color";
 @use "../utils/mixins" as utils;
 @use "../utils/variables" as vars;
 
@@ -111,7 +112,7 @@ nav {
       width: max-content;
       padding: 1.7rem 3.2rem;
       border-right: 1px solid vars.$lineColor;
-      color: vars.$grey;
+      color: color.scale(vars.$grey, $lightness: 50%);
       transition: all 0.25s ease-in-out;
       position: relative;
       cursor: pointer;
