@@ -1,7 +1,6 @@
 "use client";
 import React from "react";
 
-import { motion } from "framer-motion";
 import Image from "next/image";
 import Link from "next/link";
 import { Tooltip } from "react-tooltip";
@@ -14,7 +13,6 @@ export interface IProjectCard {
   repoUrl?: string;
   liveUrl?: string;
   src?: string;
-  index: number;
 }
 const ProjectCard = ({
   title,
@@ -22,8 +20,7 @@ const ProjectCard = ({
   repoUrl,
   liveUrl,
   skills,
-  src,
-  index
+  src
 }: IProjectCard) => {
   const links = [
     {
@@ -40,16 +37,8 @@ const ProjectCard = ({
     }
   ];
 
-  const delay = 0.65 + index * 0.5;
   return (
-    <motion.article
-      initial={{ opacity: 0 }}
-      animate={{
-        opacity: [0, 0.65, 1],
-        scale: [1.03, 1.015, 1],
-        transition: { delay, duration: 0.5 }
-      }}
-    >
+    <article>
       <div className="image">
         <Image
           src={`/assets/images/${src}`}
@@ -90,7 +79,7 @@ const ProjectCard = ({
           ]}
         </div>
       </div>
-    </motion.article>
+    </article>
   );
 };
 
