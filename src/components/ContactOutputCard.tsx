@@ -1,12 +1,12 @@
 import React from "react";
 
+import dynamic from "next/dynamic";
+
 import { today } from "@/screens/data";
 
-import CodeSnippet from "./CodeSnippet";
-
-// const CodeSnippet = dynamic(() => import("@/components/CodeSnippet"), {
-//   ssr: false
-// });
+const CodeSnippet = dynamic(() => import("@/components/CodeSnippet"), {
+  ssr: false
+});
 interface IContactOutputCard {
   output: string;
   _name: string;

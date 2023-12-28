@@ -4,8 +4,8 @@
   "private": true,
   "scripts": {
     "dev": "next dev",
-    "build": "next build && next start",
-    "start": "next start",
+    "build": "next build",
+    "start": "next build && next start",
     "lint-fix": "eslint  --fix --ext .js,.jsx,.ts,.tsx .",
     "prepare": "husky install",
     "storybook": "storybook dev -p 6006  -s ./public",
@@ -58,7 +58,6 @@
     "prettier": "^3.0.0",
     "sass": "^1.69.5",
     "storybook": "^7.5.3",
-    "tailwindcss": "^3.3.0",
     "typescript": "^5"
   }
 }

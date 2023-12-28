@@ -3,9 +3,12 @@
 @use "../utils/mixins" as utils;
 @use "../utils/variables" as vars;
 button {
+  border: none;
   border-bottom: 1px solid darken(vars.$orange, 10%);
   position: relative;
   cursor: pointer;
+  background-color: transparent;
+  color: inherit;
   &::after {
     transition: opacity 0.25s ease-in-out;
     opacity: 0;

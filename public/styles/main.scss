@@ -20,6 +20,7 @@ a {
   box-sizing: border-box;
   font-family: "Fira Code Variable", sans-serif;
   font-style: normal;
+  font-weight: 400;
 }
 
 //Configuring html
@@ -45,8 +46,7 @@ html {
 
 body {
   font-size: 1.6em;
-  // min-width: 32rem;
-  background-color: vars.$blueDark;
+  color: vars.$white;
   background:
     url("/background-blurs.svg") no-repeat,
     vars.$blueDark;
