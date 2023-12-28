@@ -4,7 +4,7 @@
   "private": true,
   "scripts": {
     "dev": "next dev",
-    "build": "next build",
+    "build": "next build && next start",
     "start": "next start",
     "lint-fix": "eslint  --fix --ext .js,.jsx,.ts,.tsx .",
     "prepare": "husky install",
@@ -23,6 +23,7 @@
     "react-responsive": "^9.0.2",
     "react-syntax-highlighter": "^15.5.0",
     "react-tooltip": "^5.24.0",
+    "sharp": "^0.33.1",
     "swiper": "^11.0.5"
   },
   "devDependencies": {

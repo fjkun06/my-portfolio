@@ -1,10 +1,6 @@
 import type { Metadata } from "next";
-import dynamic from "next/dynamic";
 
-/* eslint-disable max-len */
-const PageWrapper = dynamic(() => import("@/components/layouts/PageWrapper"), {
-  ssr: true
-});
+import { PageWrapper } from "@/components";
 
 export const metadata: Metadata = {
   title: "Frank Jordan | Contact",

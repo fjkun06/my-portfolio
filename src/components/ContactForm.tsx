@@ -2,9 +2,11 @@ import React from "react";
 
 import dynamic from "next/dynamic";
 
-const Button = dynamic(() => import("@/components/Button"), {
-  ssr: true
-});
+import Button from "./Button";
+
+// const Button = dynamic(() => import("@/components/Button"), {
+//   ssr: true
+// });
 const InputComponent = dynamic(() => import("@/components/InputComponent"), {
   ssr: true
 });

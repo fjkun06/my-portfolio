@@ -1,7 +1,7 @@
 "use client";
 import React, { memo } from "react";
 
-import { AnimatePresence, motion } from "framer-motion";
+import { motion } from "framer-motion";
 
 import { NavigationLink, SwitchLanguage } from "@/components";
 import { FrankJordanIcon, MenuIcon } from "@/components/icons";
@@ -50,35 +50,33 @@ const NavBar: React.FC<INavBar> = ({ items = [[]] }) => {
             <MenuIcon isOpen={isOpen} callback={toggleOpen} />
           </div>
         </div>
-        <AnimatePresence>
-          {isOpen && (
-            <>
-              <NavBarGroup>
-                {items.length &&
-                  items.slice(0, 3).map(([text, href], index) => (
-                    <NavigationLink key={index} callback={closeMenu} href={href}>
-                      {text}
-                    </NavigationLink>
-                  ))}
-              </NavBarGroup>
-              <NavBarGroup className="nav-links-group">
-                <div className="nav-links-group--language">
-                  {locales.map((locale) => (
-                    <SwitchLanguage
-                      key={locale}
-                      language={locale as any}
-                      text={`_${locale}`}
-                    />
-                  ))}
-                </div>
+        {isOpen && (
+          <>
+            <NavBarGroup>
+              {items.length &&
+                items.slice(0, 3).map(([text, href], index) => (
+                  <NavigationLink key={index} callback={closeMenu} href={href}>
+                    {text}
+                  </NavigationLink>
+                ))}
+            </NavBarGroup>
+            <NavBarGroup className="nav-links-group">
+              <div className="nav-links-group--language">
+                {locales.map((locale) => (
+                  <SwitchLanguage
+                    key={locale}
+                    language={locale as any}
+                    text={`_${locale}`}
+                  />
+                ))}
+              </div>
 
-                <NavigationLink callback={closeMenu} href={contact[1]}>
-                  {contact[0]}
-                </NavigationLink>
-              </NavBarGroup>
-            </>
-          )}
-        </AnimatePresence>
+              <NavigationLink callback={closeMenu} href={contact[1]}>
+                {contact[0]}
+              </NavigationLink>
+            </NavBarGroup>
+          </>
+        )}
       </div>
     </nav>
   );
