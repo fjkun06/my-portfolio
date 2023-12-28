@@ -2,9 +2,13 @@
 
 import React, { useEffect, useState } from "react";
 
-import { CodeSnippet } from "@/components";
+import dynamic from "next/dynamic";
 
 import { codeSnippets } from "../screens/data";
+
+const CodeSnippet = dynamic(() => import("@/components/CodeSnippet"), {
+  ssr: true
+});
 
 const CodeReel = () => {
   const [arr, setArr] = useState<number[]>([0, 1, 2, 3, 4]);
@@ -22,6 +26,7 @@ const CodeReel = () => {
           })
         );
 
+        // eslint-disable-next-line react-hooks/exhaustive-deps
         lastTime = currentTime;
       }
 

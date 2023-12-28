@@ -1,10 +1,11 @@
-"use client";
+import dynamic from "next/dynamic";
 
-import React from "react";
-
-import { motion } from "framer-motion";
-
-import { Button, CodeSnippet } from "@/components";
+const CodeSnippet = dynamic(() => import("@/components/CodeSnippet"), {
+  ssr: true
+});
+const HomeCTA = dynamic(() => import("@/components/HomeCTA"), {
+  ssr: true
+});
 
 import { sampleCode } from "../screens/data";
 
@@ -19,24 +20,17 @@ const UserInfo = ({
 }) => {
   return (
     <div className="portfolio-home--left">
-      <motion.div className="" animate={{ y: [50, -50, 0], opacity: [0, 1] }}>
+      <div className="">
         <span className="">{greeting}</span>
         <span className="title">Frank Jordan Z.</span>
         <h3 className="">
           <mark> &gt; {role}</mark>
         </h3>
-        <div className="cta">
-          {callToActions.map(([text, route], i) => (
-            <Button text={text} route={route} key={i} />
-          ))}
-        </div>
-      </motion.div>
-      <motion.div
-        animate={{ y: [50, -50, 0], opacity: [0, 1] }}
-        transition={{ delay: 0.25, type: "spring" }}
-      >
+      </div>
+      <HomeCTA callToActions={callToActions} />
+      <div>
         <CodeSnippet snippet={sampleCode} />
-      </motion.div>
+      </div>
     </div>
   );
 };

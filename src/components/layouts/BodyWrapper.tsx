@@ -1,11 +1,6 @@
 import React from "react";
 
-import dynamic from "next/dynamic";
-
-import { NavBar } from "@/components";
-const Footer = dynamic(() => import("@/components/layouts/Footer"), {
-  ssr: false
-});
+import { Footer, NavBar } from "@/components";
 
 interface IBodyWrapper {
   children: React.ReactNode | React.ReactNode[];

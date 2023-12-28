@@ -1,21 +1,25 @@
-import React from "react";
+/* eslint-disable max-len */
+import dynamic from "next/dynamic";
 
-import { useTranslations } from "next-intl";
+const CodeReel = dynamic(() => import("@/components/CodeReel"), {
+  ssr: true
+});
+const UserInfo = dynamic(() => import("@/components/UserInfo"), {
+  ssr: true
+});
 
-import { CodeReel, UserInfo } from "@/components";
-import { routes } from "@/utils/data";
-
-const HomeScreen = () => {
-  const t = useTranslations("home");
-  const t2 = useTranslations("routes");
-  const callToActions = routes
-    .map((el) => [t2(`${el}.text`), t2(`${el}.href`)])
-    .filter((_, i) => i > 0 && i !== 2);
+const HomeScreen = (props: {
+  role: string;
+  greeting: string;
+  callToActions: string[][];
+}) => {
   return (
-    <div className="portfolio-home">
-      <UserInfo role={t("role")} greeting={t("greeting")} callToActions={callToActions} />
-      <CodeReel />
-    </div>
+    <main>
+      <div className="portfolio-home">
+        <UserInfo {...props} />
+        <CodeReel />
+      </div>
+    </main>
   );
 };
 
