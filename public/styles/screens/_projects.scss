@@ -64,6 +64,12 @@ $delays:
       border-radius: 0.5rem 0.5rem 0 0;
       transition: all 0.25s ease-in-out;
       opacity: 0;
+
+      //adding translation effects
+      &:nth-of-type(1),&:nth-of-type(4) {
+        transform: translateY(3rem) !important;
+      }
+
       //generating animations and delays by destructuring index and delay time from delays list above
       @each $i, $delay in $delays {
         &:nth-of-type(#{$i}) {
@@ -106,14 +112,16 @@ $delays:
       .data {
         padding-left: 0.1rem;
         /*********CARD TITLE SECTION******************************/
-        h3 {
+        h2 {
           font-size: 1.8rem;
           padding-block: 1rem;
           padding-left: 0.5rem;
         }
         hr {
+          border: none;
           padding-bottom: 2rem;
-          border-top-color: vars.$orange;
+
+          border-top: 0.1rem solid vars.$orange;
         }
         /*********CARD DESCRIPTION SECTION******************************/
         p {
@@ -152,6 +160,7 @@ $delays:
             svg {
               @include utils.size(2.5rem);
               @include utils.size(inherit);
+              color: vars.$white;
               z-index: 999;
               cursor: pointer;
               transition: all 0.25s ease-in-out;

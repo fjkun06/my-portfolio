@@ -20,3 +20,7 @@ export { default as ProjectCard } from "@/components/ProjectCard";
 export { default as ContactThankYouCard } from "@/components/ContactThankYouCard";
 export { default as ContactOutputCard } from "@/components/ContactOutputCard";
 export { default as ContactForm } from "@/components/ContactForm";
+export { default as NavbarGroup } from "@/components/NavbarGroup";
+export { default as NavbarHeader } from "@/components/NavbarHeader";
+export { default as NavbarContactLanguage } from "@/components/NavbarContactLanguage";
+export { default as NavbarRoutes } from "@/components/NavbarRoutes";

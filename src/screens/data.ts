@@ -189,7 +189,7 @@ export const projects = [
     src: "digtal.webp"
   },
   {
-    title: "Brytzone Educational Platform (Ongoing)",
+    title: "Brytzone  (Ongoing)",
     repoUrl: "https://github.com/fjkun06/brytzone",
     liveUrl: "https://brytzone-1.vercel.app/",
     skills: [

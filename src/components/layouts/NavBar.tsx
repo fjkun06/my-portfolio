@@ -1,12 +1,20 @@
 "use client";
 import React, { memo } from "react";
 
-import { motion } from "framer-motion";
+import dynamic from "next/dynamic";
 
-import { NavigationLink, SwitchLanguage } from "@/components";
-import { FrankJordanIcon, MenuIcon } from "@/components/icons";
-import { locales } from "@/utils/data";
+import { NavbarHeader } from "@/components";
 import useMediaQuery from "@/utils/useMediaQuery";
+
+const NavbarContactLanguage = dynamic(
+  () => import("@/components/NavbarContactLanguage"),
+  {
+    ssr: false
+  }
+);
+const NavbarRoutes = dynamic(() => import("@/components/NavbarRoutes"), {
+  ssr: false
+});
 
 interface INavBar {
   items: string[][];
@@ -41,40 +49,11 @@ const NavBar: React.FC<INavBar> = ({ items = [[]] }) => {
   return (
     <nav>
       <div className={`navbar navbar--${isOpen ? "open" : "closed"}`}>
-        <div className="nav-toggle">
-          <div className={`nav-toggle--link ${isOpen ? "underlined" : ""}`}>
-            <span className="">
-              <FrankJordanIcon />
-              <span className=""> frank jordan zoné</span>
-            </span>
-            <MenuIcon isOpen={isOpen} callback={toggleOpen} />
-          </div>
-        </div>
+        <NavbarHeader isOpen={isOpen} toggleOpen={toggleOpen} />
         {isOpen && (
           <>
-            <NavBarGroup>
-              {items.length &&
-                items.slice(0, 3).map(([text, href], index) => (
-                  <NavigationLink key={index} callback={closeMenu} href={href}>
-                    {text}
-                  </NavigationLink>
-                ))}
-            </NavBarGroup>
-            <NavBarGroup className="nav-links-group">
-              <div className="nav-links-group--language">
-                {locales.map((locale) => (
-                  <SwitchLanguage
-                    key={locale}
-                    language={locale as any}
-                    text={`_${locale}`}
-                  />
-                ))}
-              </div>
-
-              <NavigationLink callback={closeMenu} href={contact[1]}>
-                {contact[0]}
-              </NavigationLink>
-            </NavBarGroup>
+            <NavbarRoutes items={items} closeMenu={closeMenu} />
+            <NavbarContactLanguage contact={contact} closeMenu={closeMenu} />
           </>
         )}
       </div>
@@ -83,22 +62,3 @@ const NavBar: React.FC<INavBar> = ({ items = [[]] }) => {
 };
 
 export default memo(NavBar);
-
-const NavBarGroup = ({
-  children,
-  className
-}: {
-  children: React.ReactNode;
-  className?: string;
-}) => {
-  return (
-    <motion.div
-      className={className}
-      initial={{ x: -20, opacity: 0 }}
-      animate={{ x: 0, opacity: 1, transition: { duration: 0.7, ease: "easeInOut" } }}
-      exit={{ x: -20, opacity: 0, transition: { duration: 0.4, ease: "easeInOut" } }}
-    >
-      {children}
-    </motion.div>
-  );
-};
