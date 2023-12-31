@@ -1,0 +1,45 @@
+//loading mixins and variable
+@use "../utils/mixins" as utils;
+@use "../utils/variables" as vars;
+
+.about-skills {
+  /************************************************SOFT SKILLS SECTION************************************************/
+  &--soft {
+    @include utils.size(100%, max-content);
+    gap: 2rem;
+    @include utils.flex(column);
+
+    // background-color: green;
+    @media only screen and (width < 480px) {
+      padding-bottom: 2rem;
+    }
+
+    ul {
+      li {
+        &::before {
+          background: url("/assets/icons/star.svg");
+        }
+      }
+    }
+  }
+  /************************************************HARD SKILLS SECTION************************************************/
+  &--hard {
+    @include utils.size(100%, max-content);
+    @include utils.flex(column);
+
+    //Icons container
+    div {
+      @include utils.flex;
+      @include utils.size(80%, max-content);
+      flex-wrap: wrap;
+      padding: 2rem;
+      padding-bottom: 3vh;
+      gap: 1rem;
+      @media only screen and (width < 768px) {
+        width: 100%;
+      }
+
+  
+    }
+  }
+}

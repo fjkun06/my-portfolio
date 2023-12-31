@@ -1,0 +1,90 @@
+//loading mixins and variable
+@use "../utils/mixins" as utils;
+@use "../utils/variables" as vars;
+
+.about-education {
+  /************************************************EDUCATION SECTION************************************************/
+
+  div {
+    @include utils.flex(column);
+  }
+
+  &--school {
+    @include utils.size(100%, max-content);
+    gap: 2rem;
+
+    article {
+      @include utils.flex(column);
+      @include utils.size(60%, max-content);
+      align-items: flex-start;
+      border: 1px solid vars.$orange;
+      padding: 1rem;
+      border-radius: 1rem;
+      gap: 1rem;
+      @media only screen and (width < 1500px) {
+        width: 70%;
+      }
+      @media only screen and (width < 980px) {
+        width: 90%;
+      }
+      h3 {
+        @include utils.formatText(450, 2.5rem);
+        text-align: left;
+        @media only screen and (width < 1700px) {
+          font-size: 2.2rem;
+        }
+        @media only screen and (width < 768px) {
+          font-size: 2rem;
+        }
+      }
+
+      p {
+        @include utils.flex(column);
+        align-items: flex-start;
+        gap: 0.5rem;
+
+        span.university {
+          // color: red;
+          @include utils.formatText(450, 2.1rem);
+          @media only screen and (width < 1700px) {
+            font-size: 1.9rem;
+          }
+          @media only screen and (width < 768px) {
+            font-size: 1.8rem;
+          }
+        }
+        span.year {
+          // color: orangered;
+          color: lighten(vars.$grey, 30%);
+
+          @include utils.formatText(450, 1.7rem);
+          @media only screen and (width < 1700px) {
+            font-size: 1.6rem;
+          }
+        }
+        span.grade {
+          color: vars.$orange;
+          @include utils.formatText(450, 1.5rem);
+        }
+      }
+    }
+  }
+
+  /************************************************INTERESTS SECTION************************************************/
+
+  &--interests {
+    @include utils.size(100%, max-content);
+    gap: 2rem;
+    @media only screen and (width < 480px) {
+      padding-bottom: 0rem;
+    }
+
+    ul {
+      li {
+        &::before {
+          background: url("/assets/icons/arrow-forward.svg");
+        }
+      }
+    }
+  }
+}

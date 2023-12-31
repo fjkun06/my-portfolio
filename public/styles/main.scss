@@ -1,0 +1,71 @@
+/***********************************************Importing other stylesheets***********************************************/
+
+@use "components";
+@use "layout";
+@use "screens";
+
+//importing utilities
+@use "utils/mixins" as utils;
+@use "utils/variables" as vars;
+
+//styling links
+a {
+  text-decoration: none;
+}
+
+//all components
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Fira Code Variable", sans-serif;
+  font-style: normal;
+  font-weight: 400;
+}
+
+//Configuring html
+html {
+  @include utils.size(100vw, 100%);
+  @include utils.flex;
+  font-size: 62.5%;
+  -webkit-scroll-behavior: smooth;
+  scroll-behavior: smooth;
+  overflow: hidden;
+  background: vars.$blueDarkest;
+  padding: 3rem;
+  @media only screen and (width < 1300px) {
+    padding: 1.5rem;
+  }
+  @media only screen and (width < 768px) {
+    padding: 0.5rem;
+  }
+}
+
+body {
+  font-size: 1.6em;
+  color: vars.$white;
+  background:
+    url("/background-blurs.svg") no-repeat 100% 0% / 60%,
+    vars.$blueDark;
+  @include utils.size(100%);
+  border-radius: 0.8rem;
+  border: 0.1rem solid vars.$lineColor;
+  overflow: inherit;
+  position: relative;
+  @include utils.flex(column);
+
+  @media only screen and (width < 1300px) {
+    background-size: cover;
+    background-position: center;
+  }
+  main {
+    @include utils.size(100%, calc(100% - 10.5rem));
+    background: transparent;
+    @media only screen and (width < 1300px) {
+      @include utils.size(100%, calc(100% - 7.125rem - 5rem));
+    }
+    @media only screen and (width > 1950px) {
+      width: 75%;
+    }
+  }
+}

@@ -1,0 +1,46 @@
+//loading mixins and variable
+@use "sass:color";
+@use "../utils/mixins" as utils;
+@use "../utils/variables" as vars;
+button {
+  border: none;
+  border-bottom: 1px solid darken(vars.$orange, 10%);
+  position: relative;
+  cursor: pointer;
+  background-color: transparent;
+  color: inherit;
+  &::after {
+    transition: opacity 0.25s ease-in-out;
+    opacity: 0;
+    display: block;
+    position: absolute;
+    @include utils.positioning(0, 115%);
+    content: "";
+    @include utils.size(100%, 0.1rem);
+    background-color: darken(vars.$orange, 10%);
+  }
+  &:hover {
+    &::after {
+      opacity: 1;
+    }
+  }
+}
+
+/************************************************PILLS SECTION************************************************/
+.pill {
+  @include utils.flex(row-reverse);
+  transition: background-color 0.25s ease-in-out;
+  background-color: color.scale(#011627, $lightness: 15%);
+  padding: 0.75rem 1rem;
+  border-radius: 3rem;
+  gap: 1rem;
+  &:hover {
+    background-color: color.scale(#011627, $lightness: 25%);
+  }
+  @media only screen and (width < 768px) {
+    font-size: 1.5rem;
+  }
+  @media only screen and (width < 500px) {
+    font-size: 1.4rem;
+  }
+}

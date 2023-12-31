@@ -1,0 +1,195 @@
+//loading mixins and variable
+@use "../utils/mixins" as utils;
+@use "../utils/variables" as vars;
+
+@keyframes animateLastChild {
+  50% {
+    opacity: 0;
+    transform: translateY(10vh);
+  }
+  60% {
+    opacity: 0;
+    transform: translateY(-105vh);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateY(-95vh);
+  }
+}
+@keyframes animateFourthChild {
+  100% {
+    transform: translateY(10rem);
+  }
+}
+.portfolio-home {
+  @include utils.size(100%);
+  @include utils.flex;
+  justify-content: center;
+  gap: 8rem;
+
+  @media only screen and (width < 1900px) {
+    padding-inline: 6.1vw;
+    gap: 0rem;
+  }
+
+  &--left,
+  &--right {
+    @include utils.size(100%);
+    @include utils.flex(column);
+    max-width: 50%;
+    @media only screen and (width > 1900px) {
+      max-width: max-content;
+    }
+    h1 {
+      text-align: center;
+    }
+  }
+
+  //name section of home page
+  /************************************************User Text SECTION************************************************/
+
+  &--left {
+    row-gap: 7.1rem;
+    @media only screen and (width < 1300px) {
+      max-width: 100%;
+    }
+
+    div {
+      @include utils.size(100%, max-content);
+      @include utils.flex(column);
+      align-items: flex-start;
+      height: max-content;
+      // width: max-content;
+    }
+
+    //stzyling main text and name
+
+    /************************************************User MAIN Text SECTION************************************************/
+    div:first-of-type {
+      justify-content: flex-end;
+      span,
+      h3 {
+        @include utils.formatText(450, 1.8rem);
+        color: vars.$milkyWhite;
+        font-size: 1.3rem;
+        mark {
+          background-color: vars.$orange;
+        }
+
+        &:is(.title) {
+          font-size: 6.2rem;
+          transform: translateX(-0.75rem);
+          @media only screen and (width < 1400px) {
+            font-size: 5.2rem;
+          }
+          @media only screen and (width < 550px) {
+            font-size: 4.2rem;
+          }
+          @media only screen and (width < 480px) {
+            font-size: 3.2rem;
+          }
+          @media only screen and (width < 380px) {
+            font-size: 3rem;
+          }
+        }
+      }
+      h3 {
+        font-size: 3.2rem;
+        color: vars.$indigo;
+        @media only screen and (width < 1400px) {
+          font-size: 2.2rem;
+        }
+        @media only screen and (width < 480px) {
+          font-size: 1.8rem;
+        }
+      }
+      /************************************************CALL TO ACTION SECTION************************************************/
+      .cta {
+        @include utils.flex;
+        justify-content: flex-start;
+        gap: 4rem;
+        margin-top: 4rem;
+        button {
+          font-size: 2rem;
+          text-transform: capitalize;
+        }
+      }
+    }
+
+    /************************************************CODE SNIPPET SECTION************************************************/
+    div:last-of-type {
+      pre {
+        overflow: hidden !important;
+        background: transparent !important;
+        padding-left: 0 !important;
+        span {
+          @include utils.formatText(450, 1.6rem);
+          @media only screen and (width < 1900px) {
+            @include utils.formatText(450, 1.3rem);
+          }
+          @media only screen and (width < 480px) {
+            font-size: 1.1rem;
+          }
+          @media only screen and (width < 380px) {
+            font-size: 0.9rem;
+          }
+        }
+      }
+    }
+  }
+
+  //right section : code reel
+  /************************************************ANIMATED CODE REEL SECTION************************************************/
+
+  &--right {
+    padding-inline: 1rem;
+    height: 100%;
+    overflow: hidden;
+    display: grid;
+    gap: 2rem;
+    @media only screen and (width < 1300px) {
+      display: none;
+    }
+
+    div {
+      @include utils.size(56rem, 18.2rem);
+      @include utils.flex;
+      text-align: center;
+      transform: translateY(-10rem);
+      cursor: pointer;
+      user-select: none;
+      border-radius: 1rem;
+      transition: all 0.25s linear;
+      background-color: rgba(#011627, 0.5);
+      overflow: hidden;
+      box-shadow: rgba(#1e2d3d, 0.25) 0px 8px 24px;
+      &:hover {
+        background-color: rgba(#011627, 1);
+        transition: background-color 0.25s ease-in-out;
+      }
+      //editing code snippet container
+      pre {
+        @include utils.size(100% !important);
+        background: transparent !important;
+        border-radius: 1rem;
+        overflow: hidden !important;
+        code {
+          @include utils.size(100%);
+          text-wrap: wrap !important;
+
+          span {
+            text-wrap: wrap !important;
+          }
+        }
+      }
+      //fourth child
+      &:not(:last-child) {
+        animation: animateFourthChild 3s linear 3s 1 forwards;
+      }
+      &:last-child {
+        animation: animateLastChild 3s linear 3s 1 forwards;
+      }
+    }
+  }
+}

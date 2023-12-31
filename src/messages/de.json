@@ -1,0 +1,120 @@
+{
+  "index": {
+    "title": "Hallo Welt"
+  },
+  "routes": {
+    "home": {
+      "text": "_hallo",
+      "href": "/"
+    },
+    "about": {
+      "text": "_über-mich",
+      "href": "/about"
+    },
+    "projects": {
+      "text": "_projekte",
+      "href": "/projects"
+    },
+    "contact": {
+      "text": "_kontaktiere-mich",
+      "href": "/contact"
+    }
+  },
+  "about": {
+    "summary": {
+      "title": "Zusammenfassung",
+      "question": "Also, wer bin ich?",
+      "opener": "Ich bin ein Front-End-Entwickler aus Kamerun.",
+      "desc1": "Ich genieße es, komplexen und schönen Web-Designs Leben einzuhauchen. Ich liebe auch die Logik und Struktur der Programmierung und bin immer bestrebt, eleganten und effizienten Code zu schreiben, unabhängig von der Programmiersprache.",
+      "desc2": " Vom Schreiben meines ersten C-Codes im Jahr 2018 bis hin zu meinem neuesten Github-Commit wächst die Begeisterung für das Lösen von Problemen durch Programmierung exponentiell. Der Abschnitt  <important>Projekte</important> zeigt meine neuesten Projekte.",
+      "contact": "Kontakt aufnehmen"
+    },
+    "education": {
+      "title": "Bildung && Interessen",
+      "schools": {
+        "title": "Bildung",
+        "ub": {
+          "name": "Universität Buea",
+          "endDate": "2023",
+          "grade": "Note: 3,23",
+          "field": "Bachelor of Science in Technischer Informatik"
+        },
+        "ude": {
+          "name": "Universität Duisburg-Essen",
+          "endDate": "Aktuelle",
+          "grade": "",
+          "field": "Bachelor of Science in Technischer Informatik"
+        }
+      },
+      "interests": {
+        "title": "Interessen && Hobbys",
+        "list": {
+          "one": "Technologie-Trends",
+          "two": "Bücher lesen (Psychologie)",
+          "three": "Sport (Fußball, Basketball)",
+          "four": "Forschung und Entdeckung",
+          "five": "Künstliche Intelligenz",
+          "six": "Erstaunliche Dinge mit Code machen",
+          "seven": "Japanische Anime",
+          "eight": "Fitnessstudio-Workouts"
+        }
+      }
+    },
+    "skills": {
+      "title": "Fähigkeiten && Technologien",
+      "subtitle": "Technologien und Tools",
+      "soft": {
+        "title": "Soft Skills",
+        "list": {
+          "one": "Großer Teamplayer",
+          "two": "Effizienter Kommunikator",
+          "three": "Kritischer Denker",
+          "four": "Problemlöser",
+          "five": "Aufmerksam für Details",
+          "six": "Anpassungsfähigkeit an neue Technologien",
+          "seven": "Effizientes Zeitmanagement",
+          "eight": "Kreativität und Innovation"
+        }
+      }
+    },
+    "experience": {
+      "title": "Berufserfahrung",
+      "xp1": "Frontend-Entwickler @ WandaPrep",
+      "xp2": "Ehrenamtlicher Frontend-Entwickler @ Positive Impact Events",
+      "date1": "Jan — Nov 2023",
+      "date2": "Mai — Sep 2021",
+      "list": {
+        "one": "Nutzung verschiedener Front-End-Technologien für die Gestaltung von Ansichten, was zu einer beachtlichen Steigerung der Benutzeraktivität um 20 % führte.",
+        "two": "Spielte eine aktive Rolle bei der Bereitstellung wertvoller Einblicke für interne Stakeholder und bewies dabei ein Verständnis für komplexe technische Zusammenhänge.",
+        "three": "Unermüdliches Engagement beim Erlernen und Anwenden neuer Technologien und Methoden.",
+        "four": "Hat mit Designern zusammengearbeitet, um benutzerorientierte Webanwendungen zu erstellen und bereitzustellen, die die Erwartungen der Kunden übertreffen.",
+        "five": "Konstante Unterstützung der Teammitglieder und Förderung einer kollaborativen Arbeitsumgebung. Dies führte zu einer Steigerung der Effizienz bei der Projektabwicklung um 15 % und zu einem zusammenhängenden, motivierten Team."
+      }
+    }
+  },
+  "home": {
+    "greeting": "Hallo zusammen, ich bin",
+    "role": "Front-End-Entwickler"
+  },
+  "contact": {
+    "heading": "Nehmen Sie Kontakt auf",
+    "input": "Eingangsdaten",
+    "output": "Ausgabe Daten",
+    "name": "name",
+    "email": "email",
+    "message": "nachricht",
+    "button": "nachricht-abshicken",
+    "thanks": "Vielen Dank! 😇",
+    "tmessage": "Ihre Nachricht wurde zugestellt. Sie werden bald eine Antwort erhalten!",
+    "redirect": "...Weiterleitung in 3s"
+  },
+  "projects": {
+    "heading": "Projekte",
+    "description1": "Leitung der Entwicklung einer mehrsprachigen Website für ein Webentwicklungs- und Beratungsunternehmen, 'Digital' mit einem funktionsübergreifenden Team. Das Projekt umfasste verschiedene Technologien und Fähigkeiten um optimale Ergebnisse zu erzielen.",
+    "description2": "Brytzone, eine umfassende mehrsprachige Bildungsplattform, die für Universitätsstudenten zugeschnitten ist. Sie ermöglicht es den Studenten, sich über die neuesten Informationen ihrer Fakultät/Schule auf dem Laufenden zu bleiben, wertvolle Praktika zu finden, aktiv aktiv an Umfragen teilzunehmen, um ihre akademischen Leistungen zu verbessern, und sich durch Projekte, mit denen sie sich möglicherweise schon vor Verlassen der Universität einen Arbeitsplatz sichern können.",
+    "description3": "Entwicklung der FlippBidd-Landingpage, einer beeindruckenden Demonstration von Frontend Entwicklungsfähigkeiten. Diese ästhetisch ansprechende Landing Page wurde akribisch und entwickelt, um pixelgenau zu sein, und unterstreicht Kreativität und Aufmerksamkeit für Details",
+    "description4": "Ein ästhetisch ansprechendes und vollständig responsives Frontend-Projekt, das zwei Sprachen einwandfrei unterbringt. Durch die Nutzung von Fachwissen in Figma und i18n, wurde diese Landing Page sorgfältig erstellt. Während des gesamten Projekts pflegte ich enge Zusammenarbeit mit dem Kunden, um sicherzustellen, dass seine Vorstellungen in ein benutzerfreundliches Design umgesetzt wurde. Insbesondere wurde eine WhatsApp-Funktionalität implementiert, die die Nutzer beim Anklicken eines bestimmten Buttons zu WhatsApp weiterleitet.",
+    "message": "nachricht"
+  },
+  "find-me": "profile:"
+}
