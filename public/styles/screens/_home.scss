@@ -25,7 +25,7 @@
 .portfolio-home {
   @include utils.size(100%);
   @include utils.flex;
-  justify-content: flex-start;
+  justify-content: center;
   gap: 8rem;
 
   @media only screen and (width < 1900px) {
