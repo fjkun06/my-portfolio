@@ -25,6 +25,7 @@
 .portfolio-home {
   @include utils.size(100%);
   @include utils.flex;
+  justify-content: flex-start;
   gap: 8rem;
 
   @media only screen and (width < 1900px) {
@@ -49,7 +50,6 @@
   /************************************************User Text SECTION************************************************/
 
   &--left {
-    // background: red;
     row-gap: 7.1rem;
     @media only screen and (width < 1300px) {
       max-width: 100%;
@@ -110,8 +110,8 @@
         justify-content: flex-start;
         gap: 4rem;
         margin-top: 4rem;
-        font-size: 2rem;
         button {
+          font-size: 2rem;
           text-transform: capitalize;
         }
       }

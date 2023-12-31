@@ -3,6 +3,7 @@
 
 @use "../utils/mixins" as utils;
 @use "../utils/variables" as vars;
+
 /************************************************ANIMATIONS SECTION************************************************/
 
 @keyframes dance {
@@ -42,7 +43,6 @@ h1 {
     padding-inline: 2vw;
   }
 }
-
 .portfolio-contact {
   @include utils.size(100%);
   @include utils.flex(column);
@@ -54,6 +54,7 @@ h1 {
   section {
     @include utils.size(70%, max-content);
     @include utils.flex;
+    justify-content: flex-start;
     gap: 5vh;
     @media only screen and (width < 768px) {
       width: 100%;
@@ -87,10 +88,11 @@ h1 {
       align-items: flex-start;
       padding-inline: 2rem;
       gap: 1rem;
-      width: 70%;
+      width: 50rem;
       border: 0.1rem solid vars.$lineColor;
       min-width: 50rem;
-      animation: dance 0.5s ease-in-out 0.6s 1 forwards;
+      animation: dance 0.5s ease-in-out 1.6s 1 forwards;
+      transition: width 0.25s ease-in-out;
 
       @media only screen and (width < 768px) {
         min-width: unset;

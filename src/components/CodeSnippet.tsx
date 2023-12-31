@@ -1,5 +1,5 @@
-"use client";
-import React, { memo } from "react";
+// "use client";
+import React from "react";
 
 import { Prism as SyntaxHighlighter } from "react-syntax-highlighter";
 import { vscDarkPlus } from "react-syntax-highlighter/dist/esm/styles/prism";
@@ -20,4 +20,4 @@ const CodeSnippet: React.FC<ICodeSnippet> = ({ snippet, language, className }) =
   );
 };
 
-export default memo(CodeSnippet);
+export default CodeSnippet;

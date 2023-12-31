@@ -4,7 +4,7 @@ const CodeSnippet = dynamic(() => import("@/components/CodeSnippet"), {
   ssr: true
 });
 const HomeCTA = dynamic(() => import("@/components/HomeCTA"), {
-  ssr: true
+  ssr: false
 });
 
 import { sampleCode } from "../screens/data";
@@ -26,8 +26,8 @@ const UserInfo = ({
         <h3 className="">
           <mark> &gt; {role}</mark>
         </h3>
+        <HomeCTA callToActions={callToActions} />
       </div>
-      <HomeCTA callToActions={callToActions} />
       <div>
         <CodeSnippet snippet={sampleCode} />
       </div>

@@ -9,11 +9,11 @@ import useMediaQuery from "@/utils/useMediaQuery";
 const NavbarContactLanguage = dynamic(
   () => import("@/components/NavbarContactLanguage"),
   {
-    ssr: false
+    ssr: true
   }
 );
 const NavbarRoutes = dynamic(() => import("@/components/NavbarRoutes"), {
-  ssr: false
+  ssr: true
 });
 
 interface INavBar {

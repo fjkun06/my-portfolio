@@ -9,7 +9,7 @@ const ContactThankYouCard = dynamic(() => import("@/components/ContactThankYouCa
   ssr: true
 });
 const ContactOutputCard = dynamic(() => import("@/components/ContactOutputCard"), {
-  ssr: true
+  ssr: false
 });
 const ContactForm = dynamic(() => import("@/components/ContactForm"), {
   ssr: true
@@ -100,7 +100,6 @@ const ContactScreen: React.FC<IContactScreen> = ({
       clearTimeout(timer);
     };
   }, [state.succeeded, push]);
-  console.log(state.succeeded);
 
   //grouping props per component
   const thankYou = { thanks, tmessage, redirect, success: state.succeeded, _gone };
