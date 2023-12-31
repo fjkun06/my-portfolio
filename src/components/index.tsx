@@ -25,3 +25,5 @@ export { default as NavbarHeader } from "@/components/NavbarHeader";
 export { default as NavbarContactLanguage } from "@/components/NavbarContactLanguage";
 export { default as NavbarRoutes } from "@/components/NavbarRoutes";
 export { default as HomeCTA } from "@/components/HomeCTA";
+export { default as ProjectCardImage } from "@/components/ProjectCardImage";
+export { default as ProjectCardLink } from "@/components/ProjectCardLink";
