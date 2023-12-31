@@ -1,12 +1,15 @@
 import React from "react";
 
+import dynamic from "next/dynamic";
 import { useTranslations } from "next-intl";
 
 import { sideNavigationDate } from "@/components/data";
-import { AboutScreen } from "@/screens";
 import { summaryKeys } from "@/screens/data";
 import { IEducation, List } from "@/screens/EducationScreen";
 import { IExperienceData } from "@/screens/ExperienceScreen";
+const AboutScreen = dynamic(() => import("@/screens/AboutScreen"), {
+  ssr: true
+});
 
 const About = () => {
   const t = useTranslations("about");

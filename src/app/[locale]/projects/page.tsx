@@ -1,8 +1,12 @@
 import React from "react";
 
+import dynamic from "next/dynamic";
 import { useTranslations } from "next-intl";
+// import { ProjectsScreen } from "@/screens";
 
-import { ProjectsScreen } from "@/screens";
+const ProjectsScreen = dynamic(() => import("@/screens/ProjectsScreen"), {
+  ssr: true
+});
 
 const Projects = () => {
   const t = useTranslations("projects");

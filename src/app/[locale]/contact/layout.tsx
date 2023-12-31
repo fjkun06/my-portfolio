@@ -1,7 +1,6 @@
 import type { Metadata } from "next";
 
 import { PageWrapper } from "@/components";
-/* eslint-disable max-len */
 
 export const metadata: Metadata = {
   title: "Frank Jordan | Contact",

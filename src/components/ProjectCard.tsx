@@ -1,12 +1,19 @@
-"use client";
 import React from "react";
 
-import { motion } from "framer-motion";
-import Image from "next/image";
-import Link from "next/link";
-import { Tooltip } from "react-tooltip";
+import dynamic from "next/dynamic";
 
-import { GithubIcon, GlobeIcon } from "@/components/icons";
+import ProjectCardImage from "./ProjectCardImage";
+
+const ProjectCardLink = dynamic(() => import("@/components/ProjectCardLink"), {
+  ssr: false
+});
+const GithubIcon = dynamic(() => import("@/components/icons/GithubIcon"), {
+  ssr: false
+});
+const GlobeIcon = dynamic(() => import("@/components/icons/GlobeIcon"), {
+  ssr: false
+});
+
 export interface IProjectCard {
   title?: string;
   description?: string;
@@ -14,7 +21,6 @@ export interface IProjectCard {
   repoUrl?: string;
   liveUrl?: string;
   src?: string;
-  index: number;
 }
 const ProjectCard = ({
   title,
@@ -22,8 +28,7 @@ const ProjectCard = ({
   repoUrl,
   liveUrl,
   skills,
-  src,
-  index
+  src
 }: IProjectCard) => {
   const links = [
     {
@@ -40,57 +45,31 @@ const ProjectCard = ({
     }
   ];
 
-  const delay = 0.65 + index * 0.5;
   return (
-    <motion.article
-      initial={{ opacity: 0 }}
-      animate={{
-        opacity: [0, 0.65, 1],
-        scale: [1.03, 1.015, 1],
-        transition: { delay, duration: 0.5 }
-      }}
-    >
-      <div className="image">
-        <Image
-          src={`/assets/images/${src}`}
-          width={400}
-          height={200}
-          alt="project-picture"
-          priority
-          quality={100}
-        />
-      </div>
+    <article>
+      {src && <ProjectCardImage src={`/assets/images/projects/${src}`} />}
       <div className="data">
-        <h2 className="">{title ?? "Project Title"}</h2> <hr />
-        <p>{description}</p>
-        <div className="technologies">
-          {skills?.map((skill) => (
-            <span className="pill" key={skill}>
-              {skill}
-            </span>
-          ))}
-        </div>
-        <div className="links">
-          {[
-            links.map(({ href, icon, cls, text }) => (
-              <span key={cls}>
-                <Link
-                  href={href as string}
-                  target="_blank"
-                  passHref={true}
-                  className={cls}
-                >
-                  {icon}
-                </Link>
-                <Tooltip anchorSelect={`.${cls}`} place="top" variant="light">
-                  <span>{text}</span>
-                </Tooltip>
+        {title && (
+          <>
+            <h2>{title}</h2>
+            <hr />
+          </>
+        )}
+        {description && <p>{description}</p>}
+        {skills && (
+          <div className="technologies">
+            {skills.map((skill) => (
+              <span className="pill" key={skill}>
+                {skill}
               </span>
-            ))
-          ]}
+            ))}
+          </div>
+        )}
+        <div className="links">
+          {[links.map((props) => <ProjectCardLink {...props} key={props.cls} />)]}
         </div>
       </div>
-    </motion.article>
+    </article>
   );
 };
 

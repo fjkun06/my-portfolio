@@ -1,8 +1,7 @@
 /* eslint-disable max-len */
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
-import "./globals.css";
-import "@/styles/main.scss";
+import "../../../public/styles/main.scss";
 import "@/utils/fonts";
 import { useTranslations } from "next-intl";
 

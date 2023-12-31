@@ -1,0 +1,178 @@
+@use "sass:color";
+@use "../utils/mixins" as utils;
+@use "../utils/variables" as vars;
+
+.nav-size {
+  @include utils.size(100%, 6.125rem);
+  @include utils.flex;
+  background: vars.$blueDark;
+  transition: height 0.5s ease-in-out;
+  border-bottom: 1px solid vars.$lineColor;
+
+  @media only screen and (width > 1300px) {
+    height: 5.6191rem !important;
+  }
+  @media only screen and (width < 1300px) {
+    height: 7.125rem;
+  }
+}
+
+nav {
+  @extend .nav-size;
+
+  .navbar {
+    @include utils.positioning(0, 0);
+    z-index: 9999;
+    justify-content: flex-start;
+
+    @media only screen and (width < 1300px) {
+      flex-direction: column;
+      @include utils.justifyAlignSame(flex-start);
+    }
+  }
+}
+.navbar {
+  @extend .nav-size;
+  // background-color: red;
+
+  //Navbar items containers
+  div {
+    @include utils.flex;
+    //styling navbar link items
+    .nav-toggle--link,
+    a {
+      @include utils.formatText(450, 1.6rem);
+      @include utils.flex;
+      width: max-content;
+      padding: 1.7rem 3.2rem;
+      border-right: 1px solid vars.$lineColor;
+      color: color.scale(vars.$grey, $lightness: 50%);
+      transition: color 0.25s ease-in-out;
+      position: relative;
+      cursor: pointer;
+
+      &:hover {
+        background-color: vars.$blueHover;
+        color: vars.$white;
+      }
+
+      @media only screen and (width < 1300px) {
+        font-size: 2.5rem;
+      }
+      @media only screen and (width < 480px) {
+        font-size: 2rem;
+      }
+    }
+
+    //Giving active route text a white color
+    .navbar-link--active {
+      color: vars.$white;
+    }
+    @media only screen and (width < 1300px) {
+      flex-direction: column;
+      width: 100%;
+      .navbar-link,
+      a {
+        width: inherit;
+        justify-content: flex-start;
+      }
+    }
+  }
+
+  //Mobile Menu Bar
+  .nav-toggle {
+    div:first-child {
+      user-select: none;
+      width: 31.1rem;
+      justify-content: flex-start;
+      -webkit-user-select: none;
+      border-bottom: 1px solid transparent;
+
+      //span containing logo
+      span {
+        @include utils.flex;
+        gap: 2rem;
+        svg:is(.icon) {
+          //selects an svg with classname .icon
+          @include utils.size(2.5rem);
+          padding-left: 0.5rem;
+          display: block;
+        }
+        @media only screen and (width < 500px) {
+          font-size: 1.6rem;
+        }
+      }
+      //Menu icon in Navbar Item
+      svg {
+        display: none;
+        cursor: pointer;
+        transition: all 0.25s ease-in-out;
+      }
+      @media only screen and (width < 1300px) {
+        width: inherit;
+        justify-content: space-between;
+        &:hover {
+          background: transparent;
+          color: vars.$grey;
+          cursor: default;
+        }
+
+        svg {
+          transform: scale(1.5) translateY(0.15rem);
+          display: block;
+          &:hover {
+            color: vars.$white;
+          }
+        }
+      }
+    }
+  }
+
+  //Line under active route
+  .underline {
+    position: absolute;
+    left: 0;
+    right: 0;
+    display: block;
+    height: 0.3rem;
+    background: vars.$orange;
+    bottom: -0.3rem;
+    @media only screen and (width < 1300px) {
+      display: none;
+    }
+  }
+
+  //second div container of navbar items (right most items)
+  .nav-links-group {
+    justify-content: flex-end;
+    width: 100%;
+
+    a .nav-flag {
+      width: 3rem;
+      margin-right: 0.5rem;
+      @media only screen and (width < 1300px) {
+        @include utils.size(inherit);
+      }
+    }
+    @media only screen and (width < 1300px) {
+      flex-direction: column-reverse;
+
+      &--language {
+        display: flex;
+        flex-direction: row;
+        justify-content: flex-start;
+        a {
+          width: 15rem;
+          border: none;
+        }
+      }
+    }
+  }
+}
+
+.navbar--open {
+  height: calc(100% - 5rem);
+}
+.underlined {
+  border-bottom: 1px solid vars.$lineColor !important;
+}

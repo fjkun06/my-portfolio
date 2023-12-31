@@ -3,7 +3,7 @@ import React from "react";
 export interface IExperienceCard {
   title: string;
   data: string[];
-  skills: string[];
+  skills?: string[];
   date?: string;
 }
 const ExperienceCard = ({ title, data, date, skills }: IExperienceCard) => {
@@ -20,7 +20,7 @@ const ExperienceCard = ({ title, data, date, skills }: IExperienceCard) => {
           ))}
         </ul>
         <div className="technologies">
-          {skills.map((skill) => (
+          {skills?.map((skill) => (
             <span className="pill" key={skill}>
               {skill}
             </span>

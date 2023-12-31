@@ -1,20 +1,15 @@
 "use client";
 import React from "react";
 
-import { useMediaQuery } from "react-responsive";
-import { Parallax, Mousewheel, Pagination } from "swiper/modules";
-import { Swiper, SwiperSlide } from "swiper/react";
+import dynamic from "next/dynamic";
+import { Swiper } from "swiper/react";
 
-// Import Swiper styles
-import "swiper/scss";
-import "swiper/scss/pagination";
-import { SideNavigation } from "@/components";
-import {
-  SummaryScreen,
-  EducationScreen,
-  SkillsScreen,
-  ExperienceScreen
-} from "@/screens";
+const SideNavigation = dynamic(() => import("@/components/SideNavigation"), {
+  ssr: true
+});
+const AboutSlideContainer = dynamic(() => import("@/components/AboutSlideContainer"), {
+  ssr: true
+});
 
 import { IEducation, List } from "./EducationScreen";
 import { IExperienceData } from "./ExperienceScreen";
@@ -40,33 +35,10 @@ const AboutScreen: React.FC<IAboutScreen> = ({
   //which can be used to force re - rende other components
   const [activeIndex, setActiveIndex] = React.useState(0);
 
-  //enabling or disabling mouselwheel scrolling
-  const isLongEnough = useMediaQuery(
-    {
-      minHeight: 1080
-    },
-    undefined,
-    handleMediaQueryChange
-  );
-  const isLargeEnough = useMediaQuery(
-    {
-      minHeight: 922,
-      minWidth: 1300
-    },
-    undefined,
-    handleMediaQueryChange
-  );
-  const [max1024, setAMouseWheel] = React.useState(isLongEnough || isLargeEnough);
-  function handleMediaQueryChange(matches: boolean) {
-    setAMouseWheel(matches);
-  }
+  const configureIndex = (index: number) => setActiveIndex(index);
+  const configureSwiper = (swipe: any) => setSwiper(swipe);
 
-  const arr = [
-    <SummaryScreen summary={summary} key={1} />,
-    <EducationScreen interests={education.interests} school={education.school} key={2} />,
-    <SkillsScreen key={3} softSkills={skills} />,
-    <ExperienceScreen key={4} experience={experience} />
-  ];
+  const props = { summary, education, skills, experience };
   return (
     <div className="portfolio-about">
       <SideNavigation
@@ -74,29 +46,13 @@ const AboutScreen: React.FC<IAboutScreen> = ({
         swiperFunction={swiper}
         routes={routes}
       />
+
       <section className="slide-container">
-        <Swiper
-          direction={"vertical"}
-          effect="pagination"
-          speed={1000}
-          slidesPerView={1}
-          spaceBetween={0}
-          simulateTouch={false}
-          mousewheel={max1024}
-          navigation={true}
-          allowTouchMove={isLongEnough}
-          pagination={{
-            clickable: true
-          }}
-          modules={[Parallax, Mousewheel, Pagination]}
-          className="mySwiper"
-          onSwiper={(swiper) => setSwiper(swiper as any)}
-          onRealIndexChange={({ activeIndex }) => setActiveIndex(activeIndex)}
-        >
-          {arr.map((el, i) => (
-            <SwiperSlide key={i}>{({ isActive }) => isActive && el}</SwiperSlide>
-          ))}
-        </Swiper>
+        <AboutSlideContainer
+          setActiveIndex={configureIndex}
+          setSwiper={configureSwiper}
+          props={props}
+        />
       </section>
     </div>
   );

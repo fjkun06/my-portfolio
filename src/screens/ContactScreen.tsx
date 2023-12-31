@@ -1,14 +1,20 @@
-/* eslint-disable max-len */
 "use client";
 import React from "react";
 
-import { useForm, ValidationError } from "@formspree/react";
-import { AnimatePresence, motion } from "framer-motion";
+import { useForm } from "@formspree/react";
+import dynamic from "next/dynamic";
 import { useRouter } from "next/navigation";
 
-import { Button, CodeSnippet, InputComponent, LabelContainer } from "@/components";
+const ContactThankYouCard = dynamic(() => import("@/components/ContactThankYouCard"), {
+  ssr: true
+});
+const ContactOutputCard = dynamic(() => import("@/components/ContactOutputCard"), {
+  ssr: false
+});
+const ContactForm = dynamic(() => import("@/components/ContactForm"), {
+  ssr: true
+});
 
-import { today } from "./data";
 export interface IContactScreen {
   heading: string;
   input: string;
@@ -38,6 +44,7 @@ const ContactScreen: React.FC<IContactScreen> = ({
   const [_name, setName] = React.useState("");
   const [_email, setEmail] = React.useState("");
   const [_message, setMessage] = React.useState("");
+  const [_gone, setGone] = React.useState(false);
   const onEmailChange: React.ChangeEventHandler<HTMLInputElement> = (e) => {
     setEmail(e.target.value);
   };
@@ -87,110 +94,40 @@ const ContactScreen: React.FC<IContactScreen> = ({
       clearTimeout(timer);
     };
   }, [state.succeeded, push]);
+  React.useEffect(() => {
+    const timer = setTimeout(() => state.succeeded && setGone(true), delay * 100);
+    return () => {
+      clearTimeout(timer);
+    };
+  }, [state.succeeded, push]);
+
+  //grouping props per component
+  const thankYou = { thanks, tmessage, redirect, success: state.succeeded, _gone };
+  const outputCardProps = {
+    success: state.succeeded,
+    output,
+    _name,
+    _email,
+    _message,
+    _gone
+  };
+  const inputCardProps = {
+    input,
+    inputs,
+    state,
+    handleSubmit,
+    button,
+    _gone
+  };
 
   return (
     <div className="portfolio-contact">
-      <motion.h1
-        animate={{
-          y: [10, -10, 0],
-          opacity: [0, 1],
-          transition: { delay: 0.1, duration: 0.5 }
-        }}
-        transition={{ type: "spring", ease: "easeInOut" }}
-      >
-        {heading}
-      </motion.h1>
-      <motion.section layout>
-        <AnimatePresence>
-          {!state.succeeded && (
-            <motion.form
-              layout
-              className="input-data"
-              onSubmit={handleSubmit}
-              animate={{
-                y: [10, -10, 0],
-                opacity: [0, 1],
-                transition: { delay: 0.5, duration: 0.5 }
-              }}
-              exit={{ y: 50, opacity: 0, transition: { delay: 0.1 } }}
-              transition={{ type: "spring", ease: "easeInOut" }}
-            >
-              <h2> {input}</h2>
-              {inputs.map(({ type, value, onChange, text, name }) => (
-                <LabelContainer text={text} key={text}>
-                  <InputComponent
-                    inputType={type as any}
-                    id={text}
-                    onChange={onChange as any}
-                    value={value}
-                    name={name}
-                  />
-                  <ValidationError
-                    prefix={name.toUpperCase()}
-                    field={name}
-                    errors={state.errors}
-                  />
-                </LabelContainer>
-              ))}
-              <Button
-                text={button}
-                className="sendBtn"
-                type="submit"
-                disabled={state.submitting}
-              />
-            </motion.form>
-          )}
-        </AnimatePresence>
-        <AnimatePresence>
-          {!state.succeeded && (
-            <motion.div
-              layout
-              className="output-data"
-              animate={{
-                y: [10, -10, 0],
-                opacity: [0, 1],
-                transition: { delay: 1, duration: 0.5 }
-              }}
-              exit={{ y: 50, opacity: 0, transition: { delay: 0.1 } }}
-              transition={{ type: "spring", ease: "easeInOut" }}
-            >
-              <h2> {output}</h2>
-              <CodeSnippet
-                snippet={`
-const button = document.querySelector('.sendBtn');
-
-const message = {
-	name: "${_name}",
-	email: "${_email}",
-	message: "${_message}",
-	date: "${today}"
-}
-
-button.addEventListener('click', () => {
-	form.send(message);
-})`}
-              />
-            </motion.div>
-          )}
-        </AnimatePresence>
-        <AnimatePresence mode="wait">
-          {state.succeeded && (
-            <motion.div
-              layout
-              className="success"
-              animate={{ y: [50, -50, 0], opacity: [0, 1], transition: { delay: 0.75 } }}
-              exit={{ y: 50, opacity: 0 }}
-              transition={{ type: "spring", ease: "easeInOut" }}
-            >
-              <h3 className="">{thanks}</h3>
-              <br />
-              <span>{tmessage}</span>
-              <br />
-              <span>{redirect}</span>
-            </motion.div>
-          )}
-        </AnimatePresence>
-      </motion.section>
+      <h1>{heading}</h1>
+      <section>
+        <ContactForm {...inputCardProps} />
+        <ContactOutputCard {...outputCardProps} />
+        <ContactThankYouCard {...thankYou} />
+      </section>
     </div>
   );
 };

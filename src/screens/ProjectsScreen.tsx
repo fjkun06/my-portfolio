@@ -1,11 +1,12 @@
-"use client";
 import React from "react";
 
-import { motion } from "framer-motion";
-
-import { ProjectCard } from "@/components";
+import dynamic from "next/dynamic";
 
 import { projects } from "./data";
+
+const ProjectCard = dynamic(() => import("@/components/ProjectCard"), {
+  ssr: true
+});
 
 interface IProjectsScreen {
   title: string;
@@ -15,21 +16,12 @@ interface IProjectsScreen {
 const ProjectsScreen: React.FC<IProjectsScreen> = ({ title, descriptions }) => {
   return (
     <div className="portfolio-projects">
-      <motion.h1
-        animate={{
-          y: [10, -10, 0],
-          opacity: [0, 1],
-          transition: { delay: 0.1, duration: 0.5 }
-        }}
-        transition={{ type: "spring", ease: "easeInOut" }}
-      >
-        {title}
-      </motion.h1>
-      <motion.section layout>
+      <h1>{title}</h1>
+      <section>
         {projects.map((project, i) => (
-          <ProjectCard {...project} description={descriptions[i]} key={i} index={i} />
+          <ProjectCard {...project} description={descriptions[i]} key={i} />
         ))}
-      </motion.section>
+      </section>
     </div>
   );
 };
