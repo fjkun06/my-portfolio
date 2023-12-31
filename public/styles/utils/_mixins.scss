@@ -73,3 +73,19 @@
   top: $top;
   #{$direction}: $dir_value;
 }
+
+@mixin generateDanceAnimation($margin:1rem){
+  @keyframes dance-animation {
+  33% {
+    transform: translateY($margin);
+  }
+  65% {
+    transform: translateY(-$margin);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+}

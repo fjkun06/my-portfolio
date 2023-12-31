@@ -20,7 +20,7 @@ const UserInfo = ({
 }) => {
   return (
     <div className="portfolio-home--left">
-      <div className="">
+      <div className="dance-animation-5-first">
         <span className="">{greeting}</span>
         <span className="title">Frank Jordan Z.</span>
         <h3 className="">
@@ -28,7 +28,7 @@ const UserInfo = ({
         </h3>
         <HomeCTA callToActions={callToActions} />
       </div>
-      <div>
+      <div className="dance-animation-5-second">
         <CodeSnippet snippet={sampleCode} />
       </div>
     </div>

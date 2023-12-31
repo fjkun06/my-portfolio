@@ -1,1 +1,24 @@
+@use "../utils/mixins" as utils;
+@use "../utils/variables" as vars;
 @use "button";
+
+.dance-animation {
+  opacity: 0;
+  transform: translateY(0);
+}
+.dance-animation-5-def {
+  @include utils.generateDanceAnimation(5rem);
+  @extend .dance-animation;
+}
+
+.dance-animation-5 {
+  &-first,
+  &-second {
+    @extend .dance-animation-5-def;
+    animation: dance-animation 0.75s ease-in-out 0s 1 forwards;
+  }
+
+  &-second {
+    animation-delay: 0.8s;
+  }
+}
