@@ -10,8 +10,8 @@ const ProjectCardLink = ({
   cls,
   text
 }: {
-  href: string;
-  icon: string;
+  href: any;
+  icon: any;
   cls: string;
   text: string;
 }) => {

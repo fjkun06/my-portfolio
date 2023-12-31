@@ -1,11 +1,9 @@
 import React from "react";
 
 import dynamic from "next/dynamic";
-import Link from "next/link";
 
-const ProjectCardImage = dynamic(() => import("@/components/ProjectCardImage"), {
-  ssr: true
-});
+import ProjectCardImage from "./ProjectCardImage";
+
 const ProjectCardLink = dynamic(() => import("@/components/ProjectCardLink"), {
   ssr: false
 });

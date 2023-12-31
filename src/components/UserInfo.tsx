@@ -4,7 +4,7 @@ const CodeSnippet = dynamic(() => import("@/components/CodeSnippet"), {
   ssr: true
 });
 const HomeCTA = dynamic(() => import("@/components/HomeCTA"), {
-  ssr: false
+  ssr: true
 });
 
 import { sampleCode } from "../screens/data";

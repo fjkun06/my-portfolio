@@ -49,7 +49,7 @@ const NavBar: React.FC<INavBar> = ({ items = [[]] }) => {
   return (
     <nav>
       <div className={`navbar navbar--${isOpen ? "open" : "closed"}`}>
-        <NavbarHeader isOpen={isOpen} toggleOpen={toggleOpen} />
+        <NavbarHeader name="frank jordan zoné" isOpen={isOpen} toggleOpen={toggleOpen} />
         {isOpen && (
           <>
             <NavbarRoutes items={items} closeMenu={closeMenu} />

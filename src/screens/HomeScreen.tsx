@@ -1,7 +1,7 @@
 import dynamic from "next/dynamic";
 
 const CodeReel = dynamic(() => import("@/components/CodeReel"), {
-  ssr: false
+  ssr: true
 });
 const UserInfo = dynamic(() => import("@/components/UserInfo"), {
   ssr: true
