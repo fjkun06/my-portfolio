@@ -5,6 +5,9 @@
 .portfolio-about {
   @include utils.size(100%);
   @include utils.flex;
+  * {
+    color: vars.$white;
+  }
   overflow: hidden;
   @media only screen and (width < 1300px) {
     flex-direction: column;

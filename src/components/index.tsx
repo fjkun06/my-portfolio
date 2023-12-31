@@ -27,3 +27,6 @@ export { default as NavbarRoutes } from "@/components/NavbarRoutes";
 export { default as HomeCTA } from "@/components/HomeCTA";
 export { default as ProjectCardImage } from "@/components/ProjectCardImage";
 export { default as ProjectCardLink } from "@/components/ProjectCardLink";
+export { default as AboutCarousel } from "@/components/AboutCarousel";
+export { default as AboutHeader } from "@/components/AboutHeader";
+export { default as AboutSlideContainer } from "@/components/AboutSlideContainer";

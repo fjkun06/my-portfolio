@@ -1,5 +1,3 @@
-import React from "react";
-
 interface ISideNavigationItem extends React.HTMLAttributes<HTMLSpanElement> {
   text: string;
   index: number;
