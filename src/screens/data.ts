@@ -153,6 +153,16 @@ export const logoData = [
 export const summaryKeys = ["question", "opener", "desc1", "desc1", "contact"];
 
 export const experienceSkills = {
+  accenture: [
+    "React",
+    "Next.js",
+    "JavaScript",
+    "TypeScript",
+    "Tailwind CSS",
+    "REST APIs",
+    "Git",
+    "Debugging"
+  ],
   wandaprep: [
     "SCSS",
     "JavaScript",
@@ -185,7 +195,14 @@ export const projects = [
     title: "Digtal Multilingual Website",
     repoUrl: "https://github.com/fjkun06/Digtal",
     liveUrl: "https://digtall.netlify.app",
-    skills: ["JavaScript", "React.js", "i18n", "CSS (SCSS)", "RESTful APIs", "HTML5"],
+    skills: [
+      "JavaScript",
+      "React.js",
+      "i18n",
+      "CSS (SCSS)",
+      "RESTful APIs",
+      "HTML5"
+    ],
     src: "digtal.webp"
   },
   {

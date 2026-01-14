@@ -36,7 +36,7 @@
         "ub": {
           "name": "University of Buea",
           "endDate": "2023",
-          "grade": " Grade: 3.23 / 4",
+          "grade": " Grade: 3.25 / 4",
           "field": "Bachelor of Science in Computer Engineering"
         },
         "ude": {
@@ -81,14 +81,21 @@
       "title": "Professional Experience",
       "xp1": "Frontend Developer @ WandaPrep",
       "xp2": "Volunteer Frontend Developer @ Positive Impact Events",
+      "xp3": "Frontend Developer @ Accenture GmbH",
       "date1": "Jan — Nov 2023",
       "date2": "May — Sep 2021",
+      "date3": "Oct 2023 — Dec 2025",
       "list": {
         "one": " Utilized diverse front-end technologies to design views, yielding a notable 20% rise in user engagement.",
         "two": "Played an active role in providing valuable insights to internal stakeholders, demonstrating a grasp of complex technicalities.",
         "three": " Showcased unwavering commitment to learning and applying new technologies and methodologies.",
         "four": "Collaborated with designers to create and deploy user-centric web applications surpassing client expectations.",
-        "five": "Consistently supported team members, fostering a collaborative work environment. Resulted in a 15% increase in project delivery efficiency and a cohesive, motivated team. "
+        "five": "Consistently supported team members, fostering a collaborative work environment. Resulted in a 15% increase in project delivery efficiency and a cohesive, motivated team. ",
+        "six": "Agile development of high-performance web frontends with React, Next.js, and TypeScript in an international team.",
+        "seven": "Close collaboration with backend and UI/UX teams in interdisciplinary project structures",
+        "eight": "Implemented client- and server-side rendering for SEO-optimized pages using Next.js",
+        "nine": "Ensured high code quality through testing, refactoring, and code reviews",
+        "ten": "Integrated and utilized REST APIs as well as implemented asynchronous data flows"
       }
     }
   },

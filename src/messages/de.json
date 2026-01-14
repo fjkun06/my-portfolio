@@ -36,7 +36,7 @@
         "ub": {
           "name": "Universität Buea",
           "endDate": "2023",
-          "grade": "Note: 3,23",
+          "grade": "Note: 3,25 / 4,00",
           "field": "Bachelor of Science in Technischer Informatik"
         },
         "ude": {
@@ -81,14 +81,21 @@
       "title": "Berufserfahrung",
       "xp1": "Frontend-Entwickler @ WandaPrep",
       "xp2": "Ehrenamtlicher Frontend-Entwickler @ Positive Impact Events",
+      "xp3": "Frontend-Entwickler @ Accenture GmbH",
       "date1": "Jan — Nov 2023",
       "date2": "Mai — Sep 2021",
+      "date3": "Okt 2023 — Dez 2025",
       "list": {
         "one": "Nutzung verschiedener Front-End-Technologien für die Gestaltung von Ansichten, was zu einer beachtlichen Steigerung der Benutzeraktivität um 20 % führte.",
         "two": "Spielte eine aktive Rolle bei der Bereitstellung wertvoller Einblicke für interne Stakeholder und bewies dabei ein Verständnis für komplexe technische Zusammenhänge.",
         "three": "Unermüdliches Engagement beim Erlernen und Anwenden neuer Technologien und Methoden.",
         "four": "Hat mit Designern zusammengearbeitet, um benutzerorientierte Webanwendungen zu erstellen und bereitzustellen, die die Erwartungen der Kunden übertreffen.",
-        "five": "Konstante Unterstützung der Teammitglieder und Förderung einer kollaborativen Arbeitsumgebung. Dies führte zu einer Steigerung der Effizienz bei der Projektabwicklung um 15 % und zu einem zusammenhängenden, motivierten Team."
+        "five": "Konstante Unterstützung der Teammitglieder und Förderung einer kollaborativen Arbeitsumgebung. Dies führte zu einer Steigerung der Effizienz bei der Projektabwicklung um 15 % und zu einem zusammenhängenden, motivierten Team.",
+        "six": "Agile Entwicklung Entwicklung performanter Web-Frontends mit React, Next.js, und TypeScript in einem internationalen Team.",
+        "seven": "Enge Zusammenarbeit mit Backend- und UI/UX-Teams in interdisziplinären Projektstrukturen",
+        "eight": "Umsetzung von Client- und Server-Side-Rendering für SEO-optimierte Seiten mithilfe von Next.js",
+        "nine": "Sicherstellung hoher Code-Qualität durch Tests, Refactorings und Code Review",
+        "ten": "Integration und Nutzung von REST-APIs sowie Implementierung asynchroner Datenflüsse"
       }
     }
   },
