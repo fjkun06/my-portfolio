@@ -13,9 +13,7 @@ const AboutScreen = dynamic(() => import("@/screens/AboutScreen"), {
 
 const About = () => {
   const t = useTranslations("about");
-  const sideNavigationRoutes = sideNavigationDate.map(({ text }) =>
-    t(`${text}.title`)
-  );
+  const sideNavigationRoutes = sideNavigationDate.map(({ text }) => t(`${text}.title`));
 
   // Summary screen data
   const summaryData = summaryKeys.map((text) => t(`summary.${text}`));
@@ -24,16 +22,7 @@ const About = () => {
   });
 
   // Education screen data
-  const interests = [
-    "one",
-    "two",
-    "three",
-    "four",
-    "five",
-    "six",
-    "seven",
-    "eight"
-  ];
+  const interests = ["one", "two", "three", "four", "five", "six", "seven", "eight"];
 
   const educationData: IEducation = {
     school: {
@@ -69,9 +58,7 @@ const About = () => {
     date1: t("experience.date1"),
     date2: t("experience.date2"),
     date3: t("experience.date3"),
-    data: [...interests.slice(), "nine", "ten"].map((el) =>
-      t(`experience.list.${el}`)
-    )
+    data: [...interests.slice(), "nine", "ten"].map((el) => t(`experience.list.${el}`))
   };
 
   //translation data for summary section of about page

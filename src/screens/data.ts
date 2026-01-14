@@ -195,14 +195,7 @@ export const projects = [
     title: "Digtal Multilingual Website",
     repoUrl: "https://github.com/fjkun06/Digtal",
     liveUrl: "https://digtall.netlify.app",
-    skills: [
-      "JavaScript",
-      "React.js",
-      "i18n",
-      "CSS (SCSS)",
-      "RESTful APIs",
-      "HTML5"
-    ],
+    skills: ["JavaScript", "React.js", "i18n", "CSS (SCSS)", "RESTful APIs", "HTML5"],
     src: "digtal.webp"
   },
   {
